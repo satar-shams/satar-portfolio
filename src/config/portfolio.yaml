@@ -1,0 +1,427 @@
+# ============================================================
+# PORTFOLIO CONFIGURATION
+# ============================================================
+#
+# This file contains the personal/content information for the
+# portfolio. The Astro components should handle presentation
+# and design; this file should contain the actual content.
+#
+# Images:
+#   Project images -> /public/images/projects/
+#   Other image directories can be added later.
+#
+# ============================================================
+
+# ============================================================
+# SITE
+# ============================================================
+
+site:
+  name: "Satar Shamsi Goushki"
+  title: "ML / AI Engineer"
+  location: "Kerman, Iran"
+
+  email: "satar.shams2@gmail.com"
+
+  social:
+    github: "https://github.com/satar-shams"
+    linkedin: "https://linkedin.com/in/satar-shamsi/"
+
+  description: >
+    Portfolio of Satar Shamsi Goushki, ML / AI Engineer.
+
+# ============================================================
+# NAVIGATION
+# ============================================================
+#
+# The order here determines the order shown in the navigation.
+#
+# Later, removing an item from this list will remove it from
+# the navigation without changing the navigation component.
+#
+
+navigation:
+  - label: "Work"
+    href: "/work"
+
+  - label: "About"
+    href: "/about"
+
+  - label: "Experience"
+    href: "/experience"
+
+  - label: "Research"
+    href: "/research"
+
+  - label: "Education"
+    href: "/education"
+
+  - label: "CV"
+    href: "/cv"
+
+  - label: "Contact"
+    href: "/contact"
+
+# ============================================================
+# HOME
+# ============================================================
+
+home:
+  introduction: >
+    ML / AI Engineer working across machine learning,
+    data engineering, MLOps, and applied AI.
+
+  # We will design the artistic ML/AI engineering introduction
+  # later. For now this is only structural content.
+
+# ============================================================
+# PROJECTS
+# ============================================================
+
+projects:
+  - title: "LSTM Time Series Forecasting"
+    year: 2026
+    category: "ML / MLOps"
+    slug: "lstm-time-series-forecasting"
+
+    description: >
+      End-to-end time series forecasting project covering
+      preprocessing, model training, hyperparameter optimization,
+      experiment tracking, deployment, testing, and CI/CD.
+
+    image: "lstm-time-series-forecasting.png"
+
+    technologies:
+      - "Python"
+      - "TensorFlow"
+      - "LSTM"
+      - "MLflow"
+      - "Optuna"
+      - "FastAPI"
+      - "Docker"
+      - "GitHub Actions"
+
+    github: "https://github.com/satar-shams/lstm-time-series-mlops"
+
+  - title: "Market Data Pipeline"
+    year: 2026
+    category: "Data Engineering"
+    slug: "market-data-pipeline"
+
+    description: >
+      Production-oriented market data pipeline for automated
+      acquisition, processing, storage, and API access.
+
+    image: "market-data-pipeline.png"
+
+    technologies:
+      - "Python"
+      - "Apache Airflow"
+      - "PostgreSQL"
+      - "FastAPI"
+      - "Docker"
+      - "SQL"
+
+    github: "https://github.com/satar-shams/market-data-pipeline"
+
+  - title: "Intelligent Document Analysis"
+    year: 2026
+    category: "AI / Document Intelligence"
+    slug: "intelligent-document-analysis"
+
+    description: >
+      Document intelligence project focused on document ingestion,
+      preprocessing, OCR, text processing, embeddings, and
+      vector-search foundations.
+
+    image: "intelligent-document-analysis.png"
+
+    technologies:
+      - "Python"
+      - "LangChain"
+      - "PyMuPDF"
+      - "OCR"
+      - "Sentence Transformers"
+      - "ChromaDB"
+
+    github: "https://github.com/satar-shams/intelligent-document-analysis"
+
+  - title: "Retail Orders ETL Pipeline"
+    year: 2026
+    category: "Data Engineering"
+    slug: "retail-orders-etl"
+
+    description: >
+      End-to-end ETL pipeline for extracting, validating,
+      transforming, and incrementally loading retail order data
+      into PostgreSQL.
+
+    image: "retail-orders-etl.png"
+
+    technologies:
+      - "Python"
+      - "Pandas"
+      - "PostgreSQL"
+      - "SQLAlchemy"
+      - "Docker"
+      - "Pytest"
+      - "HashiCorp Vault"
+
+    github: "https://github.com/satar-shams/etl-retail-data-pipeline"
+
+  - title: "ML Inference API"
+    year: 2026
+    category: "ML Engineering"
+    slug: "ml-inference-api"
+
+    description: >
+      Production-oriented machine learning inference service
+      designed around REST APIs, testing, logging, configuration,
+      and containerized deployment.
+
+    image: "ml-inference-api.png"
+
+    technologies:
+      - "Python"
+      - "FastAPI"
+      - "Docker"
+      - "Pytest"
+
+    github: "https://github.com/satar-shams/ml-inference-api"
+
+# ============================================================
+# EXPERIENCE
+# ============================================================
+
+experience:
+  - organization: "GoalEarn"
+    role: "ML / AI Engineer Intern"
+
+    location: "Iran"
+    start: "October 2025"
+    end: "Present"
+
+    description: >
+      Develop machine learning and data engineering projects
+      in a practical engineering environment.
+
+    responsibilities:
+      - "Develop machine learning and data engineering projects."
+      - "Design data acquisition, preprocessing, modeling, evaluation, and deployment workflows."
+      - "Apply software engineering practices to ML-oriented projects."
+      - "Work with Python-based machine learning and data engineering technologies."
+      - "Develop production-oriented projects covering ML, MLOps, data pipelines, and intelligent document processing."
+
+# ============================================================
+# RESEARCH
+# ============================================================
+
+research:
+  - title: "SEIR Epidemic Modeling"
+    category: "Mathematical Modeling"
+
+    description: >
+      Mathematical modeling and simulation of epidemic dynamics
+      using an SEIR-based model.
+
+  - title: "Music Generation"
+    category: "Machine Learning / Computational Music"
+
+    description: >
+      Research and implementation work involving computational
+      approaches to music generation.
+
+  - title: "Parallel Algorithms / Traveling Salesman Problem"
+    category: "High Performance Computing"
+
+    description: >
+      Investigation of parallel approaches to the Traveling
+      Salesman Problem, including nearest-neighbor heuristics,
+      parallelization, and performance limitations.
+
+  - title: "Image Processing"
+    category: "Computer Vision"
+
+    description: >
+      Academic projects involving image classification,
+      detection, segmentation, and neural networks.
+
+  - title: "Multivariate Data Analysis"
+    category: "Data Analysis"
+
+    description: >
+      Statistical analysis, mathematical modeling, and
+      computational simulations.
+
+  - title: "Machine Learning and NLP"
+    category: "Machine Learning"
+
+    description: >
+      Academic projects involving sentiment analysis,
+      text classification, time-series forecasting, and
+      classical machine learning methods.
+
+# ============================================================
+# EDUCATION
+# ============================================================
+
+education:
+  - institution: "ITMO University"
+    location: "Saint Petersburg, Russia"
+
+    program: >
+      Graduate Studies in Big Data, High Performance Computing,
+      Machine Learning and Data Analysis
+
+    start: 2018
+    end: 2020
+
+    status: "Graduate studies completed; Master's degree not completed"
+
+    gpa:
+      big_data_extreme_computing: "3.91 / 4.00"
+      machine_learning_data_analysis: "3.79 / 4.00"
+
+    subjects:
+      - "Machine Learning"
+      - "Neural Networks"
+      - "High Performance Computing"
+      - "Parallel Algorithms"
+      - "Multivariate Data Analysis"
+      - "Mathematical and Statistical Modeling"
+      - "Image Processing"
+      - "Data Warehousing"
+      - "Time Series"
+      - "Natural Language Processing"
+      - "Scientific Computing"
+
+  - institution: "Shahid Bahonar University of Kerman"
+    location: "Kerman, Iran"
+
+    program: "B.Sc. in Electrical Engineering — Electronics"
+
+    start: 2007
+    end: 2012
+
+    gpa: "14.47 / 20.00"
+    distinction: "Top 5 students"
+
+# ============================================================
+# AWARDS
+# ============================================================
+
+awards:
+  - title: "Russian Open Doors Olympiad"
+    year: 2024
+    distinction: "Winner"
+    description: >
+      Awarded a full scholarship to study at HSE University.
+
+# ============================================================
+# LANGUAGES
+# ============================================================
+
+languages:
+  - language: "Persian"
+    level: "Native"
+
+  - language: "English"
+    level: "Professional working proficiency"
+
+  - language: "Russian"
+    level: "Basic"
+
+  - language: "German"
+    level: "Basic"
+
+# ============================================================
+# ADDITIONAL
+# ============================================================
+
+additional:
+  interests:
+    - "Machine Learning"
+    - "AI Engineering"
+    - "Data Engineering"
+    - "Algorithms"
+    - "Mathematical Modeling"
+    - "Music Technology"
+
+  notes:
+    - "Classical violinist with a long-standing interest in music and computational music generation."
+
+# ============================================================
+# CONTACT
+# ============================================================
+
+contact:
+  email: "satar.shams2@gmail.com"
+
+  message: >
+    Interested in machine learning, AI engineering,
+    data engineering, and applied AI projects.
+
+# ============================================================
+# PAGES
+# ============================================================
+
+pages:
+  work:
+    title: "Work"
+    description: "Selected projects and engineering work."
+
+  about:
+    title: "About"
+    description: "Background, interests, and professional profile."
+
+  experience:
+    title: "Experience"
+    description: "Professional experience and engineering work."
+
+  research:
+    title: "Research"
+    description: "Research and academic projects."
+
+  education:
+    title: "Education"
+    description: "Academic background and education."
+
+  cv:
+    title: "CV"
+    description: "Curriculum vitae and professional profile."
+
+  contact:
+    title: "Contact"
+    description: "Get in touch."
+
+# ============================================================
+# OPTIONAL SECTIONS — NOT USED YET
+# ============================================================
+#
+# We can activate these later simply by adding content.
+#
+# publications:
+#   - title: ""
+#     year: 2026
+#     venue: ""
+#     description: ""
+#     link: ""
+#
+#
+# certifications:
+#   - name: ""
+#     issuer: ""
+#     year: 2026
+#     link: ""
+#
+#
+# blog:
+#   enabled: false
+#   posts: []
+#
+#
+# testimonials:
+#   - name: ""
+#     role: ""
+#     text: ""
+#

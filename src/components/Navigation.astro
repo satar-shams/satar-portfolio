@@ -1,0 +1,19 @@
+---
+import { portfolio } from "../content/portfolio";
+---
+
+<nav aria-label="Main navigation">
+  <a href="/" class="logo">
+    {portfolio.site.name}
+  </a>
+
+  <div class="nav-links">
+    {
+      portfolio.navigation.map((item) => (
+        <a href={item.href}>
+          {item.label}
+        </a>
+      ))
+    }
+  </div>
+</nav>

@@ -1,0 +1,31 @@
+---
+import "../styles/global.css";
+import { portfolio } from "../content/portfolio";
+import Navigation from "../components/Navigation.astro";
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = `${portfolio.site.name} — ${portfolio.site.title}`,
+  description = portfolio.site.description,
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content={description} />
+    <title>{title}</title>
+  </head>
+
+  <body>
+    <Navigation />
+
+    <slot />
+  </body>
+</html>

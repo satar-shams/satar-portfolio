@@ -1,17 +1,33 @@
 ---
-
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { portfolio } from "../content/portfolio";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<BaseLayout>
+  <main>
+    <h1>{portfolio.site.name}</h1>
+    <p>{portfolio.site.title}</p>
+
+    <nav>
+      {
+        portfolio.navigation.map((item) => (
+          <a href={item.href}>{item.label}</a>
+        ))
+      }
+    </nav>
+
+    <section>
+      <h2>Projects</h2>
+
+      {
+        portfolio.projects.map((project) => (
+          <article>
+            <h3>{project.title}</h3>
+            <p>{project.year}</p>
+            <p>{project.category}</p>
+          </article>
+        ))
+      }
+    </section>
+  </main>
+</BaseLayout>
