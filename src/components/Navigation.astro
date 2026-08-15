@@ -7,7 +7,11 @@ const navigationItems = Object.values(navigation);
 ---
 
 <header class="site-header">
-  <a href="/" class="home-mark" aria-label="Home">
+  <a
+    href={import.meta.env.BASE_URL}
+    class="home-mark"
+    aria-label="Home"
+  >
     <span class="home-label">Home</span>
     <span class="home-tagline">is where you fall in love.</span>
   </a>
@@ -17,7 +21,11 @@ const navigationItems = Object.values(navigation);
       navigationItems
         .filter((item) => item.enabled)
         .map((item) => (
-          <a href={item.href}>{item.label}</a>
+          <a
+            href={`${import.meta.env.BASE_URL}${item.href.replace(/^\//, "")}`}
+          >
+            {item.label}
+          </a>
         ))
     }
   </nav>
