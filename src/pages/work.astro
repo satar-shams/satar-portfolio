@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import { portfolio } from "../content/portfolio";
+import { assetPath } from "../utils/paths";
 
 const { work, projects } = portfolio;
 const display = work.display;
@@ -59,7 +60,7 @@ const display = work.display;
                 {
                   display.image && project.image && (
                     <img
-                      src={`/images/projects/${project.image}`}
+                      src={assetPath(`images/projects/${project.image}`)}
                       alt={project.title}
                     />
                   )

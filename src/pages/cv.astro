@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import { portfolio } from "../content/portfolio";
+import { assetPath } from "../utils/paths";
 
 const { cv } = portfolio;
 const display = cv.display;
@@ -38,7 +39,7 @@ const display = cv.display;
               <section class="cv-document">
 
                 <iframe
-                  src={`/documents/cv/${cv.document.file}`}
+                  src={assetPath(`documents/cv/${cv.document.file}`)}
                   title={cv.document.title}
                   loading="lazy"
                 ></iframe>
@@ -47,7 +48,7 @@ const display = cv.display;
                   display.download && (
                     <a
                       class="cv-download"
-                      href={`/documents/cv/${cv.document.file}`}
+                      href={assetPath(`documents/cv/${cv.document.file}`)}
                       target="_blank"
                       rel="noopener noreferrer"
                     >

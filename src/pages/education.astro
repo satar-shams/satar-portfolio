@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import { portfolio } from "../content/portfolio";
+import { assetPath } from "../utils/paths";
 
 const { education } = portfolio;
 const display = education.display;
@@ -46,7 +47,7 @@ const display = education.display;
                   item.image && (
                     <div class="education-image">
                       <img
-                        src={`/images/projects/${item.image}`}
+                        src={assetPath(`images/projects/${item.image}`)}
                         alt={item.institution}
                       />
                     </div>

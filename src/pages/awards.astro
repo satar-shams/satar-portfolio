@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import { portfolio } from "../content/portfolio";
+import { assetPath } from "../utils/paths";
 
 const { awards } = portfolio;
 const display = awards.display;
@@ -81,7 +82,7 @@ const display = awards.display;
 
                       {item.image.map((image) => (
                         <img
-                          src={`/images/awards/${image}`}
+                          src={assetPath(`images/awards/${image}`)}
                           alt={item.title}
                         />
                       ))}
@@ -98,13 +99,13 @@ const display = awards.display;
                     {item.documents.map((document) => (
                         <div class="award-document">
                         <iframe
-                            src={`/documents/awards/${document}`}
+                            src={assetPath(`documents/awards/${document}`)}
                             title={`${item.title} document`}
                             loading="lazy"
                         ></iframe>
 
                         <a
-                            href={`/documents/awards/${document}`}
+                            href={assetPath(`documents/awards/${document}`)}
                             target="_blank"
                             rel="noopener noreferrer"
                         >
