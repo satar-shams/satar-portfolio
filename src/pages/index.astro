@@ -4,30 +4,18 @@ import { portfolio } from "../content/portfolio";
 ---
 
 <BaseLayout>
-  <main>
-    <h1>{portfolio.site.name}</h1>
-    <p>{portfolio.site.title}</p>
-
-    <nav>
-      {
-        portfolio.navigation.map((item) => (
-          <a href={item.href}>{item.label}</a>
-        ))
-      }
-    </nav>
-
-    <section>
-      <h2>Projects</h2>
-
-      {
-        portfolio.projects.map((project) => (
-          <article>
-            <h3>{project.title}</h3>
-            <p>{project.year}</p>
-            <p>{project.category}</p>
-          </article>
-        ))
-      }
+  <main class="home-page">
+    <section class="hero">
+      <div class="hero-intro">
+        <p class="hero-name">{portfolio.site.name}</p>
+        <div class="hero-title">
+          <span class="hero-notation hero-notation-left">Σ wᵢxᵢ</span>
+          <span class="hero-arrow">→</span>
+          <span class="hero-role">{portfolio.site.title}</span>
+          <span class="hero-arrow">→</span>
+          <span class="hero-notation hero-notation-right">ŷ</span>
+        </div>
+      </div>
     </section>
   </main>
 </BaseLayout>

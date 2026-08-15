@@ -1,19 +1,20 @@
 ---
 import { portfolio } from "../content/portfolio";
+
+const { navigation } = portfolio;
 ---
 
-<nav aria-label="Main navigation">
-  <a href="/" class="logo">
-    {portfolio.site.name}
+<header class="site-header">
+  <a href="/" class="home-mark" aria-label="Home">
+    <span class="home-label">{navigation.home.label}</span>
+    <span class="home-tagline">{navigation.home.tagline}</span>
   </a>
 
-  <div class="nav-links">
+  <nav class="site-navigation" aria-label="Main navigation">
     {
-      portfolio.navigation.map((item) => (
-        <a href={item.href}>
-          {item.label}
-        </a>
+      navigation.links.map((link) => (
+        <a href={link.href}>{link.label}</a>
       ))
     }
-  </div>
-</nav>
+  </nav>
+</header>
