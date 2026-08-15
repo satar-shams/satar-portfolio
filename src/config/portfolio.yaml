@@ -149,30 +149,41 @@ about:
     enabled: true
     title: "Introduction"
     text: >
-      I am a professional working at the intersection of technology,
-      problem solving, and continuous learning. My work focuses on
-      building practical solutions and turning ideas into useful,
-      reliable results.
+      I am an ML / AI Engineer with hands-on experience across machine
+      learning, data engineering, MLOps, and applied AI. My recent work
+      focuses on building complete, practical systems rather than isolated
+      models, including data pipelines, model development and evaluation,
+      experiment tracking, testing, deployment, and API-based inference.
+      I also have an academic background in machine learning, mathematical
+      modeling, image processing, parallel algorithms, high-performance
+      computing, and data analysis through graduate studies and research
+      at ITMO University.
 
   engineering_focus:
     enabled: true
     title: "Engineering Focus"
     items:
-      - "Machine Learning"
-      - "Software Engineering"
-      - "Data & Analytics"
-      - "Automation"
-      - "Applied AI"
-      - "System Design"
+      - "Machine Learning & Deep Learning"
+      - "ML Engineering & MLOps"
+      - "Data Engineering & ETL"
+      - "Time Series Forecasting"
+      - "NLP & Document AI"
+      - "Model Serving & APIs"
+      - "Data Analysis & Mathematical Modeling"
+      - "Research & Applied Computing"
 
   approach:
     enabled: true
     title: "Approach"
     text: >
-      I value clear thinking, practical engineering, maintainable systems,
-      and continuous improvement. I prefer simple solutions when they are
-      sufficient and introduce complexity only when it provides real value.
-
+      I approach machine learning as an engineering discipline as well as
+      a modeling problem. I value reproducible workflows, clean and modular
+      code, automated testing, data validation, experiment tracking, and
+      maintainable deployment pipelines. I prefer practical solutions that
+      can be understood, tested, and maintained, while using more advanced
+      methods when they provide a clear benefit. My academic and project
+      experience also gives me an interest in understanding the mathematical
+      and computational foundations behind the systems I build.
 # ============================================================
 # WORK
 # ============================================================
@@ -189,7 +200,8 @@ work:
     title: "Selected Projects"
     text: >
       A selection of machine learning, AI, data engineering,
-      and software engineering projects.
+      MLOps, and software engineering projects developed through
+      professional work, independent development, and academic study.
 
   references:
     enabled: true
@@ -261,21 +273,26 @@ projects:
   # PROJECT 1
   # ==========================================================
 
-  - title: "LSTM Time Series Forecasting"
+  - title: "LSTM Time Series Forecasting — End-to-End MLOps"
     year: 2026
     category: "ML / MLOps"
     slug: "lstm-time-series-forecasting"
 
     description: >
-      End-to-end time series forecasting project covering
-      preprocessing, model training, hyperparameter optimization,
-      experiment tracking, deployment, testing, and CI/CD.
+      End-to-end machine learning system for AAPL stock-price
+      forecasting, covering chronological data splitting,
+      leakage-safe preprocessing, stacked LSTM modeling,
+      hyperparameter optimization, experiment tracking,
+      model management, evaluation, API-based inference,
+      containerization, automated testing, CI/CD, and cloud
+      deployment.
 
-    image: "lstm-time-series-forecasting.png"
+    image: "lstm-time-series-forecasting-mlops.png"
 
     technologies:
       - "Python"
       - "TensorFlow"
+      - "Keras"
       - "LSTM"
       - "MLflow"
       - "Optuna"
@@ -291,24 +308,31 @@ projects:
   # PROJECT 2
   # ==========================================================
 
-  - title: "Market Data Pipeline"
+  - title: "Market Data Pipeline — ETL"
     year: 2026
     category: "Data Engineering"
     slug: "market-data-pipeline"
 
     description: >
-      Production-oriented market data pipeline for automated
-      acquisition, processing, storage, and API access.
+      Production-oriented market data pipeline that acquires
+      financial data from yfinance, validates and transforms
+      the data, stores it in PostgreSQL using idempotent loading,
+      and provides an API layer for querying the stored data.
+      Apache Airflow is being integrated for pipeline scheduling
+      and orchestration.
 
-    image: "market-data-pipeline.png"
+    image: "market-data-pipeline-etl.png"
 
     technologies:
       - "Python"
-      - "Apache Airflow"
+      - "yfinance"
+      - "Pandas"
       - "PostgreSQL"
+      - "SQLAlchemy"
+      - "Apache Airflow"
       - "FastAPI"
       - "Docker"
-      - "SQL"
+      - "Pytest"
 
     links:
       - label: "GitHub"
@@ -324,19 +348,23 @@ projects:
     slug: "intelligent-document-analysis"
 
     description: >
-      Document intelligence project focused on document ingestion,
-      preprocessing, OCR, text processing, embeddings, and
-      vector-search foundations.
+      Document intelligence pipeline for processing PDF and DOCX
+      documents, including text extraction, document preprocessing,
+      OCR for scanned documents, text processing, embeddings, and
+      vector-database foundations for semantic search and document
+      retrieval.
 
-    image: "intelligent-document-analysis.png"
+    image: "intelligent-document-analysis-document-ai.png"
 
     technologies:
       - "Python"
       - "LangChain"
       - "PyMuPDF"
-      - "OCR"
+      - "python-docx"
+      - "Tesseract OCR"
       - "Sentence Transformers"
       - "ChromaDB"
+      - "Pytest"
 
     links:
       - label: "GitHub"
@@ -347,16 +375,19 @@ projects:
   # ==========================================================
 
   - title: "Retail Orders ETL Pipeline"
-    year: 2026
+    year: 2024
     category: "Data Engineering"
     slug: "retail-orders-etl"
 
     description: >
-      End-to-end ETL pipeline for extracting, validating,
-      transforming, and incrementally loading retail order data
-      into PostgreSQL.
+      End-to-end ETL pipeline for processing retail order data
+      from CSV files and loading validated results into PostgreSQL.
+      The project includes separate extraction, transformation,
+      and loading stages, data-quality checks, incremental and
+      idempotent loading, structured logging, automated testing,
+      credential management, and containerized execution.
 
-    image: "retail-orders-etl.png"
+    image: "retail-orders-etl-pipeline.png"
 
     technologies:
       - "Python"
@@ -376,22 +407,26 @@ projects:
   # ==========================================================
 
   - title: "ML Inference API"
-    year: 2026
+    year: 2025
     category: "ML Engineering"
     slug: "ml-inference-api"
 
     description: >
-      Production-oriented machine learning inference service
-      designed around REST APIs, testing, logging, configuration,
-      and containerized deployment.
+      Machine learning inference service built around a REST API
+      for serving model predictions, with request and response
+      validation, environment-based configuration, structured
+      logging, automated testing, modular model handling, and
+      Docker-based deployment.
 
-    image: "ml-inference-api.png"
+    image: "ml-inference-api-fastapi.png"
 
     technologies:
       - "Python"
       - "FastAPI"
+      - "Pydantic"
       - "Docker"
       - "Pytest"
+      - "Structured Logging"
 
     links:
       - label: "GitHub"
@@ -413,7 +448,7 @@ projects:
 
 experience:
   introduction:
-    enabled: true
+    enabled: false
     title: "Professional Experience"
     text: >
       A summary of professional experience and engineering work.
@@ -445,13 +480,17 @@ experience:
       end: "Present"
 
       description: >
-        Develop machine learning and data engineering projects
-        in a practical engineering environment.
+        Work across machine learning, data engineering, and ML engineering
+        projects, with a focus on building modular, testable, and reproducible
+        systems and applying software engineering practices to practical
+        machine learning workflows.
 
       responsibilities:
-        - "Develop machine learning and data engineering projects."
-        - "Design data acquisition, preprocessing, modeling, evaluation, and deployment workflows."
-        - "Apply software engineering practices to ML-oriented projects."
+        - "Built a modular ETL pipeline for acquiring, validating, transforming, and loading data into PostgreSQL."
+        - "Implemented incremental loading, structured logging, automated tests, and secure credential management using HashiCorp Vault."
+        - "Developed a machine learning inference API for serving model predictions."
+        - "Worked with modular project structures, automated testing, documentation, Git, and reproducible development workflows."
+        - "Applied engineering practices across data acquisition, preprocessing, model development, evaluation, and deployment."
 
       links:
         # ==========================================================
@@ -467,33 +506,6 @@ experience:
 
         - label: "LinkedIn"
           url: "https://linkedin.com/company/example"
-
-    # ==========================================================
-    # EXPERIENCE 2
-    # ==========================================================
-
-    - organization: "Another Organization"
-      role: "Another Role"
-
-      location: "City, Country"
-      start: "2023"
-      end: "2025"
-
-      description: >
-        Description of the role and work.
-
-      responsibilities:
-        - "Responsibility one."
-        - "Responsibility two."
-
-      links:
-        # ==========================================================
-        # LINK 1
-        # ==========================================================
-
-        - label: "Website"
-          url: "https://example.com"
-
 # ============================================================
 # RESEARCH
 # ============================================================
@@ -524,7 +536,7 @@ research:
     title: true
     category: true
     description: true
-    links: true
+    links: false
 
   # ==========================================================
   # RESEARCH ITEMS
@@ -539,27 +551,28 @@ research:
       category: "Mathematical Modeling"
 
       description: >
-        Mathematical modeling and simulation of epidemic dynamics
-        using an SEIR-based model.
+        Research and implementation of an SEIR-based mathematical
+        model for epidemic dynamics, supported by literature research
+        and a research paper of approximately 20 pages.
 
-      links:
-        # ======================================================
-        # LINK 1
-        # ======================================================
+      # links:
+      #   # ======================================================
+      #   # LINK 1
+      #   # ======================================================
 
-        - label: "Project"
-          url: "https://example.com"
+      #   - label: "Project"
+      #     url: "https://example.com"
 
-        # ======================================================
-        # LINK 2
-        # ======================================================
+      #   # ======================================================
+      #   # LINK 2
+      #   # ======================================================
 
-        - label: "Research Paper"
-          url: "https://example.com"
+      #   - label: "Research Paper"
+      #     url: "https://example.com"
 
-        # ======================================================
-        # Add or remove as many links as needed.
-        # ======================================================
+      # ======================================================
+      # Add or remove as many links as needed.
+      # ======================================================
 
     # ==========================================================
     # RESEARCH 2
@@ -569,16 +582,11 @@ research:
       category: "Machine Learning / Computational Music"
 
       description: >
-        Research and implementation work involving computational
-        approaches to music generation.
+        Research on machine-learning-based music generation,
+        including literature research, implementation, and a
+        research paper of approximately 20 pages.
 
-      links:
-        # ======================================================
-        # LINK 1
-        # ======================================================
-
-        - label: "Project"
-          url: "https://example.com"
+      links: []
 
     # ==========================================================
     # RESEARCH 3
@@ -588,17 +596,11 @@ research:
       category: "High Performance Computing"
 
       description: >
-        Investigation of parallel approaches to the Traveling
-        Salesman Problem, including nearest-neighbor heuristics,
-        parallelization, and performance limitations.
+        Academic work involving the Traveling Salesman Problem,
+        nearest-neighbor algorithms, parallel execution, and analysis
+        of algorithmic limitations and parallel performance.
 
-      links:
-        # ======================================================
-        # LINK 1
-        # ======================================================
-
-        - label: "Project"
-          url: "https://example.com"
+      links: []
 
     # ==========================================================
     # RESEARCH 4
@@ -608,16 +610,11 @@ research:
       category: "Computer Vision"
 
       description: >
-        Academic projects involving image classification,
-        detection, segmentation, and neural networks.
+        Academic projects involving image classification and image
+        segmentation, supported by technical reports and project
+        documentation.
 
-      links:
-        # ======================================================
-        # LINK 1
-        # ======================================================
-
-        - label: "Project"
-          url: "https://example.com"
+      links: []
 
     # ==========================================================
     # RESEARCH 5
@@ -627,16 +624,10 @@ research:
       category: "Data Analysis"
 
       description: >
-        Statistical analysis, mathematical modeling, and
-        computational simulations.
+        Academic work involving multivariate data analysis,
+        statistical methods, and mathematical modeling.
 
-      links:
-        # ======================================================
-        # LINK 1
-        # ======================================================
-
-        - label: "Project"
-          url: "https://example.com"
+      links: []
 
     # ==========================================================
     # RESEARCH 6
@@ -646,18 +637,10 @@ research:
       category: "Machine Learning"
 
       description: >
-        Academic projects involving sentiment analysis,
-        text classification, time-series forecasting, and
-        classical machine learning methods.
+        Academic projects involving machine learning, text processing,
+        sentiment analysis, text classification, and time-series analysis.
 
-      links:
-        # ======================================================
-        # LINK 1
-        # ======================================================
-
-        - label: "Project"
-          url: "https://example.com"
-
+      links: []
 # ============================================================
 # EDUCATION
 # ============================================================
@@ -668,7 +651,7 @@ education:
   # ==========================================================
 
   introduction:
-    enabled: true
+    enabled: false
     title: "Education"
     text: >
       Academic background in electrical engineering, machine learning,
@@ -693,7 +676,7 @@ education:
     status: true
     gpa: true
     subjects: true
-    links: true
+    links: false
 
   # ==========================================================
   # EDUCATION ITEMS
@@ -706,13 +689,12 @@ education:
 
     - institution: "ITMO University"
 
-      image: "lstm-time-series-forecasting.png"
+      image: "itmo-university.jpeg"
 
       location: "Saint Petersburg, Russia"
 
       program: >
-        Graduate Studies in Big Data, High Performance Computing,
-        Machine Learning and Data Analysis
+        Graduate Studies in Big Data and Machine Learning
 
       start: 2018
       end: 2020
@@ -736,20 +718,21 @@ education:
         - "Natural Language Processing"
         - "Scientific Computing"
 
-      links:
+      links: []
+
         # ======================================================
         # LINK 1
         # ======================================================
 
-        - label: "University"
-          url: "https://example.com"
+        # - label: "University"
+        #   url: "https://example.com"
 
         # ======================================================
         # LINK 2
         # ======================================================
 
-        - label: "Program"
-          url: "https://example.com"
+        # - label: "Program"
+        #   url: "https://example.com"
 
         # ======================================================
         # Add or remove as many links as needed.
@@ -777,13 +760,14 @@ education:
 
       subjects: []
 
-      links:
+      links: []
+
         # ======================================================
         # LINK 1
         # ======================================================
 
-        - label: "University"
-          url: "https://example.com"
+        # - label: "University"
+        #   url: "https://example.com"
 
         # ======================================================
         # Add or remove as many links as needed.
@@ -791,7 +775,7 @@ education:
 
 skills:
   introduction:
-    enabled: true
+    enabled: false
     title: "Technical Skills"
     text: >
       Technologies, tools, and technical areas used across
@@ -808,59 +792,110 @@ skills:
     # SKILL CATEGORY 1
     # ==========================================================
 
-    - category: "Machine Learning"
-      skills:
-        - "Machine Learning"
-        - "Deep Learning"
-        - "Neural Networks"
-        - "Time Series"
-        - "Natural Language Processing"
-
-    # ==========================================================
-    # SKILL CATEGORY 2
-    # ==========================================================
-
-    - category: "Programming"
+    - category: "Programming Languages"
       skills:
         - "Python"
         - "SQL"
         - "C++"
 
     # ==========================================================
+    # SKILL CATEGORY 2
+    # ==========================================================
+
+    - category: "Machine Learning"
+      skills:
+        - "Machine Learning"
+        - "Deep Learning"
+        - "Neural Networks"
+        - "Time Series Forecasting"
+        - "Classification"
+        - "Natural Language Processing"
+        - "Computer Vision"
+
+    # ==========================================================
     # SKILL CATEGORY 3
     # ==========================================================
 
-    - category: "Data Engineering"
+    - category: "ML Engineering / MLOps"
       skills:
-        - "Data Acquisition"
-        - "ETL"
-        - "PostgreSQL"
-        - "Apache Airflow"
+        - "MLflow"
+        - "Optuna"
+        - "Model Tracking"
+        - "Model Registry"
+        - "Model Versioning"
+        - "FastAPI"
+        - "Model Serving"
+        - "Docker"
+        - "Docker Compose"
+        - "GitHub Actions"
+        - "CI/CD"
 
     # ==========================================================
     # SKILL CATEGORY 4
     # ==========================================================
 
-    - category: "MLOps & Deployment"
+    - category: "Data Engineering"
       skills:
-        - "MLflow"
-        - "Docker"
-        - "FastAPI"
-        - "GitHub Actions"
-        - "CI/CD"
+        - "ETL / ELT"
+        - "Pandas"
+        - "PostgreSQL"
+        - "SQLAlchemy"
+        - "Apache Airflow"
+        - "Data Validation"
+        - "Incremental Loading"
+        - "Idempotent Loading"
 
     # ==========================================================
     # SKILL CATEGORY 5
     # ==========================================================
 
-    - category: "Tools & Libraries"
+    - category: "Deep Learning"
       skills:
         - "TensorFlow"
-        - "PyTorch"
-        - "Pandas"
-        - "Scikit-learn"
-        - "Optuna"
+        - "Keras"
+        - "LSTM"
+        - "CNN"
+        - "Autoencoders"
+        - "Transfer Learning"
+
+    # ==========================================================
+    # SKILL CATEGORY 6
+    # ==========================================================
+
+    - category: "Data Science"
+      skills:
+        - "NumPy"
+        - "scikit-learn"
+        - "Statistical Analysis"
+        - "Mathematical Modeling"
+        - "Time Series Analysis"
+
+    # ==========================================================
+    # SKILL CATEGORY 7
+    # ==========================================================
+
+    - category: "NLP / Document AI"
+      skills:
+        - "Text Processing"
+        - "OCR"
+        - "Embeddings"
+        - "Vector Databases"
+        - "Document Processing"
         - "LangChain"
+
+    # ==========================================================
+    # SKILL CATEGORY 8
+    # ==========================================================
+
+    - category: "Development & Tools"
+      skills:
+        - "Git"
+        - "GitHub"
+        - "Linux"
+        - "Jupyter Notebook"
+        - "Pytest"
+        - "Structured Logging"
+        - "HashiCorp Vault"
 
   # ==========================================================
   # LANGUAGES
@@ -872,20 +907,27 @@ skills:
     # ==========================================================
 
     - language: "English"
-      level: "Professional"
+      level: "Professional proficiency (TOEFL iBT 85; graduate studies conducted in English)"
 
     # ==========================================================
     # LANGUAGE 2
     # ==========================================================
 
-    - language: "Russian"
-      level: "Intermediate"
+    - language: "Persian"
+      level: "Native"
 
     # ==========================================================
     # LANGUAGE 3
     # ==========================================================
 
-    - language: "Armenian"
+    - language: "Russian"
+      level: "Basic"
+
+    # ==========================================================
+    # LANGUAGE 4
+    # ==========================================================
+
+    - language: "German"
       level: "Basic"
 
     # ==========================================================
@@ -902,7 +944,7 @@ awards:
   # ==========================================================
 
   introduction:
-    enabled: true
+    enabled: false
     title: "Awards & Achievements"
     text: >
       Selected academic and professional awards,
@@ -923,9 +965,9 @@ awards:
     organization: true
     year: true
     description: true
-    image: true
+    image: false
     documents: true
-    links: true
+    links: false
 
   # ==========================================================
   # AWARD ITEMS
@@ -936,83 +978,51 @@ awards:
     # AWARD 1
     # ==========================================================
 
-    - title: "Example Award"
-      organization: "Example Organization"
-      year: 2020
+    - title: "Russian Open Doors Olympiad — Full Scholarship"
+      organization: "HSE University"
+      year: 2024
 
       description: >
-        Description of the award and the achievement
-        for which it was received.
+        Awarded a full scholarship through the Russian Open Doors
+        Olympiad for graduate study in Russia.
 
-      image:
-        # ======================================================
-        # IMAGE 1
-        # ======================================================
-
-        - "award-russian.jpg"
-
-        # ======================================================
-        # IMAGE 2
-        # ======================================================
-
-        - "award-english.jpg"
-
-        # ======================================================
-        # Add or remove as many images as needed.
-        # ======================================================
+      image: []
 
       documents:
         # ======================================================
         # DOCUMENT 1
         # ======================================================
 
-        - "award-russian.pdf"
+        - "diplomas№ 2024-APP-M082_Satar_Shamsi Goushki_ru_diploma.pdf"
 
         # ======================================================
         # DOCUMENT 2
         # ======================================================
 
-        - "award-english.pdf"
+        - "diplomas№ 2024-APP-M082_Satar_Shamsi Goushki_en_diploma.pdf"
 
         # ======================================================
         # Add or remove as many documents as needed.
         # ======================================================
 
-      links:
-        # ======================================================
-        # LINK 1
-        # ======================================================
-
-        - label: "Organization"
-          url: "https://example.com"
-
-        # ======================================================
-        # LINK 2
-        # ======================================================
-
-        - label: "Award Information"
-          url: "https://example.com"
-
-        # ======================================================
-        # Add or remove as many links as needed.
-        # ======================================================
+      links: []
 
     # ==========================================================
     # AWARD 2
     # ==========================================================
 
-    - title: "Another Award"
-      organization: "Another Organization"
-      year: 2022
-
-      description: >
-        Description of another award or achievement.
-
-      image: []
-
-      documents: []
-
-      links: []
+    # - title: "Another Award"
+    #   organization: "Another Organization"
+    #   year: 2022
+    #
+    #   description: >
+    #     Description of another award or achievement.
+    #
+    #   image: []
+    #
+    #   documents: []
+    #
+    #   links: []
 
     # ==========================================================
     # Add or remove as many awards as needed.
@@ -1028,7 +1038,7 @@ cv:
   # ==========================================================
 
   introduction:
-    enabled: true
+    enabled: false
     title: "Curriculum Vitae"
     text: >
       A detailed overview of my professional experience,
