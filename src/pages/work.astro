@@ -1,13 +1,122 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import PageIntro from "../components/PageIntro.astro";
+import { portfolio } from "../content/portfolio";
+
+const { work, projects } = portfolio;
+const display = work.display;
 ---
 
-<BaseLayout title="Work">
-  <main>
-    <PageIntro
-      title="Work"
-      description="Selected projects and engineering work."
-    />
+<BaseLayout>
+  <main class="work-page">
+    <header class="page-header">
+      <p class="page-label">Work</p>
+
+      <h1>{work.title}</h1>
+
+      {
+        work.introduction.enabled && (
+          <div class="work-introduction">
+            <h2>{work.introduction.title}</h2>
+            <p>{work.introduction.text}</p>
+          </div>
+        )
+      }
+
+      {
+        work.notice.enabled && (
+          <div class="work-notice">
+            <h2>{work.notice.title}</h2>
+            <p>{work.notice.text}</p>
+          </div>
+        )
+      }
+    </header>
+
+    {
+      display.enabled && (
+        <div class="projects-list">
+          {projects.map((project, index) => (
+            <article class="project">
+              <div class="project-number">
+                {String(index + 1).padStart(2, "0")}
+              </div>
+
+              <div class="project-content">
+                <h2>{project.title}</h2>
+
+                {
+                  (display.category || display.year) && (
+                    <p class="project-meta">
+                      {display.category && project.category}
+                      {display.category && display.year && " · "}
+                      {display.year && project.year}
+                    </p>
+                  )
+                }
+
+                {display.description && <p>{project.description}</p>}
+
+                {
+                  display.image && project.image && (
+                    <img
+                      src={`/images/projects/${project.image}`}
+                      alt={project.title}
+                    />
+                  )
+                }
+
+                {
+                  display.technologies && (
+                    <ul class="project-technologies">
+                      {project.technologies.map((technology) => (
+                        <li>{technology}</li>
+                      ))}
+                    </ul>
+                  )
+                }
+
+                {
+                  display.links && project.links?.length > 0 && (
+                    <div class="project-links">
+                      {project.links.map((link) => (
+                        <a
+                          href={link.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          {link.label} →
+                        </a>
+                      ))}
+                    </div>
+                  )
+                }
+              </div>
+            </article>
+          ))}
+        </div>
+      )
+    }
+
+    {
+      work.references.enabled && (
+        <section class="work-references">
+          <h2>{work.references.title}</h2>
+
+          <p>{work.references.text}</p>
+
+          <div class="reference-links">
+            {work.references.links.map((link) => (
+              <a
+                href={link.url}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {link.label} →
+              </a>
+            ))}
+          </div>
+        </section>
+      )
+    }    
   </main>
 </BaseLayout>

@@ -1,13 +1,159 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import PageIntro from "../components/PageIntro.astro";
+import { portfolio } from "../content/portfolio";
+
+const { education } = portfolio;
+const display = education.display;
 ---
 
-<BaseLayout title="Education">
-  <main>
-    <PageIntro
-      title="Education"
-      description="Academic background and education."
-    />
+<BaseLayout>
+  <main class="education-page">
+
+    <header class="page-header">
+      <p class="page-label">Education</p>
+
+      {
+        education.introduction.enabled && (
+          <div class="education-introduction">
+            <h1>{education.introduction.title}</h1>
+            <p>{education.introduction.text}</p>
+          </div>
+        )
+      }
+    </header>
+
+    {
+      display.enabled && (
+        <div
+          class:list={[
+            "education-list",
+            {
+              "has-introduction": education.introduction.enabled,
+            },
+          ]}
+        >
+          {education.items.map((item, index) => (
+            <article class="education-item">
+
+              <div class="education-number">
+                {String(index + 1).padStart(2, "0")}
+              </div>
+
+              <div class="education-content">
+
+                {
+                  display.image &&
+                  item.image && (
+                    <div class="education-image">
+                      <img
+                        src={`/images/projects/${item.image}`}
+                        alt={item.institution}
+                      />
+                    </div>
+                  )
+                }
+
+                {
+                  display.institution && (
+                    <h2>{item.institution}</h2>
+                  )
+                }
+
+                {
+                  display.program && (
+                    <p class="education-program">
+                      {item.program}
+                    </p>
+                  )
+                }
+
+                {
+                  (display.location || display.dates) && (
+                    <p class="education-meta">
+
+                      {display.location && item.location}
+
+                      {display.location &&
+                        display.dates &&
+                        " · "}
+
+                      {display.dates &&
+                        `${item.start} — ${item.end}`}
+
+                    </p>
+                  )
+                }
+
+                {
+                  display.status &&
+                  item.status && (
+                    <p class="education-status">
+                      {item.status}
+                    </p>
+                  )
+                }
+
+                {
+                  display.gpa &&
+                  item.gpa &&
+                  Object.keys(item.gpa).length > 0 && (
+                    <section class="education-gpa">
+                      <h3>GPA</h3>
+
+                      <ul>
+                        {Object.entries(item.gpa).map(
+                          ([label, value]) => (
+                            <li>
+                              <span>{label}</span>
+                              <span>{value}</span>
+                            </li>
+                          )
+                        )}
+                      </ul>
+                    </section>
+                  )
+                }
+
+                {
+                  display.subjects &&
+                  item.subjects?.length > 0 && (
+                    <section class="education-subjects">
+                      <h3>Subjects</h3>
+
+                      <ul>
+                        {item.subjects.map((subject) => (
+                          <li>{subject}</li>
+                        ))}
+                      </ul>
+                    </section>
+                  )
+                }
+
+                {
+                  display.links &&
+                  item.links?.length > 0 && (
+                    <div class="education-links">
+
+                      {item.links.map((link) => (
+                        <a
+                          href={link.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          {link.label} →
+                        </a>
+                      ))}
+
+                    </div>
+                  )
+                }
+
+              </div>
+            </article>
+          ))}
+        </div>
+      )
+    }
+
   </main>
 </BaseLayout>

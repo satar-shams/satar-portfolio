@@ -1,0 +1,148 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { portfolio } from "../content/portfolio";
+
+const { awards } = portfolio;
+const display = awards.display;
+---
+
+<BaseLayout>
+  <main class="awards-page">
+
+    <header class="page-header">
+      <p class="page-label">Awards</p>
+
+      {
+        awards.introduction.enabled && (
+          <div class="awards-introduction">
+            <h1>{awards.introduction.title}</h1>
+            <p>{awards.introduction.text}</p>
+          </div>
+        )
+      }
+    </header>
+
+    {
+      display.enabled && (
+        <div
+          class:list={[
+            "awards-list",
+            {
+              "has-introduction": awards.introduction.enabled,
+            },
+          ]}
+        >
+          {awards.items.map((item, index) => (
+            <article class="award-item">
+
+              <div class="award-number">
+                {String(index + 1).padStart(2, "0")}
+              </div>
+
+              <div class="award-content">
+
+                {
+                  display.title && (
+                    <h2>{item.title}</h2>
+                  )
+                }
+
+                {
+                  display.organization &&
+                  item.organization && (
+                    <p class="award-organization">
+                      {item.organization}
+                    </p>
+                  )
+                }
+
+                {
+                  display.year &&
+                  item.year && (
+                    <p class="award-year">
+                      {item.year}
+                    </p>
+                  )
+                }
+
+                {
+                  display.description &&
+                  item.description && (
+                    <p class="award-description">
+                      {item.description}
+                    </p>
+                  )
+                }
+
+                {
+                  display.image &&
+                  item.image?.length > 0 && (
+                    <div class="award-images">
+
+                      {item.image.map((image) => (
+                        <img
+                          src={`/images/awards/${image}`}
+                          alt={item.title}
+                        />
+                      ))}
+
+                    </div>
+                  )
+                }
+
+                {
+                display.documents &&
+                item.documents?.length > 0 && (
+                    <div class="award-documents">
+
+                    {item.documents.map((document) => (
+                        <div class="award-document">
+                        <iframe
+                            src={`/documents/awards/${document}`}
+                            title={`${item.title} document`}
+                            loading="lazy"
+                        ></iframe>
+
+                        <a
+                            href={`/documents/awards/${document}`}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            Open Full Document →
+                        </a>
+                        </div>
+                    ))}
+
+                    </div>
+                )
+                }
+
+                {
+                  display.links &&
+                  item.links?.length > 0 && (
+                    <div class="award-links">
+
+                      {item.links.map((link) => (
+                        <a
+                          href={link.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          {link.label} →
+                        </a>
+                      ))}
+
+                    </div>
+                  )
+                }
+
+              </div>
+
+            </article>
+          ))}
+        </div>
+      )
+    }
+
+  </main>
+</BaseLayout>

@@ -1,13 +1,91 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import PageIntro from "../components/PageIntro.astro";
+import { portfolio } from "../content/portfolio";
+
+const { research } = portfolio;
+const display = research.display;
 ---
 
-<BaseLayout title="Research">
-  <main>
-    <PageIntro
-      title="Research"
-      description="Research and academic projects."
-    />
+<BaseLayout>
+  <main class="research-page">
+
+    <header class="page-header">
+      <p class="page-label">Research</p>
+
+      {
+        research.introduction.enabled && (
+          <div class="research-introduction">
+            <h1>{research.introduction.title}</h1>
+            <p>{research.introduction.text}</p>
+          </div>
+        )
+      }
+    </header>
+
+    {
+      display.enabled && (
+        <div
+          class:list={[
+            "research-list",
+            {
+              "has-introduction": research.introduction.enabled,
+            },
+          ]}
+        >
+          {research.items.map((item, index) => (
+            <article class="research-item">
+
+              <div class="research-number">
+                {String(index + 1).padStart(2, "0")}
+              </div>
+
+              <div class="research-content">
+
+                {
+                  display.title && (
+                    <h2>{item.title}</h2>
+                  )
+                }
+
+                {
+                  display.category && (
+                    <p class="research-category">
+                      {item.category}
+                    </p>
+                  )
+                }
+
+                {
+                  display.description && (
+                    <p class="research-description">
+                      {item.description}
+                    </p>
+                  )
+                }
+
+                {
+                  display.links &&
+                  item.links?.length > 0 && (
+                    <div class="research-links">
+                      {item.links.map((link) => (
+                        <a
+                          href={link.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          {link.label} →
+                        </a>
+                      ))}
+                    </div>
+                  )
+                }
+
+              </div>
+            </article>
+          ))}
+        </div>
+      )
+    }
+
   </main>
 </BaseLayout>

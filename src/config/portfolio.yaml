@@ -34,41 +34,99 @@ site:
 # NAVIGATION
 # ============================================================
 #
-# The order here determines the order shown in the navigation.
+# The order here determines the navigation order.
 #
-# Later, removing an item from this list will remove it from
-# the navigation without changing the navigation component.
+# Set enabled: false to remove a page from the navigation.
+#
+# Home is handled by the site mark.
+# The remaining pages appear in this order.
 #
 
 navigation:
-  home:
-    label: "Home"
-    tagline: "is where you fall in love."
+  about:
+    enabled: true
+    label: "About"
+    href: "/about"
 
-  links:
-    - label: "Work"
-      href: "/work"
+  work:
+    enabled: true
+    label: "Work"
+    href: "/work"
 
-    - label: "Experience"
-      href: "/experience"
+  experience:
+    enabled: true
+    label: "Experience"
+    href: "/experience"
 
-    - label: "Research"
-      href: "/research"
+  research:
+    enabled: true
+    label: "Research"
+    href: "/research"
 
-    - label: "Education"
-      href: "/education"
+  education:
+    enabled: true
+    label: "Education"
+    href: "/education"
 
-    - label: "Earlier Work"
-      href: "/earlier-work"
+  skills:
+    enabled: true
+    label: "Skills"
+    href: "/skills"
 
-    - label: "About"
-      href: "/about"
+  awards:
+    enabled: true
+    label: "Awards"
+    href: "/awards"
 
-    - label: "CV"
-      href: "/cv"
+  cv:
+    enabled: true
+    label: "CV"
+    href: "/cv"
 
-    - label: "Contact"
-      href: "/contact"
+  contact:
+    enabled: true
+    label: "Contact"
+    href: "/contact"
+
+# ============================================================
+# PAGES
+# ============================================================
+
+pages:
+  about:
+    enabled: true
+    title: "About"
+    description: "Background, interests, and professional profile."
+
+  work:
+    enabled: true
+    title: "Work"
+    description: "Selected projects and engineering work."
+
+  experience:
+    enabled: true
+    title: "Experience"
+    description: "Professional experience and engineering work."
+
+  research:
+    enabled: true
+    title: "Research"
+    description: "Research and academic projects."
+
+  education:
+    enabled: true
+    title: "Education"
+    description: "Academic background and education."
+
+  cv:
+    enabled: true
+    title: "CV"
+    description: "Curriculum vitae and professional profile."
+
+  contact:
+    enabled: true
+    title: "Contact"
+    description: "Get in touch."
 
 # ============================================================
 # HOME
@@ -83,10 +141,126 @@ home:
   # later. For now this is only structural content.
 
 # ============================================================
+# About
+# ============================================================
+
+about:
+  introduction:
+    enabled: true
+    title: "Introduction"
+    text: >
+      I am a professional working at the intersection of technology,
+      problem solving, and continuous learning. My work focuses on
+      building practical solutions and turning ideas into useful,
+      reliable results.
+
+  engineering_focus:
+    enabled: true
+    title: "Engineering Focus"
+    items:
+      - "Machine Learning"
+      - "Software Engineering"
+      - "Data & Analytics"
+      - "Automation"
+      - "Applied AI"
+      - "System Design"
+
+  approach:
+    enabled: true
+    title: "Approach"
+    text: >
+      I value clear thinking, practical engineering, maintainable systems,
+      and continuous improvement. I prefer simple solutions when they are
+      sufficient and introduce complexity only when it provides real value.
+
+# ============================================================
+# WORK
+# ============================================================
+#
+# Configuration and content for the Work / Projects page.
+#
+# The page itself is controlled by pages.work.enabled.
+#
+# ============================================================
+
+work:
+  introduction:
+    enabled: true
+    title: "Selected Projects"
+    text: >
+      A selection of machine learning, AI, data engineering,
+      and software engineering projects.
+
+  references:
+    enabled: true
+    title: "More Work"
+    text: >
+      To explore more of my projects and work, visit the links below.
+
+    # Add or remove as many reference links as you want.
+
+    links:
+      # ==========================================================
+      # LINK 1
+      # ==========================================================
+
+      - label: "GitHub"
+        url: "https://github.com/satar-shams"
+
+      # ==========================================================
+      # LINK 2
+      # ==========================================================
+
+      - label: "LinkedIn"
+        url: "https://linkedin.com/in/satar-shamsi/"
+
+  notice:
+    enabled: false
+    title: "Projects Coming Soon"
+    text: >
+      New projects will be added here soon.
+
+  display:
+    enabled: true
+    # ==========================================================
+    # DISPLAY OPTIONS
+    # ==========================================================
+
+    image: true
+    year: true
+    category: true
+    description: true
+    technologies: true
+    links: true
+
+# ============================================================
 # PROJECTS
+# ============================================================
+#
+# Add or remove as many projects as you want.
+#
+# Each project is independent. Copy an existing project block
+# to add another project, or remove a project block when it is
+# no longer needed.
+#
+# Which project fields are displayed is controlled by:
+#
+#   work.display
+#
+# This section contains project data only. Presentation settings
+# should not be repeated inside individual projects.
+#
+# Links are intentionally generic and can point to GitHub,
+# live demos, documentation, papers, Hugging Face, or any
+# other relevant external resource.
+#
 # ============================================================
 
 projects:
+  # ==========================================================
+  # PROJECT 1
+  # ==========================================================
+
   - title: "LSTM Time Series Forecasting"
     year: 2026
     category: "ML / MLOps"
@@ -109,7 +283,13 @@ projects:
       - "Docker"
       - "GitHub Actions"
 
-    github: "https://github.com/satar-shams/lstm-time-series-mlops"
+    links:
+      - label: "GitHub"
+        url: "https://github.com/satar-shams/lstm-time-series-mlops"
+
+  # ==========================================================
+  # PROJECT 2
+  # ==========================================================
 
   - title: "Market Data Pipeline"
     year: 2026
@@ -130,7 +310,13 @@ projects:
       - "Docker"
       - "SQL"
 
-    github: "https://github.com/satar-shams/market-data-pipeline"
+    links:
+      - label: "GitHub"
+        url: "https://github.com/satar-shams/market-data-pipeline"
+
+  # ==========================================================
+  # PROJECT 3
+  # ==========================================================
 
   - title: "Intelligent Document Analysis"
     year: 2026
@@ -152,7 +338,13 @@ projects:
       - "Sentence Transformers"
       - "ChromaDB"
 
-    github: "https://github.com/satar-shams/intelligent-document-analysis"
+    links:
+      - label: "GitHub"
+        url: "https://github.com/satar-shams/intelligent-document-analysis"
+
+  # ==========================================================
+  # PROJECT 4
+  # ==========================================================
 
   - title: "Retail Orders ETL Pipeline"
     year: 2026
@@ -175,7 +367,13 @@ projects:
       - "Pytest"
       - "HashiCorp Vault"
 
-    github: "https://github.com/satar-shams/etl-retail-data-pipeline"
+    links:
+      - label: "GitHub"
+        url: "https://github.com/satar-shams/etl-retail-data-pipeline"
+
+  # ==========================================================
+  # PROJECT 5
+  # ==========================================================
 
   - title: "ML Inference API"
     year: 2026
@@ -195,152 +393,670 @@ projects:
       - "Docker"
       - "Pytest"
 
-    github: "https://github.com/satar-shams/ml-inference-api"
+    links:
+      - label: "GitHub"
+        url: "https://github.com/satar-shams/ml-inference-api"
 
 # ============================================================
 # EXPERIENCE
 # ============================================================
+#
+# Add or remove as many experience entries as you want.
+#
+# Each experience entry is independent.
+#
+# Links are optional. Add as many links as you want for each
+# experience, such as an organization website, LinkedIn,
+# company page, project page, or other relevant reference.
+#
+# ============================================================
 
 experience:
-  - organization: "GoalEarn"
-    role: "ML / AI Engineer Intern"
+  introduction:
+    enabled: true
+    title: "Professional Experience"
+    text: >
+      A summary of professional experience and engineering work.
 
-    location: "Iran"
-    start: "October 2025"
-    end: "Present"
+  display:
+    enabled: true
+    # ==========================================================
+    # DISPLAY OPTIONS
+    # ==========================================================
 
-    description: >
-      Develop machine learning and data engineering projects
-      in a practical engineering environment.
+    organization: true
+    role: true
+    location: true
+    dates: true
+    description: true
+    responsibilities: true
+    links: true
 
-    responsibilities:
-      - "Develop machine learning and data engineering projects."
-      - "Design data acquisition, preprocessing, modeling, evaluation, and deployment workflows."
-      - "Apply software engineering practices to ML-oriented projects."
-      - "Work with Python-based machine learning and data engineering technologies."
-      - "Develop production-oriented projects covering ML, MLOps, data pipelines, and intelligent document processing."
+  items:
+    # ==========================================================
+    # EXPERIENCE 1
+    # ==========================================================
+
+    - organization: "GoalEarn"
+      role: "ML / AI Engineer Intern"
+
+      location: "Iran"
+      start: "October 2025"
+      end: "Present"
+
+      description: >
+        Develop machine learning and data engineering projects
+        in a practical engineering environment.
+
+      responsibilities:
+        - "Develop machine learning and data engineering projects."
+        - "Design data acquisition, preprocessing, modeling, evaluation, and deployment workflows."
+        - "Apply software engineering practices to ML-oriented projects."
+
+      links:
+        # ==========================================================
+        # LINK 1
+        # ==========================================================
+
+        - label: "Website"
+          url: "https://example.com"
+
+        # ==========================================================
+        # LINK 2
+        # ==========================================================
+
+        - label: "LinkedIn"
+          url: "https://linkedin.com/company/example"
+
+    # ==========================================================
+    # EXPERIENCE 2
+    # ==========================================================
+
+    - organization: "Another Organization"
+      role: "Another Role"
+
+      location: "City, Country"
+      start: "2023"
+      end: "2025"
+
+      description: >
+        Description of the role and work.
+
+      responsibilities:
+        - "Responsibility one."
+        - "Responsibility two."
+
+      links:
+        # ==========================================================
+        # LINK 1
+        # ==========================================================
+
+        - label: "Website"
+          url: "https://example.com"
 
 # ============================================================
 # RESEARCH
 # ============================================================
 
 research:
-  - title: "SEIR Epidemic Modeling"
-    category: "Mathematical Modeling"
+  # ==========================================================
+  # INTRODUCTION
+  # ==========================================================
 
-    description: >
-      Mathematical modeling and simulation of epidemic dynamics
-      using an SEIR-based model.
+  introduction:
+    enabled: true
+    title: "Research & Academic Work"
+    text: >
+      A selection of research, academic projects, mathematical
+      modeling, and computational work.
 
-  - title: "Music Generation"
-    category: "Machine Learning / Computational Music"
+  # ==========================================================
+  # DISPLAY
+  # ==========================================================
 
-    description: >
-      Research and implementation work involving computational
-      approaches to music generation.
+  display:
+    enabled: true
 
-  - title: "Parallel Algorithms / Traveling Salesman Problem"
-    category: "High Performance Computing"
+    # ==========================================================
+    # DISPLAY OPTIONS
+    # ==========================================================
 
-    description: >
-      Investigation of parallel approaches to the Traveling
-      Salesman Problem, including nearest-neighbor heuristics,
-      parallelization, and performance limitations.
+    title: true
+    category: true
+    description: true
+    links: true
 
-  - title: "Image Processing"
-    category: "Computer Vision"
+  # ==========================================================
+  # RESEARCH ITEMS
+  # ==========================================================
 
-    description: >
-      Academic projects involving image classification,
-      detection, segmentation, and neural networks.
+  items:
+    # ==========================================================
+    # RESEARCH 1
+    # ==========================================================
 
-  - title: "Multivariate Data Analysis"
-    category: "Data Analysis"
+    - title: "SEIR Epidemic Modeling"
+      category: "Mathematical Modeling"
 
-    description: >
-      Statistical analysis, mathematical modeling, and
-      computational simulations.
+      description: >
+        Mathematical modeling and simulation of epidemic dynamics
+        using an SEIR-based model.
 
-  - title: "Machine Learning and NLP"
-    category: "Machine Learning"
+      links:
+        # ======================================================
+        # LINK 1
+        # ======================================================
 
-    description: >
-      Academic projects involving sentiment analysis,
-      text classification, time-series forecasting, and
-      classical machine learning methods.
+        - label: "Project"
+          url: "https://example.com"
+
+        # ======================================================
+        # LINK 2
+        # ======================================================
+
+        - label: "Research Paper"
+          url: "https://example.com"
+
+        # ======================================================
+        # Add or remove as many links as needed.
+        # ======================================================
+
+    # ==========================================================
+    # RESEARCH 2
+    # ==========================================================
+
+    - title: "Music Generation"
+      category: "Machine Learning / Computational Music"
+
+      description: >
+        Research and implementation work involving computational
+        approaches to music generation.
+
+      links:
+        # ======================================================
+        # LINK 1
+        # ======================================================
+
+        - label: "Project"
+          url: "https://example.com"
+
+    # ==========================================================
+    # RESEARCH 3
+    # ==========================================================
+
+    - title: "Parallel Algorithms / Traveling Salesman Problem"
+      category: "High Performance Computing"
+
+      description: >
+        Investigation of parallel approaches to the Traveling
+        Salesman Problem, including nearest-neighbor heuristics,
+        parallelization, and performance limitations.
+
+      links:
+        # ======================================================
+        # LINK 1
+        # ======================================================
+
+        - label: "Project"
+          url: "https://example.com"
+
+    # ==========================================================
+    # RESEARCH 4
+    # ==========================================================
+
+    - title: "Image Processing"
+      category: "Computer Vision"
+
+      description: >
+        Academic projects involving image classification,
+        detection, segmentation, and neural networks.
+
+      links:
+        # ======================================================
+        # LINK 1
+        # ======================================================
+
+        - label: "Project"
+          url: "https://example.com"
+
+    # ==========================================================
+    # RESEARCH 5
+    # ==========================================================
+
+    - title: "Multivariate Data Analysis"
+      category: "Data Analysis"
+
+      description: >
+        Statistical analysis, mathematical modeling, and
+        computational simulations.
+
+      links:
+        # ======================================================
+        # LINK 1
+        # ======================================================
+
+        - label: "Project"
+          url: "https://example.com"
+
+    # ==========================================================
+    # RESEARCH 6
+    # ==========================================================
+
+    - title: "Machine Learning and NLP"
+      category: "Machine Learning"
+
+      description: >
+        Academic projects involving sentiment analysis,
+        text classification, time-series forecasting, and
+        classical machine learning methods.
+
+      links:
+        # ======================================================
+        # LINK 1
+        # ======================================================
+
+        - label: "Project"
+          url: "https://example.com"
 
 # ============================================================
 # EDUCATION
 # ============================================================
 
 education:
-  - institution: "ITMO University"
-    location: "Saint Petersburg, Russia"
+  # ==========================================================
+  # INTRODUCTION
+  # ==========================================================
 
-    program: >
-      Graduate Studies in Big Data, High Performance Computing,
-      Machine Learning and Data Analysis
+  introduction:
+    enabled: true
+    title: "Education"
+    text: >
+      Academic background in electrical engineering, machine learning,
+      data analysis, high performance computing, and related fields.
 
-    start: 2018
-    end: 2020
+  # ==========================================================
+  # DISPLAY
+  # ==========================================================
 
-    status: "Graduate studies completed; Master's degree not completed"
+  display:
+    enabled: true
 
-    gpa:
-      big_data_extreme_computing: "3.91 / 4.00"
-      machine_learning_data_analysis: "3.79 / 4.00"
+    # ==========================================================
+    # DISPLAY OPTIONS
+    # ==========================================================
 
-    subjects:
-      - "Machine Learning"
-      - "Neural Networks"
-      - "High Performance Computing"
-      - "Parallel Algorithms"
-      - "Multivariate Data Analysis"
-      - "Mathematical and Statistical Modeling"
-      - "Image Processing"
-      - "Data Warehousing"
-      - "Time Series"
-      - "Natural Language Processing"
-      - "Scientific Computing"
+    image: true
+    institution: true
+    location: true
+    program: true
+    dates: true
+    status: true
+    gpa: true
+    subjects: true
+    links: true
 
-  - institution: "Shahid Bahonar University of Kerman"
-    location: "Kerman, Iran"
+  # ==========================================================
+  # EDUCATION ITEMS
+  # ==========================================================
 
-    program: "B.Sc. in Electrical Engineering — Electronics"
+  items:
+    # ==========================================================
+    # EDUCATION 1
+    # ==========================================================
 
-    start: 2007
-    end: 2012
+    - institution: "ITMO University"
 
-    gpa: "14.47 / 20.00"
-    distinction: "Top 5 students"
+      image: "lstm-time-series-forecasting.png"
+
+      location: "Saint Petersburg, Russia"
+
+      program: >
+        Graduate Studies in Big Data, High Performance Computing,
+        Machine Learning and Data Analysis
+
+      start: 2018
+      end: 2020
+
+      status: "Graduate studies completed; Master's degree not completed"
+
+      gpa:
+        big_data_extreme_computing: "3.91 / 4.00"
+        machine_learning_data_analysis: "3.79 / 4.00"
+
+      subjects:
+        - "Machine Learning"
+        - "Neural Networks"
+        - "High Performance Computing"
+        - "Parallel Algorithms"
+        - "Multivariate Data Analysis"
+        - "Mathematical and Statistical Modeling"
+        - "Image Processing"
+        - "Data Warehousing"
+        - "Time Series"
+        - "Natural Language Processing"
+        - "Scientific Computing"
+
+      links:
+        # ======================================================
+        # LINK 1
+        # ======================================================
+
+        - label: "University"
+          url: "https://example.com"
+
+        # ======================================================
+        # LINK 2
+        # ======================================================
+
+        - label: "Program"
+          url: "https://example.com"
+
+        # ======================================================
+        # Add or remove as many links as needed.
+        # ======================================================
+
+    # ==========================================================
+    # EDUCATION 2
+    # ==========================================================
+
+    - institution: "Shahid Bahonar University of Kerman"
+
+      image: "shahid-bahonar-university.jpg"
+
+      location: "Kerman, Iran"
+
+      program: "B.Sc. in Electrical Engineering — Electronics"
+
+      start: 2007
+      end: 2012
+
+      gpa:
+        overall: "14.47 / 20.00"
+
+      status: "Top 5 students"
+
+      subjects: []
+
+      links:
+        # ======================================================
+        # LINK 1
+        # ======================================================
+
+        - label: "University"
+          url: "https://example.com"
+
+        # ======================================================
+        # Add or remove as many links as needed.
+        # ======================================================
+
+skills:
+  introduction:
+    enabled: true
+    title: "Technical Skills"
+    text: >
+      Technologies, tools, and technical areas used across
+      machine learning, data engineering, and software development.
+
+  display:
+    enabled: true
+    category: true
+    skills: true
+    languages: true
+
+  items:
+    # ==========================================================
+    # SKILL CATEGORY 1
+    # ==========================================================
+
+    - category: "Machine Learning"
+      skills:
+        - "Machine Learning"
+        - "Deep Learning"
+        - "Neural Networks"
+        - "Time Series"
+        - "Natural Language Processing"
+
+    # ==========================================================
+    # SKILL CATEGORY 2
+    # ==========================================================
+
+    - category: "Programming"
+      skills:
+        - "Python"
+        - "SQL"
+        - "C++"
+
+    # ==========================================================
+    # SKILL CATEGORY 3
+    # ==========================================================
+
+    - category: "Data Engineering"
+      skills:
+        - "Data Acquisition"
+        - "ETL"
+        - "PostgreSQL"
+        - "Apache Airflow"
+
+    # ==========================================================
+    # SKILL CATEGORY 4
+    # ==========================================================
+
+    - category: "MLOps & Deployment"
+      skills:
+        - "MLflow"
+        - "Docker"
+        - "FastAPI"
+        - "GitHub Actions"
+        - "CI/CD"
+
+    # ==========================================================
+    # SKILL CATEGORY 5
+    # ==========================================================
+
+    - category: "Tools & Libraries"
+      skills:
+        - "TensorFlow"
+        - "PyTorch"
+        - "Pandas"
+        - "Scikit-learn"
+        - "Optuna"
+        - "LangChain"
+
+  # ==========================================================
+  # LANGUAGES
+  # ==========================================================
+
+  languages:
+    # ==========================================================
+    # LANGUAGE 1
+    # ==========================================================
+
+    - language: "English"
+      level: "Professional"
+
+    # ==========================================================
+    # LANGUAGE 2
+    # ==========================================================
+
+    - language: "Russian"
+      level: "Intermediate"
+
+    # ==========================================================
+    # LANGUAGE 3
+    # ==========================================================
+
+    - language: "Armenian"
+      level: "Basic"
+
+    # ==========================================================
+    # Add or remove as many languages as needed.
+    # ==========================================================
 
 # ============================================================
 # AWARDS
 # ============================================================
 
 awards:
-  - title: "Russian Open Doors Olympiad"
-    year: 2024
-    distinction: "Winner"
-    description: >
-      Awarded a full scholarship to study at HSE University.
+  # ==========================================================
+  # INTRODUCTION
+  # ==========================================================
+
+  introduction:
+    enabled: true
+    title: "Awards & Achievements"
+    text: >
+      Selected academic and professional awards,
+      achievements, and recognitions.
+
+  # ==========================================================
+  # DISPLAY
+  # ==========================================================
+
+  display:
+    enabled: true
+
+    # ==========================================================
+    # DISPLAY OPTIONS
+    # ==========================================================
+
+    title: true
+    organization: true
+    year: true
+    description: true
+    image: true
+    documents: true
+    links: true
+
+  # ==========================================================
+  # AWARD ITEMS
+  # ==========================================================
+
+  items:
+    # ==========================================================
+    # AWARD 1
+    # ==========================================================
+
+    - title: "Example Award"
+      organization: "Example Organization"
+      year: 2020
+
+      description: >
+        Description of the award and the achievement
+        for which it was received.
+
+      image:
+        # ======================================================
+        # IMAGE 1
+        # ======================================================
+
+        - "award-russian.jpg"
+
+        # ======================================================
+        # IMAGE 2
+        # ======================================================
+
+        - "award-english.jpg"
+
+        # ======================================================
+        # Add or remove as many images as needed.
+        # ======================================================
+
+      documents:
+        # ======================================================
+        # DOCUMENT 1
+        # ======================================================
+
+        - "award-russian.pdf"
+
+        # ======================================================
+        # DOCUMENT 2
+        # ======================================================
+
+        - "award-english.pdf"
+
+        # ======================================================
+        # Add or remove as many documents as needed.
+        # ======================================================
+
+      links:
+        # ======================================================
+        # LINK 1
+        # ======================================================
+
+        - label: "Organization"
+          url: "https://example.com"
+
+        # ======================================================
+        # LINK 2
+        # ======================================================
+
+        - label: "Award Information"
+          url: "https://example.com"
+
+        # ======================================================
+        # Add or remove as many links as needed.
+        # ======================================================
+
+    # ==========================================================
+    # AWARD 2
+    # ==========================================================
+
+    - title: "Another Award"
+      organization: "Another Organization"
+      year: 2022
+
+      description: >
+        Description of another award or achievement.
+
+      image: []
+
+      documents: []
+
+      links: []
+
+    # ==========================================================
+    # Add or remove as many awards as needed.
+    # ==========================================================
 
 # ============================================================
-# LANGUAGES
+# CV
 # ============================================================
 
-languages:
-  - language: "Persian"
-    level: "Native"
+cv:
+  # ==========================================================
+  # INTRODUCTION
+  # ==========================================================
 
-  - language: "English"
-    level: "Professional working proficiency"
+  introduction:
+    enabled: true
+    title: "Curriculum Vitae"
+    text: >
+      A detailed overview of my professional experience,
+      education, technical skills, and selected projects.
 
-  - language: "Russian"
-    level: "Basic"
+  # ==========================================================
+  # DISPLAY
+  # ==========================================================
 
-  - language: "German"
-    level: "Basic"
+  display:
+    enabled: true
+    document: true
+    download: true
+
+  # ==========================================================
+  # DOCUMENT
+  # ==========================================================
+
+  document:
+    file: "satar-shamsi-cv.pdf"
+    title: "Curriculum Vitae"
+
+  # ==========================================================
+  # DOWNLOAD
+  # ==========================================================
+
+  download:
+    label: "Download CV"
 
 # ============================================================
 # ADDITIONAL
@@ -363,44 +1079,57 @@ additional:
 # ============================================================
 
 contact:
-  email: "satar.shams2@gmail.com"
+  # ==========================================================
+  # INTRODUCTION
+  # ==========================================================
 
-  message: >
-    Interested in machine learning, AI engineering,
-    data engineering, and applied AI projects.
+  introduction:
+    enabled: true
+    title: "Get in Touch"
+    text: >
+      Feel free to contact me for professional opportunities,
+      collaboration, or other inquiries.
 
-# ============================================================
-# PAGES
-# ============================================================
+  # ==========================================================
+  # DISPLAY
+  # ==========================================================
 
-pages:
-  work:
-    title: "Work"
-    description: "Selected projects and engineering work."
+  display:
+    enabled: true
+    email: true
+    location: true
+    links: true
 
-  about:
-    title: "About"
-    description: "Background, interests, and professional profile."
+  # ==========================================================
+  # CONTACT INFORMATION
+  # ==========================================================
 
-  experience:
-    title: "Experience"
-    description: "Professional experience and engineering work."
+  email: "satar.shamsi@gmail.com"
 
-  research:
-    title: "Research"
-    description: "Research and academic projects."
+  location: "Iran"
 
-  education:
-    title: "Education"
-    description: "Academic background and education."
+  # ==========================================================
+  # LINKS
+  # ==========================================================
 
-  cv:
-    title: "CV"
-    description: "Curriculum vitae and professional profile."
+  links:
+    # ==========================================================
+    # LINK 1
+    # ==========================================================
 
-  contact:
-    title: "Contact"
-    description: "Get in touch."
+    - label: "GitHub"
+      url: "https://github.com/satar-shams"
+
+    # ==========================================================
+    # LINK 2
+    # ==========================================================
+
+    - label: "LinkedIn"
+      url: "https://linkedin.com/in/satar-shamsi/"
+
+    # ==========================================================
+    # Add or remove as many links as needed.
+    # ==========================================================
 
 # ============================================================
 # OPTIONAL SECTIONS — NOT USED YET

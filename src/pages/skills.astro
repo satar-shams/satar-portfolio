@@ -1,0 +1,108 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { portfolio } from "../content/portfolio";
+
+const { skills } = portfolio;
+const display = skills.display;
+---
+
+<BaseLayout>
+  <main class="skills-page">
+
+    <header class="page-header">
+      <p class="page-label">Skills</p>
+
+      {
+        skills.introduction.enabled && (
+          <div class="skills-introduction">
+            <h1>{skills.introduction.title}</h1>
+            <p>{skills.introduction.text}</p>
+          </div>
+        )
+      }
+    </header>
+
+    {
+      display.enabled && (
+        <div
+          class:list={[
+            "skills-list",
+            {
+              "has-introduction": skills.introduction.enabled,
+            },
+          ]}
+        >
+
+          {
+            skills.items.map((item, index) => (
+              <article class="skills-item">
+
+                <div class="skills-number">
+                  {String(index + 1).padStart(2, "0")}
+                </div>
+
+                <div class="skills-content">
+
+                  {
+                    display.category && (
+                      <h2>{item.category}</h2>
+                    )
+                  }
+
+                  {
+                    display.skills &&
+                    item.skills?.length > 0 && (
+                      <ul class="skills-list-items">
+                        {item.skills.map((skill) => (
+                          <li>{skill}</li>
+                        ))}
+                      </ul>
+                    )
+                  }
+
+                </div>
+
+              </article>
+            ))
+          }
+
+
+          {
+            display.languages &&
+            skills.languages?.length > 0 && (
+              <article class="skills-item skills-languages">
+
+                <div class="skills-number">
+                  {String(skills.items.length + 1).padStart(2, "0")}
+                </div>
+
+                <div class="skills-content">
+
+                  <h2>Languages</h2>
+
+                  <ul class="skills-language-list">
+                    {skills.languages.map((item) => (
+                      <li>
+                        <span class="language-name">
+                          {item.language}
+                        </span>
+
+                        <span class="language-level">
+                          {item.level}
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
+
+                </div>
+
+              </article>
+            )
+          }
+
+        </div>
+      )
+    }
+
+  </main>
+</BaseLayout>

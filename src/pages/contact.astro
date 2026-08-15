@@ -1,13 +1,83 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import PageIntro from "../components/PageIntro.astro";
+import { portfolio } from "../content/portfolio";
+
+const { contact } = portfolio;
+const display = contact.display;
 ---
 
-<BaseLayout title="Contact">
-  <main>
-    <PageIntro
-      title="Contact"
-      description="Get in touch."
-    />
+<BaseLayout>
+  <main class="contact-page">
+
+    <header class="page-header">
+      <p class="page-label">Contact</p>
+
+      {
+        contact.introduction.enabled && (
+          <div class="contact-introduction">
+            <h1>{contact.introduction.title}</h1>
+            <p>{contact.introduction.text}</p>
+          </div>
+        )
+      }
+    </header>
+
+    {
+      display.enabled && (
+        <div
+          class:list={[
+            "contact-content",
+            {
+              "has-introduction": contact.introduction.enabled,
+            },
+          ]}
+        >
+
+          {
+            display.email &&
+            contact.email && (
+              <div class="contact-item">
+                <span class="contact-label">Email</span>
+
+                <a href={`mailto:${contact.email}`}>
+                  {contact.email}
+                </a>
+              </div>
+            )
+          }
+
+          {
+            display.location &&
+            contact.location && (
+              <div class="contact-item">
+                <span class="contact-label">Location</span>
+                <span>{contact.location}</span>
+              </div>
+            )
+          }
+
+          {
+            display.links &&
+            contact.links?.length > 0 && (
+              <div class="contact-links">
+
+                {contact.links.map((link) => (
+                  <a
+                    href={link.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {link.label} →
+                  </a>
+                ))}
+
+              </div>
+            )
+          }
+
+        </div>
+      )
+    }
+
   </main>
 </BaseLayout>

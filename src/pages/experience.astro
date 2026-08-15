@@ -1,13 +1,114 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import PageIntro from "../components/PageIntro.astro";
+import { portfolio } from "../content/portfolio";
+
+const { experience } = portfolio;
+const display = experience.display;
 ---
 
-<BaseLayout title="Experience">
-  <main>
-    <PageIntro
-      title="Experience"
-      description="Professional experience and engineering work."
-    />
+<BaseLayout>
+  <main class="experience-page">
+    <header class="page-header">
+      <p class="page-label">Experience</p>
+
+      {
+        experience.introduction.enabled && (
+          <div class="experience-introduction">
+            <h1>{experience.introduction.title}</h1>
+            <p>{experience.introduction.text}</p>
+          </div>
+        )
+      }
+    </header>
+
+    {
+      display.enabled && (
+        <div
+          class:list={[
+            "experience-list",
+            {
+              "has-introduction": experience.introduction.enabled,
+            },
+          ]}
+        >
+          {experience.items.map((item, index) => (
+            <article class="experience-item">
+              <div class="experience-number">
+                {String(index + 1).padStart(2, "0")}
+              </div>
+
+              <div class="experience-content">
+
+                {
+                  display.organization && (
+                    <h2>{item.organization}</h2>
+                  )
+                }
+
+                {
+                  display.role && (
+                    <p class="experience-role">{item.role}</p>
+                  )
+                }
+
+                {
+                  (display.location || display.dates) && (
+                    <p class="experience-meta">
+                      {display.location && item.location}
+
+                      {display.location && display.dates && " · "}
+
+                      {display.dates &&
+                        `${item.start} — ${item.end}`}
+                    </p>
+                  )
+                }
+
+                {
+                  display.description && (
+                    <p class="experience-description">
+                      {item.description}
+                    </p>
+                  )
+                }
+
+                {
+                  display.responsibilities &&
+                  item.responsibilities?.length > 0 && (
+                    <section class="experience-responsibilities">
+                      <h3>Responsibilities</h3>
+
+                      <ul>
+                        {item.responsibilities.map((responsibility) => (
+                          <li>{responsibility}</li>
+                        ))}
+                      </ul>
+                    </section>
+                  )
+                }
+
+                {
+                  display.links &&
+                  item.links?.length > 0 && (
+                    <div class="experience-links">
+                      {item.links.map((link) => (
+                        <a
+                          href={link.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          {link.label} →
+                        </a>
+                      ))}
+                    </div>
+                  )
+                }
+
+              </div>
+            </article>
+          ))}
+        </div>
+      )
+    }
   </main>
 </BaseLayout>

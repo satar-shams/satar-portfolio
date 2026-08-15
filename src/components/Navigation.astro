@@ -2,19 +2,23 @@
 import { portfolio } from "../content/portfolio";
 
 const { navigation } = portfolio;
+
+const navigationItems = Object.values(navigation);
 ---
 
 <header class="site-header">
   <a href="/" class="home-mark" aria-label="Home">
-    <span class="home-label">{navigation.home.label}</span>
-    <span class="home-tagline">{navigation.home.tagline}</span>
+    <span class="home-label">Home</span>
+    <span class="home-tagline">is where you fall in love.</span>
   </a>
 
   <nav class="site-navigation" aria-label="Main navigation">
     {
-      navigation.links.map((link) => (
-        <a href={link.href}>{link.label}</a>
-      ))
+      navigationItems
+        .filter((item) => item.enabled)
+        .map((item) => (
+          <a href={item.href}>{item.label}</a>
+        ))
     }
   </nav>
 </header>

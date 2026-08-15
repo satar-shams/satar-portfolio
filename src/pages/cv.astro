@@ -1,13 +1,68 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import PageIntro from "../components/PageIntro.astro";
+import { portfolio } from "../content/portfolio";
+
+const { cv } = portfolio;
+const display = cv.display;
 ---
 
-<BaseLayout title="CV">
-  <main>
-    <PageIntro
-      title="CV"
-      description="Curriculum vitae and professional profile."
-    />
+<BaseLayout>
+  <main class="cv-page">
+
+    <header class="page-header">
+      <p class="page-label">CV</p>
+
+      {
+        cv.introduction.enabled && (
+          <div class="cv-introduction">
+            <h1>{cv.introduction.title}</h1>
+            <p>{cv.introduction.text}</p>
+          </div>
+        )
+      }
+    </header>
+
+    {
+      display.enabled && (
+        <div
+          class:list={[
+            "cv-content",
+            {
+              "has-introduction": cv.introduction.enabled,
+            },
+          ]}
+        >
+
+          {
+            display.document && cv.document?.file && (
+              <section class="cv-document">
+
+                <iframe
+                  src={`/documents/cv/${cv.document.file}`}
+                  title={cv.document.title}
+                  loading="lazy"
+                ></iframe>
+
+                {
+                  display.download && (
+                    <a
+                      class="cv-download"
+                      href={`/documents/cv/${cv.document.file}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      {cv.download.label} →
+                    </a>
+                  )
+                }
+
+              </section>
+            )
+          }
+
+        </div>
+      )
+    }
+
   </main>
 </BaseLayout>
