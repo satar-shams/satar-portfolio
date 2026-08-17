@@ -465,7 +465,7 @@ experience:
     dates: true
     description: true
     responsibilities: true
-    links: true
+    links: false
 
   items:
     # ==========================================================

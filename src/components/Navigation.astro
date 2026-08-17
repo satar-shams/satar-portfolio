@@ -1,9 +1,18 @@
+```astro
 ---
 import { portfolio } from "../content/portfolio";
 
 const { navigation } = portfolio;
 
 const navigationItems = Object.values(navigation);
+
+const currentPath = Astro.url.pathname;
+const basePath = import.meta.env.BASE_URL.replace(/\/$/, "");
+
+const normalizePath = (path: string) => {
+  const normalized = path.replace(/\/$/, "");
+  return normalized || "/";
+};
 ---
 
 <header class="site-header">
@@ -20,13 +29,21 @@ const navigationItems = Object.values(navigation);
     {
       navigationItems
         .filter((item) => item.enabled)
-        .map((item) => (
-          <a
-            href={`${import.meta.env.BASE_URL.replace(/\/$/, "")}/${item.href.replace(/^\//, "")}`}
-          >
-            {item.label}
-          </a>
-        ))
+        .map((item) => {
+          const href = `${basePath}/${item.href.replace(/^\//, "")}`;
+          const isActive =
+            normalizePath(currentPath) === normalizePath(href);
+
+          return (
+            <a
+              href={href}
+              aria-current={isActive ? "page" : undefined}
+            >
+              {item.label}
+            </a>
+          );
+        })
     }
   </nav>
 </header>
+```
