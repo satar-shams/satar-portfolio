@@ -41,8 +41,9 @@
 
   --color-highlight: #8A5A3B;
 
+  /* All separators / borders use the Home accent */
   --color-border: #8A5A3B;
-  --color-border-light: #D8C9BF;
+  --color-border-light: #8A5A3B;
 
 
   /* ==========================================================
@@ -94,7 +95,7 @@
 
   --heading-page-font: "Inter", sans-serif;
   --heading-page-size: clamp(2.4rem, 5vw, 4.5rem);
-  --heading-page-color: #657565;
+  --heading-page-color: #526777;
   --heading-page-weight: 500;
   --heading-page-line-height: 1;
 
@@ -153,7 +154,7 @@
 
   --number-font: "Inter", sans-serif;
   --number-size: 0.9rem;
-  --number-color: #657565;
+  --number-color: #526777;
   --number-weight: 400;
   --number-line-height: 1.5;
   --number-letter-spacing: 0;
@@ -239,7 +240,7 @@
   --nav-tagline-color: #6F6A63;
   --nav-tagline-weight: 400;
 
-  --nav-border-color: rgba(17, 17, 17, 0.2);
+  --nav-border-color: var(--color-accent);
   --nav-border-width: 1px;
 
   --nav-blur: 12px;
@@ -300,9 +301,8 @@
   --border-width: 1px;
   --radius: 4px;
 
-  --section-border-color: rgba(82, 103, 119, 0.35);
+  --section-border-color: var(--color-accent);
   --section-border-width: 1px;
-
 
   /* ==========================================================
      1.22 ANIMATION
