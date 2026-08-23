@@ -1,43 +1,209 @@
-# Astro Starter Kit: Minimal
+# Satar Shamsi — Portfolio
 
-```sh
-npm create astro@latest -- --template minimal
+A personal portfolio website built with **Astro**.
+
+The project is designed to keep the website structure and content separate. Most portfolio content — including personal information, experience, education, skills, projects, awards, contact information, and CV settings — is managed through a single YAML configuration file.
+
+This makes the portfolio easy to customize without needing to modify the Astro page components.
+
+## Tech Stack
+
+* [Astro](https://astro.build/)
+* HTML / CSS
+* YAML-based configuration
+* Google Fonts
+
+## Quick Start
+
+### 1. Clone the repository
+
+```bash
+git clone <repository-url>
+cd satar-portfolio
 ```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+### 2. Install dependencies
 
-## 🚀 Project Structure
+```bash
+npm install
+```
 
-Inside of your Astro project, you'll see the following folders and files:
+### 3. Start the development server
+
+```bash
+npm run dev
+```
+
+The site will be available at:
 
 ```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
+http://localhost:4321
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+### 4. Build for production
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+```bash
+npm run build
+```
 
-Any static assets, like images, can be placed in the `public/` directory.
+The production build is generated in:
 
-## 🧞 Commands
+```text
+dist/
+```
 
-All commands are run from the root of the project, from a terminal:
+To preview the production build locally:
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+```bash
+npm run preview
+```
 
-## 👀 Want to learn more?
+---
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+## Project Structure
+
+```text
+satar-portfolio/
+├── public/
+│   ├── documents/
+│   │   └── cv/
+│   └── ...
+│
+├── src/
+│   ├── components/
+│   ├── config/
+│   │   └── portfolio.yaml
+│   ├── layouts/
+│   ├── pages/
+│   └── styles/
+│       └── global.css
+│
+├── package.json
+└── README.md
+```
+
+### Main parts
+
+* `src/pages/` — website pages and routes
+* `src/components/` — reusable UI components
+* `src/layouts/` — shared page layouts
+* `src/config/portfolio.yaml` — portfolio content and configuration
+* `src/styles/global.css` — global design system and styling
+* `public/` — static files such as the CV and images
+
+---
+
+## YAML Configuration
+
+The main content of the portfolio is controlled through:
+
+```text
+src/config/portfolio.yaml
+```
+
+The YAML file contains sections for the different parts of the portfolio, such as:
+
+```text
+home
+about
+work
+experience
+research
+education
+skills
+awards
+cv
+contact
+```
+
+This allows the portfolio to be customized without changing the underlying Astro components.
+
+For example, the CV configuration contains the document used by the CV page:
+
+```yaml
+cv:
+  document:
+    file: "Portfolio CV.pdf"
+    title: "Curriculum Vitae"
+```
+
+The corresponding file is placed under:
+
+```text
+public/documents/cv/
+```
+
+### Customizing the portfolio
+
+To reuse this project for another person:
+
+1. Open `src/config/portfolio.yaml`.
+2. Replace the existing personal and portfolio content.
+3. Add the required images or documents to `public/`.
+4. Update the corresponding file paths in the YAML configuration.
+5. Run the development server to check the result.
+
+The page structure does not need to be rewritten for normal content changes.
+
+---
+
+## Styling
+
+Global visual settings are centralized in:
+
+```text
+src/styles/global.css
+```
+
+The CSS uses variables for the main design system, including:
+
+* Colors
+* Typography
+* Navigation
+* Headings
+* Borders and separators
+* Spacing
+* Layout widths
+* Responsive behavior
+
+For example, the main accent color can be changed from the variables in `:root`:
+
+```css
+--color-accent: #8A5A3B;
+```
+
+This makes it possible to change the visual style of the portfolio from one central location.
+
+---
+
+## Available Commands
+
+| Command             | Description                          |
+| ------------------- | ------------------------------------ |
+| `npm install`       | Install project dependencies         |
+| `npm run dev`       | Start the local development server   |
+| `npm run build`     | Build the production website         |
+| `npm run preview`   | Preview the production build locally |
+| `npm run astro ...` | Run Astro CLI commands               |
+
+---
+
+## Development Workflow
+
+A typical workflow is:
+
+```text
+Edit portfolio.yaml / CSS
+        ↓
+npm run dev
+        ↓
+Check the website locally
+        ↓
+npm run build
+        ↓
+Commit changes
+        ↓
+Deploy
+```
+
+The project is intentionally kept simple so that content changes and visual adjustments can be made without introducing unnecessary complexity.
