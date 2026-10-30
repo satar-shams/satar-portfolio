@@ -1,10 +1,6 @@
-```astro
+
 ---
-import { portfolio } from "../content/portfolio";
-
-const { navigation } = portfolio;
-
-const navigationItems = Object.values(navigation);
+import { portfolios } from "../content/portfolio";
 
 const currentPath = Astro.url.pathname;
 const basePath = import.meta.env.BASE_URL.replace(/\/$/, "");
@@ -13,6 +9,8 @@ const normalizePath = (path: string) => {
   const normalized = path.replace(/\/$/, "");
   return normalized || "/";
 };
+
+const navigationItems = Object.entries(portfolios.ru.navigation);
 ---
 
 <header class="site-header">
@@ -21,29 +19,116 @@ const normalizePath = (path: string) => {
     class="home-mark"
     aria-label="Home"
   >
-    <span class="home-label">Home</span>
-    <span class="home-tagline">is where you fall in love.</span>
+    <span class="home-label">Главная</span>
+    <span class="home-tagline">Здесь начинается любовь.</span>
   </a>
 
   <nav class="site-navigation" aria-label="Main navigation">
-    {
-      navigationItems
-        .filter((item) => item.enabled)
-        .map((item) => {
-          const href = `${basePath}/${item.href.replace(/^\//, "")}`;
-          const isActive =
-            normalizePath(currentPath) === normalizePath(href);
+    {navigationItems
+      .filter(([key, item]: [string, any]) => item.enabled)
+      .map(([key, item]: [string, any]) => {
+        const href = `${basePath}/${item.href.replace(/^\//, "")}`;
+        const isActive =
+          normalizePath(currentPath) === normalizePath(href);
 
-          return (
-            <a
-              href={href}
-              aria-current={isActive ? "page" : undefined}
-            >
-              {item.label}
-            </a>
-          );
-        })
-    }
+        return (
+          <a
+            href={href}
+            aria-current={isActive ? "page" : undefined}
+            data-nav-key={key}
+          >
+            {item.label}
+          </a>
+        );
+      })}
+
+    <details class="language-selector">
+      <summary class="current-language">
+        <span class="selected-language">Рус</span>
+        <span class="language-chevron" aria-hidden="true">⌄</span>
+      </summary>
+
+      <div class="language-menu">
+        <button type="button" data-language="ru">
+          <span>Рус</span>
+          <span class="language-check"></span>
+        </button>
+
+        <button type="button" data-language="en">
+          <span>EN</span>
+          <span class="language-check"></span>
+        </button>
+      </div>
+    </details>
   </nav>
 </header>
-```
+
+<style>
+  .language-selector {
+    position: relative;
+    display: inline-block;
+  }
+
+  .current-language {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+    list-style: none;
+    user-select: none;
+  }
+
+  .current-language::-webkit-details-marker {
+    display: none;
+  }
+
+  .language-chevron {
+    font-size: 0.8em;
+  }
+
+  .language-menu {
+    position: absolute;
+    top: calc(100% + 8px);
+    right: 0;
+    z-index: 100;
+    min-width: 76px;
+    padding: 4px;
+    border: 1px solid var(--border-color, #ddd);
+    border-radius: 6px;
+    background: var(--background-color, white);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+
+  .language-menu button {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 7px 9px;
+    border: none;
+    border-radius: 4px;
+    background: transparent;
+    color: inherit;
+    font: inherit;
+    text-align: left;
+    cursor: pointer;
+  }
+
+  .language-menu button:hover {
+    background: rgba(128, 128, 128, 0.12);
+  }
+
+  .language-menu button.selected {
+    font-weight: 700;
+  }
+
+  .language-check {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+  }
+
+  .language-menu button.selected .language-check {
+    background: currentColor;
+  }
+</style>

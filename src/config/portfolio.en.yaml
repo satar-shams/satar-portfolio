@@ -17,6 +17,7 @@
 # ============================================================
 
 site:
+  language: "en"
   name: "Satar Shamsi Goushki"
   title: "ML / AI Engineer"
   location: "Kerman, Iran"
@@ -314,12 +315,11 @@ projects:
     slug: "market-data-pipeline"
 
     description: >
-      Production-oriented market data pipeline that acquires
-      financial data from yfinance, validates and transforms
-      the data, stores it in PostgreSQL using idempotent loading,
-      and provides an API layer for querying the stored data.
-      Apache Airflow is being integrated for pipeline scheduling
-      and orchestration.
+      Python ETL pipeline that acquires market data from yfinance,
+      validates and transforms it, and stores it in PostgreSQL using
+      idempotent loading. Integrated Apache Airflow for scheduling
+      and orchestration, with a FastAPI query layer for accessing
+      stored market data.
 
     image: "market-data-pipeline-etl.png"
 
@@ -348,11 +348,10 @@ projects:
     slug: "intelligent-document-analysis"
 
     description: >
-      Document intelligence pipeline for processing PDF and DOCX
-      documents, including text extraction, document preprocessing,
-      OCR for scanned documents, text processing, embeddings, and
-      vector-database foundations for semantic search and document
-      retrieval.
+      Document intelligence pipeline for processing PDF and DOCX files,
+      including text extraction, preprocessing, OCR for scanned documents,
+      embeddings, and vector database integration using Sentence
+      Transformers and ChromaDB for semantic search and retrieval.
 
     image: "intelligent-document-analysis-document-ai.png"
 
@@ -375,7 +374,7 @@ projects:
   # ==========================================================
 
   - title: "Retail Orders ETL Pipeline"
-    year: 2024
+    year: 2026
     category: "Data Engineering"
     slug: "retail-orders-etl"
 
@@ -477,7 +476,7 @@ experience:
 
       location: "Iran"
       start: "October 2025"
-      end: "Present"
+      end: "September 2026"
 
       description: >
         Work across machine learning, data engineering, and ML engineering
@@ -506,6 +505,28 @@ experience:
 
         - label: "LinkedIn"
           url: "https://linkedin.com/company/example"
+
+    # ==========================================================
+    # EXPERIENCE 2
+    # ==========================================================
+
+    - organization: "Self-employed"
+      role: "Full-stack Developer — Personal Projects"
+
+      location: "Iran"
+      start: "January 2022"
+      end: "September 2022"
+
+      description: >
+        Developed several self-directed full-stack projects to build practical
+        experience in software development.
+
+      responsibilities:
+        - "Built web applications using Python and JavaScript, working across backend, frontend, APIs, and database integration."
+        - "Designed and implemented application logic and relational database components using SQL."
+        - "Managed projects independently from development and debugging through testing and delivery."
+        - "Used version control and software engineering practices throughout the development process."
+
 # ============================================================
 # RESEARCH
 # ============================================================
@@ -1058,7 +1079,7 @@ cv:
   # ==========================================================
 
   document:
-    file: "Portfolio CV.pdf"
+    file: "CV_EN.pdf"
     title: "Curriculum Vitae"
 
   # ==========================================================

@@ -1,50 +1,57 @@
+
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import { portfolio } from "../content/portfolio";
+import { portfolios, defaultLanguage } from "../content/portfolio";
+
+const portfolio = portfolios[defaultLanguage];
 ---
 
-<BaseLayout>
+<BaseLayout portfolio={portfolio}>
   <main class="about-page">
-    <header class="page-header">
-      <p class="page-label">About</p>
+    {(["ru", "en"] as const).map((language) => {
+      const currentPortfolio = portfolios[language];
 
-      <h1>{portfolio.site.name}</h1>
+      return (
+        <div data-page-language={language} hidden>
+          <header class="page-header">
+            <p class="page-label">
+              {language === "ru" ? "Обо мне" : "About"}
+            </p>
 
-      <p class="page-title">{portfolio.site.title}</p>
-    </header>
+            <h1>{currentPortfolio.site.name}</h1>
 
-    <div class="about-content">
-      {
-        portfolio.about.introduction.enabled && (
-          <section class="about-section">
-            <h2>{portfolio.about.introduction.title}</h2>
-            <p>{portfolio.about.introduction.text}</p>
-          </section>
-        )
-      }
+            <p class="page-title">{currentPortfolio.site.title}</p>
+          </header>
 
-      {
-        portfolio.about.engineering_focus.enabled && (
-          <section class="about-section">
-            <h2>{portfolio.about.engineering_focus.title}</h2>
+          <div class="about-content">
+            {currentPortfolio.about.introduction.enabled && (
+              <section class="about-section">
+                <h2>{currentPortfolio.about.introduction.title}</h2>
+                <p>{currentPortfolio.about.introduction.text}</p>
+              </section>
+            )}
 
-            <ul class="focus-list">
-              {portfolio.about.engineering_focus.items.map((item) => (
-                <li>{item}</li>
-              ))}
-            </ul>
-          </section>
-        )
-      }
+            {currentPortfolio.about.engineering_focus.enabled && (
+              <section class="about-section">
+                <h2>{currentPortfolio.about.engineering_focus.title}</h2>
 
-      {
-        portfolio.about.approach.enabled && (
-          <section class="about-section">
-            <h2>{portfolio.about.approach.title}</h2>
-            <p>{portfolio.about.approach.text}</p>
-          </section>
-        )
-      }
-    </div>
+                <ul class="focus-list">
+                  {currentPortfolio.about.engineering_focus.items.map((item) => (
+                    <li>{item}</li>
+                  ))}
+                </ul>
+              </section>
+            )}
+
+            {currentPortfolio.about.approach.enabled && (
+              <section class="about-section">
+                <h2>{currentPortfolio.about.approach.title}</h2>
+                <p>{currentPortfolio.about.approach.text}</p>
+              </section>
+            )}
+          </div>
+        </div>
+      );
+    })}
   </main>
 </BaseLayout>

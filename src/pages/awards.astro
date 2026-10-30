@@ -1,149 +1,295 @@
+
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import { portfolio } from "../content/portfolio";
+import { portfolios } from "../content/portfolio";
 import { assetPath } from "../utils/paths";
 
-const { awards } = portfolio;
-const display = awards.display;
+const russianPortfolio = portfolios.ru;
+const englishPortfolio = portfolios.en;
+
+const russianAwards = russianPortfolio.awards;
+const englishAwards = englishPortfolio.awards;
+
+const russianDisplay = russianAwards.display;
+const englishDisplay = englishAwards.display;
 ---
 
-<BaseLayout>
+<BaseLayout portfolio={russianPortfolio}>
   <main class="awards-page">
 
-    <header class="page-header">
-      <p class="page-label">Awards</p>
+    <div data-page-language="ru">
+      <header class="page-header">
+        <p class="page-label">Награды</p>
+
+        {
+          russianAwards.introduction.enabled && (
+            <div class="awards-introduction">
+              <h1>{russianAwards.introduction.title}</h1>
+              <p>{russianAwards.introduction.text}</p>
+            </div>
+          )
+        }
+      </header>
 
       {
-        awards.introduction.enabled && (
-          <div class="awards-introduction">
-            <h1>{awards.introduction.title}</h1>
-            <p>{awards.introduction.text}</p>
+        russianDisplay.enabled && (
+          <div
+            class:list={[
+              "awards-list",
+              {
+                "has-introduction": russianAwards.introduction.enabled,
+              },
+            ]}
+          >
+            {russianAwards.items.map((item, index) => (
+              <article class="award-item">
+
+                <div class="award-number">
+                  {String(index + 1).padStart(2, "0")}
+                </div>
+
+                <div class="award-content">
+
+                  {
+                    russianDisplay.title && (
+                      <h2>{item.title}</h2>
+                    )
+                  }
+
+                  {
+                    russianDisplay.organization &&
+                    item.organization && (
+                      <p class="award-organization">
+                        {item.organization}
+                      </p>
+                    )
+                  }
+
+                  {
+                    russianDisplay.year &&
+                    item.year && (
+                      <p class="award-year">
+                        {item.year}
+                      </p>
+                    )
+                  }
+
+                  {
+                    russianDisplay.description &&
+                    item.description && (
+                      <p class="award-description">
+                        {item.description}
+                      </p>
+                    )
+                  }
+
+                  {
+                    russianDisplay.image &&
+                    item.image?.length > 0 && (
+                      <div class="award-images">
+
+                        {item.image.map((image) => (
+                          <img
+                            src={assetPath(`images/awards/${image}`)}
+                            alt={item.title}
+                          />
+                        ))}
+
+                      </div>
+                    )
+                  }
+
+                  {
+                    russianDisplay.documents &&
+                    item.documents?.length > 0 && (
+                      <div class="award-documents">
+
+                        {item.documents.map((document) => (
+                          <div class="award-document">
+                            <iframe
+                              src={assetPath(`documents/awards/${document}`)}
+                              title={`${item.title} — документ`}
+                              loading="lazy"
+                            ></iframe>
+
+                            <a
+                              href={assetPath(`documents/awards/${document}`)}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                            >
+                              Открыть документ полностью →
+                            </a>
+                          </div>
+                        ))}
+
+                      </div>
+                    )
+                  }
+
+                  {
+                    russianDisplay.links &&
+                    item.links?.length > 0 && (
+                      <div class="award-links">
+
+                        {item.links.map((link) => (
+                          <a
+                            href={link.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            {link.label} →
+                          </a>
+                        ))}
+
+                      </div>
+                    )
+                  }
+
+                </div>
+
+              </article>
+            ))}
           </div>
         )
       }
-    </header>
+    </div>
 
-    {
-      display.enabled && (
-        <div
-          class:list={[
-            "awards-list",
-            {
-              "has-introduction": awards.introduction.enabled,
-            },
-          ]}
-        >
-          {awards.items.map((item, index) => (
-            <article class="award-item">
+    <div data-page-language="en">
+      <header class="page-header">
+        <p class="page-label">Awards</p>
 
-              <div class="award-number">
-                {String(index + 1).padStart(2, "0")}
-              </div>
+        {
+          englishAwards.introduction.enabled && (
+            <div class="awards-introduction">
+              <h1>{englishAwards.introduction.title}</h1>
+              <p>{englishAwards.introduction.text}</p>
+            </div>
+          )
+        }
+      </header>
 
-              <div class="award-content">
+      {
+        englishDisplay.enabled && (
+          <div
+            class:list={[
+              "awards-list",
+              {
+                "has-introduction": englishAwards.introduction.enabled,
+              },
+            ]}
+          >
+            {englishAwards.items.map((item, index) => (
+              <article class="award-item">
 
-                {
-                  display.title && (
-                    <h2>{item.title}</h2>
-                  )
-                }
+                <div class="award-number">
+                  {String(index + 1).padStart(2, "0")}
+                </div>
 
-                {
-                  display.organization &&
-                  item.organization && (
-                    <p class="award-organization">
-                      {item.organization}
-                    </p>
-                  )
-                }
+                <div class="award-content">
 
-                {
-                  display.year &&
-                  item.year && (
-                    <p class="award-year">
-                      {item.year}
-                    </p>
-                  )
-                }
+                  {
+                    englishDisplay.title && (
+                      <h2>{item.title}</h2>
+                    )
+                  }
 
-                {
-                  display.description &&
-                  item.description && (
-                    <p class="award-description">
-                      {item.description}
-                    </p>
-                  )
-                }
+                  {
+                    englishDisplay.organization &&
+                    item.organization && (
+                      <p class="award-organization">
+                        {item.organization}
+                      </p>
+                    )
+                  }
 
-                {
-                  display.image &&
-                  item.image?.length > 0 && (
-                    <div class="award-images">
+                  {
+                    englishDisplay.year &&
+                    item.year && (
+                      <p class="award-year">
+                        {item.year}
+                      </p>
+                    )
+                  }
 
-                      {item.image.map((image) => (
-                        <img
-                          src={assetPath(`images/awards/${image}`)}
-                          alt={item.title}
-                        />
-                      ))}
+                  {
+                    englishDisplay.description &&
+                    item.description && (
+                      <p class="award-description">
+                        {item.description}
+                      </p>
+                    )
+                  }
 
-                    </div>
-                  )
-                }
+                  {
+                    englishDisplay.image &&
+                    item.image?.length > 0 && (
+                      <div class="award-images">
 
-                {
-                display.documents &&
-                item.documents?.length > 0 && (
-                    <div class="award-documents">
+                        {item.image.map((image) => (
+                          <img
+                            src={assetPath(`images/awards/${image}`)}
+                            alt={item.title}
+                          />
+                        ))}
 
-                    {item.documents.map((document) => (
-                        <div class="award-document">
-                        <iframe
-                            src={assetPath(`documents/awards/${document}`)}
-                            title={`${item.title} document`}
-                            loading="lazy"
-                        ></iframe>
+                      </div>
+                    )
+                  }
 
-                        <a
-                            href={assetPath(`documents/awards/${document}`)}
+                  {
+                    englishDisplay.documents &&
+                    item.documents?.length > 0 && (
+                      <div class="award-documents">
+
+                        {item.documents.map((document) => (
+                          <div class="award-document">
+                            <iframe
+                              src={assetPath(`documents/awards/${document}`)}
+                              title={`${item.title} document`}
+                              loading="lazy"
+                            ></iframe>
+
+                            <a
+                              href={assetPath(`documents/awards/${document}`)}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                            >
+                              Open Full Document →
+                            </a>
+                          </div>
+                        ))}
+
+                      </div>
+                    )
+                  }
+
+                  {
+                    englishDisplay.links &&
+                    item.links?.length > 0 && (
+                      <div class="award-links">
+
+                        {item.links.map((link) => (
+                          <a
+                            href={link.url}
                             target="_blank"
                             rel="noopener noreferrer"
-                        >
-                            Open Full Document →
-                        </a>
-                        </div>
-                    ))}
+                          >
+                            {link.label} →
+                          </a>
+                        ))}
 
-                    </div>
-                )
-                }
+                      </div>
+                    )
+                  }
 
-                {
-                  display.links &&
-                  item.links?.length > 0 && (
-                    <div class="award-links">
+                </div>
 
-                      {item.links.map((link) => (
-                        <a
-                          href={link.url}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          {link.label} →
-                        </a>
-                      ))}
-
-                    </div>
-                  )
-                }
-
-              </div>
-
-            </article>
-          ))}
-        </div>
-      )
-    }
+              </article>
+            ))}
+          </div>
+        )
+      }
+    </div>
 
   </main>
 </BaseLayout>

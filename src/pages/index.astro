@@ -1,22 +1,39 @@
+
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import { portfolio } from "../content/portfolio";
+import { portfolios, defaultLanguage } from "../content/portfolio";
+
+const portfolio = portfolios[defaultLanguage];
 ---
 
-<BaseLayout>
+<BaseLayout portfolio={portfolio}>
   <main class="home-page">
-    <section class="hero">
-      <div class="hero-intro">
-        <p class="hero-name">{portfolio.site.name}</p>
-        
-        <div class="hero-title">
-          <span class="hero-notation hero-notation-left">Σ wᵢxᵢ</span>
-          <span class="hero-arrow">→</span>
-          <span class="hero-role">{portfolio.site.title}</span>
-          <span class="hero-arrow">→</span>
-          <span class="hero-notation hero-notation-right">ŷ</span>
+    {(["ru", "en"] as const).map((language) => (
+      <section
+        class="hero"
+        data-page-language={language}
+        hidden
+      >
+        <div class="hero-intro">
+          <p class="hero-name">{portfolios[language].site.name}</p>
+
+          <div class="hero-title">
+            <span class="hero-notation hero-notation-left">Σ wᵢxᵢ</span>
+            <span class="hero-arrow">→</span>
+            <span class="hero-role">
+              {portfolios[language].site.title}
+            </span>
+            <span class="hero-arrow">→</span>
+            <span class="hero-notation hero-notation-right">ŷ</span>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+    ))}
   </main>
 </BaseLayout>
+
+<style>
+  [hidden] {
+    display: none !important;
+  }
+</style>
