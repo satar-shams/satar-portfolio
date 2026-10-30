@@ -1,123 +1,118 @@
+
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import { portfolio } from "../content/portfolio";
+import { portfolios, defaultLanguage } from "../content/portfolio";
 import { assetPath } from "../utils/paths";
 
-const { work, projects } = portfolio;
-const display = work.display;
+const portfolio = portfolios[defaultLanguage];
 ---
 
-<BaseLayout>
+<BaseLayout portfolio={portfolio}>
   <main class="work-page">
-    <header class="page-header">
-      <p class="page-label">Work</p>
+    {(["ru", "en"] as const).map((language) => {
+      const currentPortfolio = portfolios[language];
+      const { work, projects } = currentPortfolio;
+      const display = work.display;
 
-      <h1>{work.title}</h1>
+      return (
+        <div data-page-language={language} hidden>
+          <header class="page-header">
+            <p class="page-label">
+              {language === "ru" ? "Проекты" : "Work"}
+            </p>
 
-      {
-        work.introduction.enabled && (
-          <div class="work-introduction">
-            <h2>{work.introduction.title}</h2>
-            <p>{work.introduction.text}</p>
-          </div>
-        )
-      }
+            <h1>{work.title}</h1>
 
-      {
-        work.notice.enabled && (
-          <div class="work-notice">
-            <h2>{work.notice.title}</h2>
-            <p>{work.notice.text}</p>
-          </div>
-        )
-      }
-    </header>
-
-    {
-      display.enabled && (
-        <div class="projects-list">
-          {projects.map((project, index) => (
-            <article class="project">
-              <div class="project-number">
-                {String(index + 1).padStart(2, "0")}
+            {work.introduction.enabled && (
+              <div class="work-introduction">
+                <h2>{work.introduction.title}</h2>
+                <p>{work.introduction.text}</p>
               </div>
+            )}
 
-              <div class="project-content">
-                <h2>{project.title}</h2>
-
-                {
-                  (display.category || display.year) && (
-                    <p class="project-meta">
-                      {display.category && project.category}
-                      {display.category && display.year && " · "}
-                      {display.year && project.year}
-                    </p>
-                  )
-                }
-
-                {display.description && <p>{project.description}</p>}
-
-                {
-                  display.image && project.image && (
-                    <img
-                      src={assetPath(`images/projects/${project.image}`)}
-                      alt={project.title}
-                    />
-                  )
-                }
-
-                {
-                  display.technologies && (
-                    <ul class="project-technologies">
-                      {project.technologies.map((technology) => (
-                        <li>{technology}</li>
-                      ))}
-                    </ul>
-                  )
-                }
-
-                {
-                  display.links && project.links?.length > 0 && (
-                    <div class="project-links">
-                      {project.links.map((link) => (
-                        <a
-                          href={link.url}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          {link.label} →
-                        </a>
-                      ))}
-                    </div>
-                  )
-                }
+            {work.notice.enabled && (
+              <div class="work-notice">
+                <h2>{work.notice.title}</h2>
+                <p>{work.notice.text}</p>
               </div>
-            </article>
-          ))}
+            )}
+          </header>
+
+          {display.enabled && (
+            <div class="projects-list">
+              {projects.map((project, index) => (
+                <article class="project">
+                  <div class="project-number">
+                    {String(index + 1).padStart(2, "0")}
+                  </div>
+
+                  <div class="project-content">
+                    <h2>{project.title}</h2>
+
+                    {(display.category || display.year) && (
+                      <p class="project-meta">
+                        {display.category && project.category}
+                        {display.category && display.year && " · "}
+                        {display.year && project.year}
+                      </p>
+                    )}
+
+                    {display.description && <p>{project.description}</p>}
+
+                    {display.image && project.image && (
+                      <img
+                        src={assetPath(`images/projects/${project.image}`)}
+                        alt={project.title}
+                      />
+                    )}
+
+                    {display.technologies && (
+                      <ul class="project-technologies">
+                        {project.technologies.map((technology) => (
+                          <li>{technology}</li>
+                        ))}
+                      </ul>
+                    )}
+
+                    {display.links && project.links?.length > 0 && (
+                      <div class="project-links">
+                        {project.links.map((link) => (
+                          <a
+                            href={link.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            {link.label} →
+                          </a>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                </article>
+              ))}
+            </div>
+          )}
+
+          {work.references.enabled && (
+            <section class="work-references">
+              <h2>{work.references.title}</h2>
+              <p>{work.references.text}</p>
+
+              <div class="reference-links">
+                {work.references.links.map((link) => (
+                  <a
+                    href={link.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {link.label} →
+                  </a>
+                ))}
+              </div>
+            </section>
+          )}
         </div>
-      )
-    }
-
-    {
-      work.references.enabled && (
-        <section class="work-references">
-          <h2>{work.references.title}</h2>
-
-          <p>{work.references.text}</p>
-
-          <div class="reference-links">
-            {work.references.links.map((link) => (
-              <a
-                href={link.url}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                {link.label} →
-              </a>
-            ))}
-          </div>
-        </section>
-      )
-    }    
+      );
+    })}
   </main>
 </BaseLayout>
