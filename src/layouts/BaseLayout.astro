@@ -1,44 +1,31 @@
-
 ---
 import "../styles/global.css";
+import { portfolio } from "../content/portfolio";
 import Navigation from "../components/Navigation.astro";
-import { portfolios } from "../content/portfolio";
 
 interface Props {
-  portfolio: any;
   title?: string;
   description?: string;
 }
 
 const {
-  portfolio,
   title = `${portfolio.site.name} — ${portfolio.site.title}`,
   description = portfolio.site.description,
 } = Astro.props;
-
-const portfolioData = JSON.stringify(portfolios).replace(/</g, "\\u003c");
 ---
 
 <!doctype html>
-<html lang={portfolio.site.language ?? "ru"}>
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <meta name="description" content={description} />
     <title>{title}</title>
-
-    <script
-      id="portfolio-data"
-      type="application/json"
-      set:html={portfolioData}
-    ></script>
   </head>
 
   <body>
-    <Navigation portfolio={portfolio} />
+    <Navigation />
 
     <slot />
-
-    <script is:inline src={`${import.meta.env.BASE_URL}/scripts/language.js`}></script>
   </body>
 </html>

@@ -1,135 +1,69 @@
-
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import { portfolios } from "../content/portfolio";
+import { portfolio } from "../content/portfolio";
 import { assetPath } from "../utils/paths";
 
-const russianPortfolio = portfolios.ru;
-const englishPortfolio = portfolios.en;
-
-const russianCv = russianPortfolio.cv;
-const englishCv = englishPortfolio.cv;
-
-const russianDisplay = russianCv.display;
-const englishDisplay = englishCv.display;
+const { cv } = portfolio;
+const display = cv.display;
 ---
 
-<BaseLayout portfolio={russianPortfolio}>
+<BaseLayout>
   <main class="cv-page">
 
-    <div data-page-language="ru">
-      <header class="page-header">
-        <p class="page-label">Резюме</p>
-
-        {
-          russianCv.introduction.enabled && (
-            <div class="cv-introduction">
-              <h1>{russianCv.introduction.title}</h1>
-              <p>{russianCv.introduction.text}</p>
-            </div>
-          )
-        }
-      </header>
+    <header class="page-header">
+      <p class="page-label">CV</p>
 
       {
-        russianDisplay.enabled && (
-          <div
-            class:list={[
-              "cv-content",
-              {
-                "has-introduction": russianCv.introduction.enabled,
-              },
-            ]}
-          >
-
-            {
-              russianDisplay.document && russianCv.document?.file && (
-                <section class="cv-document">
-
-                  <iframe
-                    src={assetPath(`documents/cv/${russianCv.document.file}`)}
-                    title={russianCv.document.title}
-                    loading="lazy"
-                  ></iframe>
-
-                  {
-                    russianDisplay.download && (
-                      <a
-                        class="cv-download"
-                        href={assetPath(`documents/cv/${russianCv.document.file}`)}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        {russianCv.download.label} →
-                      </a>
-                    )
-                  }
-
-                </section>
-              )
-            }
-
+        cv.introduction.enabled && (
+          <div class="cv-introduction">
+            <h1>{cv.introduction.title}</h1>
+            <p>{cv.introduction.text}</p>
           </div>
         )
       }
-    </div>
+    </header>
 
-    <div data-page-language="en">
-      <header class="page-header">
-        <p class="page-label">CV</p>
-
-        {
-          englishCv.introduction.enabled && (
-            <div class="cv-introduction">
-              <h1>{englishCv.introduction.title}</h1>
-              <p>{englishCv.introduction.text}</p>
-            </div>
-          )
-        }
-      </header>
-
-      {
-        englishDisplay.enabled && (
-          <div
-            class:list={[
-              "cv-content",
-              {
-                "has-introduction": englishCv.introduction.enabled,
-              },
-            ]}
-          >
-
+    {
+      display.enabled && (
+        <div
+          class:list={[
+            "cv-content",
             {
-              englishDisplay.document && englishCv.document?.file && (
-                <section class="cv-document">
+              "has-introduction": cv.introduction.enabled,
+            },
+          ]}
+        >
 
-                  <iframe
-                    src={assetPath(`documents/cv/${englishCv.document.file}`)}
-                    title={englishCv.document.title}
-                    loading="lazy"
-                  ></iframe>
+          {
+            display.document && cv.document?.file && (
+              <section class="cv-document">
 
-                  {
-                    englishDisplay.download && (
-                      <a
-                        class="cv-download"
-                        href={assetPath(`documents/cv/${englishCv.document.file}`)}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        {englishCv.download.label} →
-                      </a>
-                    )
-                  }
+                <iframe
+                  src={assetPath(`documents/cv/${cv.document.file}`)}
+                  title={cv.document.title}
+                  loading="lazy"
+                ></iframe>
 
-                </section>
-              )
-            }
+                {
+                  display.download && (
+                    <a
+                      class="cv-download"
+                      href={assetPath(`documents/cv/${cv.document.file}`)}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      {cv.download.label} →
+                    </a>
+                  )
+                }
 
-          </div>
-        )
-      }
-    </div>
+              </section>
+            )
+          }
+
+        </div>
+      )
+    }
 
   </main>
 </BaseLayout>

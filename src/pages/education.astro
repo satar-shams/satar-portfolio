@@ -1,327 +1,160 @@
-
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import { portfolios } from "../content/portfolio";
+import { portfolio } from "../content/portfolio";
 import { assetPath } from "../utils/paths";
 
-const russianPortfolio = portfolios.ru;
-const englishPortfolio = portfolios.en;
-
-const russianEducation = russianPortfolio.education;
-const englishEducation = englishPortfolio.education;
-
-const russianDisplay = russianEducation.display;
-const englishDisplay = englishEducation.display;
-
-const russianGpaLabels: Record<string, string> = {
-  big_data_extreme_computing:
-    "Большие данные и высокопроизводительные вычисления",
-  machine_learning_data_analysis:
-    "Машинное обучение и анализ данных",
-  overall: "Общий средний балл",
-};
+const { education } = portfolio;
+const display = education.display;
 ---
 
-<BaseLayout portfolio={russianPortfolio}>
+<BaseLayout>
   <main class="education-page">
 
-    <div data-page-language="ru">
-      <header class="page-header">
-        <p class="page-label">Образование</p>
-
-        {
-          russianEducation.introduction.enabled && (
-            <div class="education-introduction">
-              <h1>{russianEducation.introduction.title}</h1>
-              <p>{russianEducation.introduction.text}</p>
-            </div>
-          )
-        }
-      </header>
+    <header class="page-header">
+      <p class="page-label">Education</p>
 
       {
-        russianDisplay.enabled && (
-          <div
-            class:list={[
-              "education-list",
-              {
-                "has-introduction": russianEducation.introduction.enabled,
-              },
-            ]}
-          >
-            {russianEducation.items.map((item, index) => (
-              <article class="education-item">
-
-                <div class="education-number">
-                  {String(index + 1).padStart(2, "0")}
-                </div>
-
-                <div class="education-content">
-
-                  {
-                    russianDisplay.image &&
-                    item.image && (
-                      <div class="education-image">
-                        <img
-                          src={assetPath(`images/projects/${item.image}`)}
-                          alt={item.institution}
-                        />
-                      </div>
-                    )
-                  }
-
-                  {
-                    russianDisplay.institution && (
-                      <h2>{item.institution}</h2>
-                    )
-                  }
-
-                  {
-                    russianDisplay.program && (
-                      <p class="education-program">
-                        {item.program}
-                      </p>
-                    )
-                  }
-
-                  {
-                    (russianDisplay.location || russianDisplay.dates) && (
-                      <p class="education-meta">
-
-                        {russianDisplay.location && item.location}
-
-                        {russianDisplay.location &&
-                          russianDisplay.dates &&
-                          " · "}
-
-                        {russianDisplay.dates &&
-                          `${item.start} — ${item.end}`}
-
-                      </p>
-                    )
-                  }
-
-                  {
-                    russianDisplay.status &&
-                    item.status && (
-                      <p class="education-status">
-                        {item.status}
-                      </p>
-                    )
-                  }
-
-                  {
-                    russianDisplay.gpa &&
-                    item.gpa &&
-                    Object.keys(item.gpa).length > 0 && (
-                      <section class="education-gpa">
-                        <h3>Средний балл</h3>
-
-                        <ul>
-                          {Object.entries(item.gpa).map(
-                            ([label, value]) => (
-                              <li>
-                                <span>
-                                  {russianGpaLabels[label] ?? label}
-                                </span>
-                                <span>{value}</span>
-                              </li>
-                            )
-                          )}
-                        </ul>
-                      </section>
-                    )
-                  }
-
-                  {
-                    russianDisplay.subjects &&
-                    item.subjects?.length > 0 && (
-                      <section class="education-subjects">
-                        <h3>Дисциплины</h3>
-
-                        <ul>
-                          {item.subjects.map((subject) => (
-                            <li>{subject}</li>
-                          ))}
-                        </ul>
-                      </section>
-                    )
-                  }
-
-                  {
-                    russianDisplay.links &&
-                    item.links?.length > 0 && (
-                      <div class="education-links">
-
-                        {item.links.map((link) => (
-                          <a
-                            href={link.url}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                          >
-                            {link.label} →
-                          </a>
-                        ))}
-
-                      </div>
-                    )
-                  }
-
-                </div>
-              </article>
-            ))}
+        education.introduction.enabled && (
+          <div class="education-introduction">
+            <h1>{education.introduction.title}</h1>
+            <p>{education.introduction.text}</p>
           </div>
         )
       }
-    </div>
+    </header>
 
-    <div data-page-language="en">
-      <header class="page-header">
-        <p class="page-label">Education</p>
+    {
+      display.enabled && (
+        <div
+          class:list={[
+            "education-list",
+            {
+              "has-introduction": education.introduction.enabled,
+            },
+          ]}
+        >
+          {education.items.map((item, index) => (
+            <article class="education-item">
 
-        {
-          englishEducation.introduction.enabled && (
-            <div class="education-introduction">
-              <h1>{englishEducation.introduction.title}</h1>
-              <p>{englishEducation.introduction.text}</p>
-            </div>
-          )
-        }
-      </header>
+              <div class="education-number">
+                {String(index + 1).padStart(2, "0")}
+              </div>
 
-      {
-        englishDisplay.enabled && (
-          <div
-            class:list={[
-              "education-list",
-              {
-                "has-introduction": englishEducation.introduction.enabled,
-              },
-            ]}
-          >
-            {englishEducation.items.map((item, index) => (
-              <article class="education-item">
+              <div class="education-content">
 
-                <div class="education-number">
-                  {String(index + 1).padStart(2, "0")}
-                </div>
+                {
+                  display.image &&
+                  item.image && (
+                    <div class="education-image">
+                      <img
+                        src={assetPath(`images/projects/${item.image}`)}
+                        alt={item.institution}
+                      />
+                    </div>
+                  )
+                }
 
-                <div class="education-content">
+                {
+                  display.institution && (
+                    <h2>{item.institution}</h2>
+                  )
+                }
 
-                  {
-                    englishDisplay.image &&
-                    item.image && (
-                      <div class="education-image">
-                        <img
-                          src={assetPath(`images/projects/${item.image}`)}
-                          alt={item.institution}
-                        />
-                      </div>
-                    )
-                  }
+                {
+                  display.program && (
+                    <p class="education-program">
+                      {item.program}
+                    </p>
+                  )
+                }
 
-                  {
-                    englishDisplay.institution && (
-                      <h2>{item.institution}</h2>
-                    )
-                  }
+                {
+                  (display.location || display.dates) && (
+                    <p class="education-meta">
 
-                  {
-                    englishDisplay.program && (
-                      <p class="education-program">
-                        {item.program}
-                      </p>
-                    )
-                  }
+                      {display.location && item.location}
 
-                  {
-                    (englishDisplay.location || englishDisplay.dates) && (
-                      <p class="education-meta">
+                      {display.location &&
+                        display.dates &&
+                        " · "}
 
-                        {englishDisplay.location && item.location}
+                      {display.dates &&
+                        `${item.start} — ${item.end}`}
 
-                        {englishDisplay.location &&
-                          englishDisplay.dates &&
-                          " · "}
+                    </p>
+                  )
+                }
 
-                        {englishDisplay.dates &&
-                          `${item.start} — ${item.end}`}
+                {
+                  display.status &&
+                  item.status && (
+                    <p class="education-status">
+                      {item.status}
+                    </p>
+                  )
+                }
 
-                      </p>
-                    )
-                  }
+                {
+                  display.gpa &&
+                  item.gpa &&
+                  Object.keys(item.gpa).length > 0 && (
+                    <section class="education-gpa">
+                      <h3>GPA</h3>
 
-                  {
-                    englishDisplay.status &&
-                    item.status && (
-                      <p class="education-status">
-                        {item.status}
-                      </p>
-                    )
-                  }
+                      <ul>
+                        {Object.entries(item.gpa).map(
+                          ([label, value]) => (
+                            <li>
+                              <span>{label}</span>
+                              <span>{value}</span>
+                            </li>
+                          )
+                        )}
+                      </ul>
+                    </section>
+                  )
+                }
 
-                  {
-                    englishDisplay.gpa &&
-                    item.gpa &&
-                    Object.keys(item.gpa).length > 0 && (
-                      <section class="education-gpa">
-                        <h3>GPA</h3>
+                {
+                  display.subjects &&
+                  item.subjects?.length > 0 && (
+                    <section class="education-subjects">
+                      <h3>Subjects</h3>
 
-                        <ul>
-                          {Object.entries(item.gpa).map(
-                            ([label, value]) => (
-                              <li>
-                                <span>{label}</span>
-                                <span>{value}</span>
-                              </li>
-                            )
-                          )}
-                        </ul>
-                      </section>
-                    )
-                  }
-
-                  {
-                    englishDisplay.subjects &&
-                    item.subjects?.length > 0 && (
-                      <section class="education-subjects">
-                        <h3>Subjects</h3>
-
-                        <ul>
-                          {item.subjects.map((subject) => (
-                            <li>{subject}</li>
-                          ))}
-                        </ul>
-                      </section>
-                    )
-                  }
-
-                  {
-                    englishDisplay.links &&
-                    item.links?.length > 0 && (
-                      <div class="education-links">
-
-                        {item.links.map((link) => (
-                          <a
-                            href={link.url}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                          >
-                            {link.label} →
-                          </a>
+                      <ul>
+                        {item.subjects.map((subject) => (
+                          <li>{subject}</li>
                         ))}
+                      </ul>
+                    </section>
+                  )
+                }
 
-                      </div>
-                    )
-                  }
+                {
+                  display.links &&
+                  item.links?.length > 0 && (
+                    <div class="education-links">
 
-                </div>
-              </article>
-            ))}
-          </div>
-        )
-      }
-    </div>
+                      {item.links.map((link) => (
+                        <a
+                          href={link.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          {link.label} →
+                        </a>
+                      ))}
+
+                    </div>
+                  )
+                }
+
+              </div>
+            </article>
+          ))}
+        </div>
+      )
+    }
 
   </main>
 </BaseLayout>

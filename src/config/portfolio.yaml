@@ -1,0 +1,1195 @@
+# ============================================================
+# PORTFOLIO CONFIGURATION
+# ============================================================
+#
+# This file contains the personal/content information for the
+# portfolio. The Astro components should handle presentation
+# and design; this file should contain the actual content.
+#
+# Images:
+#   Project images -> /public/images/projects/
+#   Other image directories can be added later.
+#
+# ============================================================
+
+# ============================================================
+# SITE
+# ============================================================
+
+site:
+  language: "en"
+  name: "Satar Shamsi Goushki"
+  title: "ML / AI Engineer"
+  location: "Kerman, Iran"
+
+  email: "satar.shams2@gmail.com"
+
+  social:
+    github: "https://github.com/satar-shams"
+    linkedin: "https://linkedin.com/in/satar-shamsi/"
+
+  description: >
+    Portfolio of Satar Shamsi Goushki, ML / AI Engineer.
+
+# ============================================================
+# NAVIGATION
+# ============================================================
+#
+# The order here determines the navigation order.
+#
+# Set enabled: false to remove a page from the navigation.
+#
+# Home is handled by the site mark.
+# The remaining pages appear in this order.
+#
+
+navigation:
+  about:
+    enabled: true
+    label: "About"
+    href: "/about"
+
+  work:
+    enabled: true
+    label: "Work"
+    href: "/work"
+
+  experience:
+    enabled: true
+    label: "Experience"
+    href: "/experience"
+
+  research:
+    enabled: true
+    label: "Research"
+    href: "/research"
+
+  education:
+    enabled: true
+    label: "Education"
+    href: "/education"
+
+  skills:
+    enabled: true
+    label: "Skills"
+    href: "/skills"
+
+  awards:
+    enabled: true
+    label: "Awards"
+    href: "/awards"
+
+  cv:
+    enabled: true
+    label: "CV"
+    href: "/cv"
+
+  contact:
+    enabled: true
+    label: "Contact"
+    href: "/contact"
+
+# ============================================================
+# PAGES
+# ============================================================
+
+pages:
+  about:
+    enabled: true
+    title: "About"
+    description: "Background, interests, and professional profile."
+
+  work:
+    enabled: true
+    title: "Work"
+    description: "Selected projects and engineering work."
+
+  experience:
+    enabled: true
+    title: "Experience"
+    description: "Professional experience and engineering work."
+
+  research:
+    enabled: true
+    title: "Research"
+    description: "Research and academic projects."
+
+  education:
+    enabled: true
+    title: "Education"
+    description: "Academic background and education."
+
+  cv:
+    enabled: true
+    title: "CV"
+    description: "Curriculum vitae and professional profile."
+
+  contact:
+    enabled: true
+    title: "Contact"
+    description: "Get in touch."
+
+# ============================================================
+# HOME
+# ============================================================
+
+home:
+  introduction: >
+    ML / AI Engineer working across machine learning,
+    data engineering, MLOps, and applied AI.
+
+  # We will design the artistic ML/AI engineering introduction
+  # later. For now this is only structural content.
+
+# ============================================================
+# About
+# ============================================================
+
+about:
+  introduction:
+    enabled: true
+    title: "Introduction"
+    text: >
+      I am an ML / AI Engineer with hands-on experience across machine
+      learning, data engineering, MLOps, and applied AI. My recent work
+      focuses on building complete, practical systems rather than isolated
+      models, including data pipelines, model development and evaluation,
+      experiment tracking, testing, deployment, and API-based inference.
+      I also have an academic background in machine learning, mathematical
+      modeling, image processing, parallel algorithms, high-performance
+      computing, and data analysis through graduate studies and research
+      at ITMO University.
+
+  engineering_focus:
+    enabled: true
+    title: "Engineering Focus"
+    items:
+      - "Machine Learning & Deep Learning"
+      - "ML Engineering & MLOps"
+      - "Data Engineering & ETL"
+      - "Time Series Forecasting"
+      - "NLP & Document AI"
+      - "Model Serving & APIs"
+      - "Data Analysis & Mathematical Modeling"
+      - "Research & Applied Computing"
+
+  approach:
+    enabled: true
+    title: "Approach"
+    text: >
+      I approach machine learning as an engineering discipline as well as
+      a modeling problem. I value reproducible workflows, clean and modular
+      code, automated testing, data validation, experiment tracking, and
+      maintainable deployment pipelines. I prefer practical solutions that
+      can be understood, tested, and maintained, while using more advanced
+      methods when they provide a clear benefit. My academic and project
+      experience also gives me an interest in understanding the mathematical
+      and computational foundations behind the systems I build.
+# ============================================================
+# WORK
+# ============================================================
+#
+# Configuration and content for the Work / Projects page.
+#
+# The page itself is controlled by pages.work.enabled.
+#
+# ============================================================
+
+work:
+  introduction:
+    enabled: true
+    title: "Selected Projects"
+    text: >
+      A selection of machine learning, AI, data engineering,
+      MLOps, and software engineering projects developed through
+      professional work, independent development, and academic study.
+
+  references:
+    enabled: true
+    title: "More Work"
+    text: >
+      To explore more of my projects and work, visit the links below.
+
+    # Add or remove as many reference links as you want.
+
+    links:
+      # ==========================================================
+      # LINK 1
+      # ==========================================================
+
+      - label: "GitHub"
+        url: "https://github.com/satar-shams"
+
+      # ==========================================================
+      # LINK 2
+      # ==========================================================
+
+      - label: "LinkedIn"
+        url: "https://linkedin.com/in/satar-shamsi/"
+
+  notice:
+    enabled: false
+    title: "Projects Coming Soon"
+    text: >
+      New projects will be added here soon.
+
+  display:
+    enabled: true
+    # ==========================================================
+    # DISPLAY OPTIONS
+    # ==========================================================
+
+    image: true
+    year: true
+    category: true
+    description: true
+    technologies: true
+    links: true
+
+# ============================================================
+# PROJECTS
+# ============================================================
+#
+# Add or remove as many projects as you want.
+#
+# Each project is independent. Copy an existing project block
+# to add another project, or remove a project block when it is
+# no longer needed.
+#
+# Which project fields are displayed is controlled by:
+#
+#   work.display
+#
+# This section contains project data only. Presentation settings
+# should not be repeated inside individual projects.
+#
+# Links are intentionally generic and can point to GitHub,
+# live demos, documentation, papers, Hugging Face, or any
+# other relevant external resource.
+#
+# ============================================================
+
+projects:
+  # ==========================================================
+  # PROJECT 1
+  # ==========================================================
+
+  - title: "LSTM Time Series Forecasting — End-to-End MLOps"
+    year: 2026
+    category: "ML / MLOps"
+    slug: "lstm-time-series-forecasting"
+
+    description: >
+      End-to-end machine learning system for AAPL stock-price
+      forecasting, covering chronological data splitting,
+      leakage-safe preprocessing, stacked LSTM modeling,
+      hyperparameter optimization, experiment tracking,
+      model management, evaluation, API-based inference,
+      containerization, automated testing, CI/CD, and cloud
+      deployment.
+
+    image: "lstm-time-series-forecasting-mlops.png"
+
+    technologies:
+      - "Python"
+      - "TensorFlow"
+      - "Keras"
+      - "LSTM"
+      - "MLflow"
+      - "Optuna"
+      - "FastAPI"
+      - "Docker"
+      - "GitHub Actions"
+
+    links:
+      - label: "GitHub"
+        url: "https://github.com/satar-shams/lstm-time-series-mlops"
+
+  # ==========================================================
+  # PROJECT 2
+  # ==========================================================
+
+  - title: "Market Data Pipeline — ETL"
+    year: 2026
+    category: "Data Engineering"
+    slug: "market-data-pipeline"
+
+    description: >
+      Python ETL pipeline that acquires market data from yfinance,
+      validates and transforms it, and stores it in PostgreSQL using
+      idempotent loading. Integrated Apache Airflow for scheduling
+      and orchestration, with a FastAPI query layer for accessing
+      stored market data.
+
+    image: "market-data-pipeline-etl.png"
+
+    technologies:
+      - "Python"
+      - "yfinance"
+      - "Pandas"
+      - "PostgreSQL"
+      - "SQLAlchemy"
+      - "Apache Airflow"
+      - "FastAPI"
+      - "Docker"
+      - "Pytest"
+
+    links:
+      - label: "GitHub"
+        url: "https://github.com/satar-shams/market-data-pipeline"
+
+  # ==========================================================
+  # PROJECT 3
+  # ==========================================================
+
+  - title: "Intelligent Document Analysis"
+    year: 2026
+    category: "AI / Document Intelligence"
+    slug: "intelligent-document-analysis"
+
+    description: >
+      Document intelligence pipeline for processing PDF and DOCX files,
+      including text extraction, preprocessing, OCR for scanned documents,
+      embeddings, and vector database integration using Sentence
+      Transformers and ChromaDB for semantic search and retrieval.
+
+    image: "intelligent-document-analysis-document-ai.png"
+
+    technologies:
+      - "Python"
+      - "LangChain"
+      - "PyMuPDF"
+      - "python-docx"
+      - "Tesseract OCR"
+      - "Sentence Transformers"
+      - "ChromaDB"
+      - "Pytest"
+
+    links:
+      - label: "GitHub"
+        url: "https://github.com/satar-shams/intelligent-document-analysis"
+
+  # ==========================================================
+  # PROJECT 4
+  # ==========================================================
+
+  - title: "Retail Orders ETL Pipeline"
+    year: 2026
+    category: "Data Engineering"
+    slug: "retail-orders-etl"
+
+    description: >
+      End-to-end ETL pipeline for processing retail order data
+      from CSV files and loading validated results into PostgreSQL.
+      The project includes separate extraction, transformation,
+      and loading stages, data-quality checks, incremental and
+      idempotent loading, structured logging, automated testing,
+      credential management, and containerized execution.
+
+    image: "retail-orders-etl-pipeline.png"
+
+    technologies:
+      - "Python"
+      - "Pandas"
+      - "PostgreSQL"
+      - "SQLAlchemy"
+      - "Docker"
+      - "Pytest"
+      - "HashiCorp Vault"
+
+    links:
+      - label: "GitHub"
+        url: "https://github.com/satar-shams/etl-retail-data-pipeline"
+
+  # ==========================================================
+  # PROJECT 5
+  # ==========================================================
+
+  - title: "ML Inference API"
+    year: 2025
+    category: "ML Engineering"
+    slug: "ml-inference-api"
+
+    description: >
+      Machine learning inference service built around a REST API
+      for serving model predictions, with request and response
+      validation, environment-based configuration, structured
+      logging, automated testing, modular model handling, and
+      Docker-based deployment.
+
+    image: "ml-inference-api-fastapi.png"
+
+    technologies:
+      - "Python"
+      - "FastAPI"
+      - "Pydantic"
+      - "Docker"
+      - "Pytest"
+      - "Structured Logging"
+
+    links:
+      - label: "GitHub"
+        url: "https://github.com/satar-shams/ml-inference-api"
+
+# ============================================================
+# EXPERIENCE
+# ============================================================
+#
+# Add or remove as many experience entries as you want.
+#
+# Each experience entry is independent.
+#
+# Links are optional. Add as many links as you want for each
+# experience, such as an organization website, LinkedIn,
+# company page, project page, or other relevant reference.
+#
+# ============================================================
+
+experience:
+  introduction:
+    enabled: false
+    title: "Professional Experience"
+    text: >
+      A summary of professional experience and engineering work.
+
+  display:
+    enabled: true
+    # ==========================================================
+    # DISPLAY OPTIONS
+    # ==========================================================
+
+    organization: true
+    role: true
+    location: true
+    dates: true
+    description: true
+    responsibilities: true
+    links: false
+
+  items:
+    # ==========================================================
+    # EXPERIENCE 1
+    # ==========================================================
+
+    - organization: "GoalEarn"
+      role: "ML / AI Engineer Intern"
+
+      location: "Iran"
+      start: "October 2025"
+      end: "September 2026"
+
+      description: >
+        Work across machine learning, data engineering, and ML engineering
+        projects, with a focus on building modular, testable, and reproducible
+        systems and applying software engineering practices to practical
+        machine learning workflows.
+
+      responsibilities:
+        - "Built a modular ETL pipeline for acquiring, validating, transforming, and loading data into PostgreSQL."
+        - "Implemented incremental loading, structured logging, automated tests, and secure credential management using HashiCorp Vault."
+        - "Developed a machine learning inference API for serving model predictions."
+        - "Worked with modular project structures, automated testing, documentation, Git, and reproducible development workflows."
+        - "Applied engineering practices across data acquisition, preprocessing, model development, evaluation, and deployment."
+
+      links:
+        # ==========================================================
+        # LINK 1
+        # ==========================================================
+
+        - label: "Website"
+          url: "https://example.com"
+
+        # ==========================================================
+        # LINK 2
+        # ==========================================================
+
+        - label: "LinkedIn"
+          url: "https://linkedin.com/company/example"
+
+    # ==========================================================
+    # EXPERIENCE 2
+    # ==========================================================
+
+    - organization: "Self-employed"
+      role: "Full-stack Developer — Personal Projects"
+
+      location: "Iran"
+      start: "January 2022"
+      end: "September 2022"
+
+      description: >
+        Developed several self-directed full-stack projects to build practical
+        experience in software development.
+
+      responsibilities:
+        - "Built web applications using Python and JavaScript, working across backend, frontend, APIs, and database integration."
+        - "Designed and implemented application logic and relational database components using SQL."
+        - "Managed projects independently from development and debugging through testing and delivery."
+        - "Used version control and software engineering practices throughout the development process."
+
+# ============================================================
+# RESEARCH
+# ============================================================
+
+research:
+  # ==========================================================
+  # INTRODUCTION
+  # ==========================================================
+
+  introduction:
+    enabled: true
+    title: "Research & Academic Work"
+    text: >
+      A selection of research, academic projects, mathematical
+      modeling, and computational work.
+
+  # ==========================================================
+  # DISPLAY
+  # ==========================================================
+
+  display:
+    enabled: true
+
+    # ==========================================================
+    # DISPLAY OPTIONS
+    # ==========================================================
+
+    title: true
+    category: true
+    description: true
+    links: false
+
+  # ==========================================================
+  # RESEARCH ITEMS
+  # ==========================================================
+
+  items:
+    # ==========================================================
+    # RESEARCH 1
+    # ==========================================================
+
+    - title: "SEIR Epidemic Modeling"
+      category: "Mathematical Modeling"
+
+      description: >
+        Research and implementation of an SEIR-based mathematical
+        model for epidemic dynamics, supported by literature research
+        and a research paper of approximately 20 pages.
+
+      # links:
+      #   # ======================================================
+      #   # LINK 1
+      #   # ======================================================
+
+      #   - label: "Project"
+      #     url: "https://example.com"
+
+      #   # ======================================================
+      #   # LINK 2
+      #   # ======================================================
+
+      #   - label: "Research Paper"
+      #     url: "https://example.com"
+
+      # ======================================================
+      # Add or remove as many links as needed.
+      # ======================================================
+
+    # ==========================================================
+    # RESEARCH 2
+    # ==========================================================
+
+    - title: "Music Generation"
+      category: "Machine Learning / Computational Music"
+
+      description: >
+        Research on machine-learning-based music generation,
+        including literature research, implementation, and a
+        research paper of approximately 20 pages.
+
+      links: []
+
+    # ==========================================================
+    # RESEARCH 3
+    # ==========================================================
+
+    - title: "Parallel Algorithms / Traveling Salesman Problem"
+      category: "High Performance Computing"
+
+      description: >
+        Academic work involving the Traveling Salesman Problem,
+        nearest-neighbor algorithms, parallel execution, and analysis
+        of algorithmic limitations and parallel performance.
+
+      links: []
+
+    # ==========================================================
+    # RESEARCH 4
+    # ==========================================================
+
+    - title: "Image Processing"
+      category: "Computer Vision"
+
+      description: >
+        Academic projects involving image classification and image
+        segmentation, supported by technical reports and project
+        documentation.
+
+      links: []
+
+    # ==========================================================
+    # RESEARCH 5
+    # ==========================================================
+
+    - title: "Multivariate Data Analysis"
+      category: "Data Analysis"
+
+      description: >
+        Academic work involving multivariate data analysis,
+        statistical methods, and mathematical modeling.
+
+      links: []
+
+    # ==========================================================
+    # RESEARCH 6
+    # ==========================================================
+
+    - title: "Machine Learning and NLP"
+      category: "Machine Learning"
+
+      description: >
+        Academic projects involving machine learning, text processing,
+        sentiment analysis, text classification, and time-series analysis.
+
+      links: []
+# ============================================================
+# EDUCATION
+# ============================================================
+
+education:
+  # ==========================================================
+  # INTRODUCTION
+  # ==========================================================
+
+  introduction:
+    enabled: false
+    title: "Education"
+    text: >
+      Academic background in electrical engineering, machine learning,
+      data analysis, high performance computing, and related fields.
+
+  # ==========================================================
+  # DISPLAY
+  # ==========================================================
+
+  display:
+    enabled: true
+
+    # ==========================================================
+    # DISPLAY OPTIONS
+    # ==========================================================
+
+    image: true
+    institution: true
+    location: true
+    program: true
+    dates: true
+    status: true
+    gpa: true
+    subjects: true
+    links: false
+
+  # ==========================================================
+  # EDUCATION ITEMS
+  # ==========================================================
+
+  items:
+    # ==========================================================
+    # EDUCATION 1
+    # ==========================================================
+
+    - institution: "ITMO University"
+
+      image: "itmo-university.jpeg"
+
+      location: "Saint Petersburg, Russia"
+
+      program: >
+        Graduate Studies in Big Data and Machine Learning
+
+      start: 2018
+      end: 2020
+
+      status: "Graduate studies completed; Master's degree not completed"
+
+      gpa:
+        big_data_extreme_computing: "3.91 / 4.00"
+        machine_learning_data_analysis: "3.79 / 4.00"
+
+      subjects:
+        - "Machine Learning"
+        - "Neural Networks"
+        - "High Performance Computing"
+        - "Parallel Algorithms"
+        - "Multivariate Data Analysis"
+        - "Mathematical and Statistical Modeling"
+        - "Image Processing"
+        - "Data Warehousing"
+        - "Time Series"
+        - "Natural Language Processing"
+        - "Scientific Computing"
+
+      links: []
+
+        # ======================================================
+        # LINK 1
+        # ======================================================
+
+        # - label: "University"
+        #   url: "https://example.com"
+
+        # ======================================================
+        # LINK 2
+        # ======================================================
+
+        # - label: "Program"
+        #   url: "https://example.com"
+
+        # ======================================================
+        # Add or remove as many links as needed.
+        # ======================================================
+
+    # ==========================================================
+    # EDUCATION 2
+    # ==========================================================
+
+    - institution: "Shahid Bahonar University of Kerman"
+
+      image: "shahid-bahonar-engineering.jpg"
+
+      location: "Kerman, Iran"
+
+      program: "B.Sc. in Electrical Engineering — Electronics"
+
+      start: 2007
+      end: 2012
+
+      gpa:
+        overall: "14.47 / 20.00"
+
+      status: "Top 5 students"
+
+      subjects: []
+
+      links: []
+
+        # ======================================================
+        # LINK 1
+        # ======================================================
+
+        # - label: "University"
+        #   url: "https://example.com"
+
+        # ======================================================
+        # Add or remove as many links as needed.
+        # ======================================================
+
+skills:
+  introduction:
+    enabled: false
+    title: "Technical Skills"
+    text: >
+      Technologies, tools, and technical areas used across
+      machine learning, data engineering, and software development.
+
+  display:
+    enabled: true
+    category: true
+    skills: true
+    languages: true
+
+  items:
+    # ==========================================================
+    # SKILL CATEGORY 1
+    # ==========================================================
+
+    - category: "Programming Languages"
+      skills:
+        - "Python"
+        - "SQL"
+        - "C++"
+
+    # ==========================================================
+    # SKILL CATEGORY 2
+    # ==========================================================
+
+    - category: "Machine Learning"
+      skills:
+        - "Machine Learning"
+        - "Deep Learning"
+        - "Neural Networks"
+        - "Time Series Forecasting"
+        - "Classification"
+        - "Natural Language Processing"
+        - "Computer Vision"
+
+    # ==========================================================
+    # SKILL CATEGORY 3
+    # ==========================================================
+
+    - category: "ML Engineering / MLOps"
+      skills:
+        - "MLflow"
+        - "Optuna"
+        - "Model Tracking"
+        - "Model Registry"
+        - "Model Versioning"
+        - "FastAPI"
+        - "Model Serving"
+        - "Docker"
+        - "Docker Compose"
+        - "GitHub Actions"
+        - "CI/CD"
+
+    # ==========================================================
+    # SKILL CATEGORY 4
+    # ==========================================================
+
+    - category: "Data Engineering"
+      skills:
+        - "ETL / ELT"
+        - "Pandas"
+        - "PostgreSQL"
+        - "SQLAlchemy"
+        - "Apache Airflow"
+        - "Data Validation"
+        - "Incremental Loading"
+        - "Idempotent Loading"
+
+    # ==========================================================
+    # SKILL CATEGORY 5
+    # ==========================================================
+
+    - category: "Deep Learning"
+      skills:
+        - "TensorFlow"
+        - "Keras"
+        - "LSTM"
+        - "CNN"
+        - "Autoencoders"
+        - "Transfer Learning"
+
+    # ==========================================================
+    # SKILL CATEGORY 6
+    # ==========================================================
+
+    - category: "Data Science"
+      skills:
+        - "NumPy"
+        - "scikit-learn"
+        - "Statistical Analysis"
+        - "Mathematical Modeling"
+        - "Time Series Analysis"
+
+    # ==========================================================
+    # SKILL CATEGORY 7
+    # ==========================================================
+
+    - category: "NLP / Document AI"
+      skills:
+        - "Text Processing"
+        - "OCR"
+        - "Embeddings"
+        - "Vector Databases"
+        - "Document Processing"
+        - "LangChain"
+
+    # ==========================================================
+    # SKILL CATEGORY 8
+    # ==========================================================
+
+    - category: "Development & Tools"
+      skills:
+        - "Git"
+        - "GitHub"
+        - "Linux"
+        - "Jupyter Notebook"
+        - "Pytest"
+        - "Structured Logging"
+        - "HashiCorp Vault"
+
+  # ==========================================================
+  # LANGUAGES
+  # ==========================================================
+
+  languages:
+    # ==========================================================
+    # LANGUAGE 1
+    # ==========================================================
+
+    - language: "English"
+      level: "Professional proficiency (TOEFL iBT 85; graduate studies conducted in English)"
+
+    # ==========================================================
+    # LANGUAGE 2
+    # ==========================================================
+
+    - language: "Persian"
+      level: "Native"
+
+    # ==========================================================
+    # LANGUAGE 3
+    # ==========================================================
+
+    - language: "Russian"
+      level: "Basic"
+
+    # ==========================================================
+    # LANGUAGE 4
+    # ==========================================================
+
+    - language: "German"
+      level: "Basic"
+
+    # ==========================================================
+    # Add or remove as many languages as needed.
+    # ==========================================================
+
+# ============================================================
+# AWARDS
+# ============================================================
+
+awards:
+  # ==========================================================
+  # INTRODUCTION
+  # ==========================================================
+
+  introduction:
+    enabled: false
+    title: "Awards & Achievements"
+    text: >
+      Selected academic and professional awards,
+      achievements, and recognitions.
+
+  # ==========================================================
+  # DISPLAY
+  # ==========================================================
+
+  display:
+    enabled: true
+
+    # ==========================================================
+    # DISPLAY OPTIONS
+    # ==========================================================
+
+    title: true
+    organization: true
+    year: true
+    description: true
+    image: false
+    documents: true
+    links: false
+
+  # ==========================================================
+  # AWARD ITEMS
+  # ==========================================================
+
+  items:
+    # ==========================================================
+    # AWARD 1
+    # ==========================================================
+
+    - title: "Russian Open Doors Olympiad — Full Scholarship"
+      organization: "HSE University"
+      year: 2024
+
+      description: >
+        Awarded a full scholarship through the Russian Open Doors
+        Olympiad for graduate study in Russia.
+
+      image: []
+
+      documents:
+        # ======================================================
+        # DOCUMENT 1
+        # ======================================================
+
+        - "diplomas№ 2024-APP-M082_Satar_Shamsi Goushki_ru_diploma.pdf"
+
+        # ======================================================
+        # DOCUMENT 2
+        # ======================================================
+
+        - "diplomas№ 2024-APP-M082_Satar_Shamsi Goushki_en_diploma.pdf"
+
+        # ======================================================
+        # Add or remove as many documents as needed.
+        # ======================================================
+
+      links: []
+
+    # ==========================================================
+    # AWARD 2
+    # ==========================================================
+
+    # - title: "Another Award"
+    #   organization: "Another Organization"
+    #   year: 2022
+    #
+    #   description: >
+    #     Description of another award or achievement.
+    #
+    #   image: []
+    #
+    #   documents: []
+    #
+    #   links: []
+
+    # ==========================================================
+    # Add or remove as many awards as needed.
+    # ==========================================================
+
+# ============================================================
+# CV
+# ============================================================
+
+cv:
+  # ==========================================================
+  # INTRODUCTION
+  # ==========================================================
+
+  introduction:
+    enabled: false
+    title: "Curriculum Vitae"
+    text: >
+      A detailed overview of my professional experience,
+      education, technical skills, and selected projects.
+
+  # ==========================================================
+  # DISPLAY
+  # ==========================================================
+
+  display:
+    enabled: true
+    document: true
+    download: true
+
+  # ==========================================================
+  # DOCUMENT
+  # ==========================================================
+
+  document:
+    file: "CV_EN.pdf"
+    title: "Curriculum Vitae"
+
+  # ==========================================================
+  # DOWNLOAD
+  # ==========================================================
+
+  download:
+    label: "Download CV"
+
+# ============================================================
+# ADDITIONAL
+# ============================================================
+
+additional:
+  interests:
+    - "Machine Learning"
+    - "AI Engineering"
+    - "Data Engineering"
+    - "Algorithms"
+    - "Mathematical Modeling"
+    - "Music Technology"
+
+  notes:
+    - "Classical violinist with a long-standing interest in music and computational music generation."
+
+# ============================================================
+# CONTACT
+# ============================================================
+
+contact:
+  # ==========================================================
+  # INTRODUCTION
+  # ==========================================================
+
+  introduction:
+    enabled: true
+    title: "Get in Touch"
+    text: >
+      Feel free to contact me for professional opportunities,
+      collaboration, or other inquiries.
+
+  # ==========================================================
+  # DISPLAY
+  # ==========================================================
+
+  display:
+    enabled: true
+    email: true
+    location: true
+    links: true
+
+  # ==========================================================
+  # CONTACT INFORMATION
+  # ==========================================================
+
+  email: "satar.shamsi@gmail.com"
+
+  location: "Iran"
+
+  # ==========================================================
+  # LINKS
+  # ==========================================================
+
+  links:
+    # ==========================================================
+    # LINK 1
+    # ==========================================================
+
+    - label: "GitHub"
+      url: "https://github.com/satar-shams"
+
+    # ==========================================================
+    # LINK 2
+    # ==========================================================
+
+    - label: "LinkedIn"
+      url: "https://linkedin.com/in/satar-shamsi/"
+
+    # ==========================================================
+    # Add or remove as many links as needed.
+    # ==========================================================
+
+# ============================================================
+# OPTIONAL SECTIONS — NOT USED YET
+# ============================================================
+#
+# We can activate these later simply by adding content.
+#
+# publications:
+#   - title: ""
+#     year: 2026
+#     venue: ""
+#     description: ""
+#     link: ""
+#
+#
+# certifications:
+#   - name: ""
+#     issuer: ""
+#     year: 2026
+#     link: ""
+#
+#
+# blog:
+#   enabled: false
+#   posts: []
+#
+#
+# testimonials:
+#   - name: ""
+#     role: ""
+#     text: ""
+#

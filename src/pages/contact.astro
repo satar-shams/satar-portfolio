@@ -1,164 +1,83 @@
-
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import { portfolios } from "../content/portfolio";
+import { portfolio } from "../content/portfolio";
 
-const russianPortfolio = portfolios.ru;
-const englishPortfolio = portfolios.en;
-
-const russianContact = russianPortfolio.contact;
-const englishContact = englishPortfolio.contact;
-
-const russianDisplay = russianContact.display;
-const englishDisplay = englishContact.display;
+const { contact } = portfolio;
+const display = contact.display;
 ---
 
-<BaseLayout portfolio={russianPortfolio}>
+<BaseLayout>
   <main class="contact-page">
 
-    <div data-page-language="ru">
-      <header class="page-header">
-        <p class="page-label">Контакты</p>
-
-        {
-          russianContact.introduction.enabled && (
-            <div class="contact-introduction">
-              <h1>{russianContact.introduction.title}</h1>
-              <p>{russianContact.introduction.text}</p>
-            </div>
-          )
-        }
-      </header>
+    <header class="page-header">
+      <p class="page-label">Contact</p>
 
       {
-        russianDisplay.enabled && (
-          <div
-            class:list={[
-              "contact-content",
-              {
-                "has-introduction": russianContact.introduction.enabled,
-              },
-            ]}
-          >
-
-            {
-              russianDisplay.email &&
-              russianContact.email && (
-                <div class="contact-item">
-                  <span class="contact-label">Электронная почта</span>
-
-                  <a href={`mailto:${russianContact.email}`}>
-                    {russianContact.email}
-                  </a>
-                </div>
-              )
-            }
-
-            {
-              russianDisplay.location &&
-              russianContact.location && (
-                <div class="contact-item">
-                  <span class="contact-label">Местоположение</span>
-                  <span>{russianContact.location}</span>
-                </div>
-              )
-            }
-
-            {
-              russianDisplay.links &&
-              russianContact.links?.length > 0 && (
-                <div class="contact-links">
-
-                  {russianContact.links.map((link) => (
-                    <a
-                      href={link.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      {link.label} →
-                    </a>
-                  ))}
-
-                </div>
-              )
-            }
-
+        contact.introduction.enabled && (
+          <div class="contact-introduction">
+            <h1>{contact.introduction.title}</h1>
+            <p>{contact.introduction.text}</p>
           </div>
         )
       }
-    </div>
+    </header>
 
-    <div data-page-language="en">
-      <header class="page-header">
-        <p class="page-label">Contact</p>
-
-        {
-          englishContact.introduction.enabled && (
-            <div class="contact-introduction">
-              <h1>{englishContact.introduction.title}</h1>
-              <p>{englishContact.introduction.text}</p>
-            </div>
-          )
-        }
-      </header>
-
-      {
-        englishDisplay.enabled && (
-          <div
-            class:list={[
-              "contact-content",
-              {
-                "has-introduction": englishContact.introduction.enabled,
-              },
-            ]}
-          >
-
+    {
+      display.enabled && (
+        <div
+          class:list={[
+            "contact-content",
             {
-              englishDisplay.email &&
-              englishContact.email && (
-                <div class="contact-item">
-                  <span class="contact-label">Email</span>
+              "has-introduction": contact.introduction.enabled,
+            },
+          ]}
+        >
 
-                  <a href={`mailto:${englishContact.email}`}>
-                    {englishContact.email}
+          {
+            display.email &&
+            contact.email && (
+              <div class="contact-item">
+                <span class="contact-label">Email</span>
+
+                <a href={`mailto:${contact.email}`}>
+                  {contact.email}
+                </a>
+              </div>
+            )
+          }
+
+          {
+            display.location &&
+            contact.location && (
+              <div class="contact-item">
+                <span class="contact-label">Location</span>
+                <span>{contact.location}</span>
+              </div>
+            )
+          }
+
+          {
+            display.links &&
+            contact.links?.length > 0 && (
+              <div class="contact-links">
+
+                {contact.links.map((link) => (
+                  <a
+                    href={link.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {link.label} →
                   </a>
-                </div>
-              )
-            }
+                ))}
 
-            {
-              englishDisplay.location &&
-              englishContact.location && (
-                <div class="contact-item">
-                  <span class="contact-label">Location</span>
-                  <span>{englishContact.location}</span>
-                </div>
-              )
-            }
+              </div>
+            )
+          }
 
-            {
-              englishDisplay.links &&
-              englishContact.links?.length > 0 && (
-                <div class="contact-links">
-
-                  {englishContact.links.map((link) => (
-                    <a
-                      href={link.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      {link.label} →
-                    </a>
-                  ))}
-
-                </div>
-              )
-            }
-
-          </div>
-        )
-      }
-    </div>
+        </div>
+      )
+    }
 
   </main>
 </BaseLayout>

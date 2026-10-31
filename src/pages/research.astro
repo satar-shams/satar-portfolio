@@ -1,180 +1,91 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import { portfolios } from "../content/portfolio";
+import { portfolio } from "../content/portfolio";
 
-const russianPortfolio = portfolios.ru;
-const englishPortfolio = portfolios.en;
-
-const russianResearch = russianPortfolio.research;
-const englishResearch = englishPortfolio.research;
+const { research } = portfolio;
+const display = research.display;
 ---
 
-<BaseLayout portfolio={russianPortfolio}>
+<BaseLayout>
   <main class="research-page">
 
-    <!-- Russian -->
-    <div data-page-language="ru">
-      <header class="page-header">
-        <p class="page-label">Исследования</p>
-
-        {
-          russianResearch.introduction.enabled && (
-            <div class="research-introduction">
-              <h1>{russianResearch.introduction.title}</h1>
-              <p>{russianResearch.introduction.text}</p>
-            </div>
-          )
-        }
-      </header>
+    <header class="page-header">
+      <p class="page-label">Research</p>
 
       {
-        russianResearch.display.enabled && (
-          <div
-            class:list={[
-              "research-list",
-              {
-                "has-introduction":
-                  russianResearch.introduction.enabled,
-              },
-            ]}
-          >
-            {russianResearch.items.map((item, index) => (
-              <article class="research-item">
-
-                <div class="research-number">
-                  {String(index + 1).padStart(2, "0")}
-                </div>
-
-                <div class="research-content">
-
-                  {
-                    russianResearch.display.title && (
-                      <h2>{item.title}</h2>
-                    )
-                  }
-
-                  {
-                    russianResearch.display.category && (
-                      <p class="research-category">
-                        {item.category}
-                      </p>
-                    )
-                  }
-
-                  {
-                    russianResearch.display.description && (
-                      <p class="research-description">
-                        {item.description}
-                      </p>
-                    )
-                  }
-
-                  {
-                    russianResearch.display.links &&
-                    item.links?.length > 0 && (
-                      <div class="research-links">
-                        {item.links.map((link) => (
-                          <a
-                            href={link.url}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                          >
-                            {link.label} →
-                          </a>
-                        ))}
-                      </div>
-                    )
-                  }
-
-                </div>
-              </article>
-            ))}
+        research.introduction.enabled && (
+          <div class="research-introduction">
+            <h1>{research.introduction.title}</h1>
+            <p>{research.introduction.text}</p>
           </div>
         )
       }
-    </div>
+    </header>
 
-    <!-- English -->
-    <div data-page-language="en">
-      <header class="page-header">
-        <p class="page-label">Research</p>
+    {
+      display.enabled && (
+        <div
+          class:list={[
+            "research-list",
+            {
+              "has-introduction": research.introduction.enabled,
+            },
+          ]}
+        >
+          {research.items.map((item, index) => (
+            <article class="research-item">
 
-        {
-          englishResearch.introduction.enabled && (
-            <div class="research-introduction">
-              <h1>{englishResearch.introduction.title}</h1>
-              <p>{englishResearch.introduction.text}</p>
-            </div>
-          )
-        }
-      </header>
+              <div class="research-number">
+                {String(index + 1).padStart(2, "0")}
+              </div>
 
-      {
-        englishResearch.display.enabled && (
-          <div
-            class:list={[
-              "research-list",
-              {
-                "has-introduction":
-                  englishResearch.introduction.enabled,
-              },
-            ]}
-          >
-            {englishResearch.items.map((item, index) => (
-              <article class="research-item">
+              <div class="research-content">
 
-                <div class="research-number">
-                  {String(index + 1).padStart(2, "0")}
-                </div>
+                {
+                  display.title && (
+                    <h2>{item.title}</h2>
+                  )
+                }
 
-                <div class="research-content">
+                {
+                  display.category && (
+                    <p class="research-category">
+                      {item.category}
+                    </p>
+                  )
+                }
 
-                  {
-                    englishResearch.display.title && (
-                      <h2>{item.title}</h2>
-                    )
-                  }
+                {
+                  display.description && (
+                    <p class="research-description">
+                      {item.description}
+                    </p>
+                  )
+                }
 
-                  {
-                    englishResearch.display.category && (
-                      <p class="research-category">
-                        {item.category}
-                      </p>
-                    )
-                  }
+                {
+                  display.links &&
+                  item.links?.length > 0 && (
+                    <div class="research-links">
+                      {item.links.map((link) => (
+                        <a
+                          href={link.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          {link.label} →
+                        </a>
+                      ))}
+                    </div>
+                  )
+                }
 
-                  {
-                    englishResearch.display.description && (
-                      <p class="research-description">
-                        {item.description}
-                      </p>
-                    )
-                  }
-
-                  {
-                    englishResearch.display.links &&
-                    item.links?.length > 0 && (
-                      <div class="research-links">
-                        {item.links.map((link) => (
-                          <a
-                            href={link.url}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                          >
-                            {link.label} →
-                          </a>
-                        ))}
-                      </div>
-                    )
-                  }
-
-                </div>
-              </article>
-            ))}
-          </div>
-        )
-      }
-    </div>
+              </div>
+            </article>
+          ))}
+        </div>
+      )
+    }
 
   </main>
 </BaseLayout>

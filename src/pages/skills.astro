@@ -1,212 +1,108 @@
-
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import { portfolios } from "../content/portfolio";
+import { portfolio } from "../content/portfolio";
 
-const russianPortfolio = portfolios.ru;
-const englishPortfolio = portfolios.en;
-
-const russianSkills = russianPortfolio.skills;
-const englishSkills = englishPortfolio.skills;
-
-const russianDisplay = russianSkills.display;
-const englishDisplay = englishSkills.display;
+const { skills } = portfolio;
+const display = skills.display;
 ---
 
-<BaseLayout portfolio={russianPortfolio}>
+<BaseLayout>
   <main class="skills-page">
 
-    <div data-page-language="ru">
-      <header class="page-header">
-        <p class="page-label">Навыки</p>
-
-        {
-          russianSkills.introduction.enabled && (
-            <div class="skills-introduction">
-              <h1>{russianSkills.introduction.title}</h1>
-              <p>{russianSkills.introduction.text}</p>
-            </div>
-          )
-        }
-      </header>
+    <header class="page-header">
+      <p class="page-label">Skills</p>
 
       {
-        russianDisplay.enabled && (
-          <div
-            class:list={[
-              "skills-list",
-              {
-                "has-introduction": russianSkills.introduction.enabled,
-              },
-            ]}
-          >
-
-            {
-              russianSkills.items.map((item, index) => (
-                <article class="skills-item">
-
-                  <div class="skills-number">
-                    {String(index + 1).padStart(2, "0")}
-                  </div>
-
-                  <div class="skills-content">
-
-                    {
-                      russianDisplay.category && (
-                        <h2>{item.category}</h2>
-                      )
-                    }
-
-                    {
-                      russianDisplay.skills &&
-                      item.skills?.length > 0 && (
-                        <ul class="skills-list-items">
-                          {item.skills.map((skill) => (
-                            <li>{skill}</li>
-                          ))}
-                        </ul>
-                      )
-                    }
-
-                  </div>
-
-                </article>
-              ))
-            }
-
-            {
-              russianDisplay.languages &&
-              russianSkills.languages?.length > 0 && (
-                <article class="skills-item skills-languages">
-
-                  <div class="skills-number">
-                    {String(russianSkills.items.length + 1).padStart(2, "0")}
-                  </div>
-
-                  <div class="skills-content">
-
-                    <h2>Владение языками</h2>
-
-                    <ul class="skills-language-list">
-                      {russianSkills.languages.map((item) => (
-                        <li>
-                          <span class="language-name">
-                            {item.language}
-                          </span>
-
-                          <span class="language-level">
-                            {item.level}
-                          </span>
-                        </li>
-                      ))}
-                    </ul>
-
-                  </div>
-
-                </article>
-              )
-            }
-
+        skills.introduction.enabled && (
+          <div class="skills-introduction">
+            <h1>{skills.introduction.title}</h1>
+            <p>{skills.introduction.text}</p>
           </div>
         )
       }
-    </div>
+    </header>
 
-    <div data-page-language="en">
-      <header class="page-header">
-        <p class="page-label">Skills</p>
-
-        {
-          englishSkills.introduction.enabled && (
-            <div class="skills-introduction">
-              <h1>{englishSkills.introduction.title}</h1>
-              <p>{englishSkills.introduction.text}</p>
-            </div>
-          )
-        }
-      </header>
-
-      {
-        englishDisplay.enabled && (
-          <div
-            class:list={[
-              "skills-list",
-              {
-                "has-introduction": englishSkills.introduction.enabled,
-              },
-            ]}
-          >
-
+    {
+      display.enabled && (
+        <div
+          class:list={[
+            "skills-list",
             {
-              englishSkills.items.map((item, index) => (
-                <article class="skills-item">
+              "has-introduction": skills.introduction.enabled,
+            },
+          ]}
+        >
 
-                  <div class="skills-number">
-                    {String(index + 1).padStart(2, "0")}
-                  </div>
+          {
+            skills.items.map((item, index) => (
+              <article class="skills-item">
 
-                  <div class="skills-content">
+                <div class="skills-number">
+                  {String(index + 1).padStart(2, "0")}
+                </div>
 
-                    {
-                      englishDisplay.category && (
-                        <h2>{item.category}</h2>
-                      )
-                    }
+                <div class="skills-content">
 
-                    {
-                      englishDisplay.skills &&
-                      item.skills?.length > 0 && (
-                        <ul class="skills-list-items">
-                          {item.skills.map((skill) => (
-                            <li>{skill}</li>
-                          ))}
-                        </ul>
-                      )
-                    }
+                  {
+                    display.category && (
+                      <h2>{item.category}</h2>
+                    )
+                  }
 
-                  </div>
+                  {
+                    display.skills &&
+                    item.skills?.length > 0 && (
+                      <ul class="skills-list-items">
+                        {item.skills.map((skill) => (
+                          <li>{skill}</li>
+                        ))}
+                      </ul>
+                    )
+                  }
 
-                </article>
-              ))
-            }
+                </div>
 
-            {
-              englishDisplay.languages &&
-              englishSkills.languages?.length > 0 && (
-                <article class="skills-item skills-languages">
+              </article>
+            ))
+          }
 
-                  <div class="skills-number">
-                    {String(englishSkills.items.length + 1).padStart(2, "0")}
-                  </div>
 
-                  <div class="skills-content">
+          {
+            display.languages &&
+            skills.languages?.length > 0 && (
+              <article class="skills-item skills-languages">
 
-                    <h2>Languages</h2>
+                <div class="skills-number">
+                  {String(skills.items.length + 1).padStart(2, "0")}
+                </div>
 
-                    <ul class="skills-language-list">
-                      {englishSkills.languages.map((item) => (
-                        <li>
-                          <span class="language-name">
-                            {item.language}
-                          </span>
+                <div class="skills-content">
 
-                          <span class="language-level">
-                            {item.level}
-                          </span>
-                        </li>
-                      ))}
-                    </ul>
+                  <h2>Languages</h2>
 
-                  </div>
+                  <ul class="skills-language-list">
+                    {skills.languages.map((item) => (
+                      <li>
+                        <span class="language-name">
+                          {item.language}
+                        </span>
 
-                </article>
-              )
-            }
+                        <span class="language-level">
+                          {item.level}
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
 
-          </div>
-        )
-      }
-    </div>
+                </div>
+
+              </article>
+            )
+          }
+
+        </div>
+      )
+    }
 
   </main>
 </BaseLayout>

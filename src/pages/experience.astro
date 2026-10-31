@@ -1,230 +1,114 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import { portfolios } from "../content/portfolio";
+import { portfolio } from "../content/portfolio";
 
-const russianPortfolio = portfolios.ru;
-const englishPortfolio = portfolios.en;
-
-const russianExperience = russianPortfolio.experience;
-const englishExperience = englishPortfolio.experience;
+const { experience } = portfolio;
+const display = experience.display;
 ---
 
-<BaseLayout portfolio={russianPortfolio}>
+<BaseLayout>
   <main class="experience-page">
-    <!-- Russian -->
-    <div data-page-language="ru">
-      <header class="page-header">
-        <p class="page-label">Опыт работы</p>
-
-        {
-          russianExperience.introduction.enabled && (
-            <div class="experience-introduction">
-              <h1>{russianExperience.introduction.title}</h1>
-              <p>{russianExperience.introduction.text}</p>
-            </div>
-          )
-        }
-      </header>
+    <header class="page-header">
+      <p class="page-label">Experience</p>
 
       {
-        russianExperience.display.enabled && (
-          <div
-            class:list={[
-              "experience-list",
-              {
-                "has-introduction":
-                  russianExperience.introduction.enabled,
-              },
-            ]}
-          >
-            {russianExperience.items.map((item, index) => (
-              <article class="experience-item">
-                <div class="experience-number">
-                  {String(index + 1).padStart(2, "0")}
-                </div>
-
-                <div class="experience-content">
-                  {
-                    russianExperience.display.organization && (
-                      <h2>{item.organization}</h2>
-                    )
-                  }
-
-                  {
-                    russianExperience.display.role && (
-                      <p class="experience-role">{item.role}</p>
-                    )
-                  }
-
-                  {
-                    (russianExperience.display.location ||
-                      russianExperience.display.dates) && (
-                      <p class="experience-meta">
-                        {russianExperience.display.location && item.location}
-
-                        {russianExperience.display.location &&
-                          russianExperience.display.dates &&
-                          " · "}
-
-                        {russianExperience.display.dates &&
-                          `${item.start} — ${item.end}`}
-                      </p>
-                    )
-                  }
-
-                  {
-                    russianExperience.display.description && (
-                      <p class="experience-description">
-                        {item.description}
-                      </p>
-                    )
-                  }
-
-                  {
-                    russianExperience.display.responsibilities &&
-                    item.responsibilities?.length > 0 && (
-                      <section class="experience-responsibilities">
-                        <h3>Обязанности</h3>
-
-                        <ul>
-                          {item.responsibilities.map((responsibility) => (
-                            <li>{responsibility}</li>
-                          ))}
-                        </ul>
-                      </section>
-                    )
-                  }
-
-                  {
-                    russianExperience.display.links &&
-                    item.links?.length > 0 && (
-                      <div class="experience-links">
-                        {item.links.map((link) => (
-                          <a
-                            href={link.url}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                          >
-                            {link.label} →
-                          </a>
-                        ))}
-                      </div>
-                    )
-                  }
-                </div>
-              </article>
-            ))}
+        experience.introduction.enabled && (
+          <div class="experience-introduction">
+            <h1>{experience.introduction.title}</h1>
+            <p>{experience.introduction.text}</p>
           </div>
         )
       }
-    </div>
+    </header>
 
-    <!-- English -->
-    <div data-page-language="en">
-      <header class="page-header">
-        <p class="page-label">Experience</p>
+    {
+      display.enabled && (
+        <div
+          class:list={[
+            "experience-list",
+            {
+              "has-introduction": experience.introduction.enabled,
+            },
+          ]}
+        >
+          {experience.items.map((item, index) => (
+            <article class="experience-item">
+              <div class="experience-number">
+                {String(index + 1).padStart(2, "0")}
+              </div>
 
-        {
-          englishExperience.introduction.enabled && (
-            <div class="experience-introduction">
-              <h1>{englishExperience.introduction.title}</h1>
-              <p>{englishExperience.introduction.text}</p>
-            </div>
-          )
-        }
-      </header>
+              <div class="experience-content">
 
-      {
-        englishExperience.display.enabled && (
-          <div
-            class:list={[
-              "experience-list",
-              {
-                "has-introduction":
-                  englishExperience.introduction.enabled,
-              },
-            ]}
-          >
-            {englishExperience.items.map((item, index) => (
-              <article class="experience-item">
-                <div class="experience-number">
-                  {String(index + 1).padStart(2, "0")}
-                </div>
+                {
+                  display.organization && (
+                    <h2>{item.organization}</h2>
+                  )
+                }
 
-                <div class="experience-content">
-                  {
-                    englishExperience.display.organization && (
-                      <h2>{item.organization}</h2>
-                    )
-                  }
+                {
+                  display.role && (
+                    <p class="experience-role">{item.role}</p>
+                  )
+                }
 
-                  {
-                    englishExperience.display.role && (
-                      <p class="experience-role">{item.role}</p>
-                    )
-                  }
+                {
+                  (display.location || display.dates) && (
+                    <p class="experience-meta">
+                      {display.location && item.location}
 
-                  {
-                    (englishExperience.display.location ||
-                      englishExperience.display.dates) && (
-                      <p class="experience-meta">
-                        {englishExperience.display.location && item.location}
+                      {display.location && display.dates && " · "}
 
-                        {englishExperience.display.location &&
-                          englishExperience.display.dates &&
-                          " · "}
+                      {display.dates &&
+                        `${item.start} — ${item.end}`}
+                    </p>
+                  )
+                }
 
-                        {englishExperience.display.dates &&
-                          `${item.start} — ${item.end}`}
-                      </p>
-                    )
-                  }
+                {
+                  display.description && (
+                    <p class="experience-description">
+                      {item.description}
+                    </p>
+                  )
+                }
 
-                  {
-                    englishExperience.display.description && (
-                      <p class="experience-description">
-                        {item.description}
-                      </p>
-                    )
-                  }
+                {
+                  display.responsibilities &&
+                  item.responsibilities?.length > 0 && (
+                    <section class="experience-responsibilities">
+                      <h3>Responsibilities</h3>
 
-                  {
-                    englishExperience.display.responsibilities &&
-                    item.responsibilities?.length > 0 && (
-                      <section class="experience-responsibilities">
-                        <h3>Responsibilities</h3>
-
-                        <ul>
-                          {item.responsibilities.map((responsibility) => (
-                            <li>{responsibility}</li>
-                          ))}
-                        </ul>
-                      </section>
-                    )
-                  }
-
-                  {
-                    englishExperience.display.links &&
-                    item.links?.length > 0 && (
-                      <div class="experience-links">
-                        {item.links.map((link) => (
-                          <a
-                            href={link.url}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                          >
-                            {link.label} →
-                          </a>
+                      <ul>
+                        {item.responsibilities.map((responsibility) => (
+                          <li>{responsibility}</li>
                         ))}
-                      </div>
-                    )
-                  }
-                </div>
-              </article>
-            ))}
-          </div>
-        )
-      }
-    </div>
+                      </ul>
+                    </section>
+                  )
+                }
+
+                {
+                  display.links &&
+                  item.links?.length > 0 && (
+                    <div class="experience-links">
+                      {item.links.map((link) => (
+                        <a
+                          href={link.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          {link.label} →
+                        </a>
+                      ))}
+                    </div>
+                  )
+                }
+
+              </div>
+            </article>
+          ))}
+        </div>
+      )
+    }
   </main>
 </BaseLayout>
