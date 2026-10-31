@@ -8,9 +8,8 @@ const display = research.display;
 
 <BaseLayout>
   <main class="research-page">
-
     <header class="page-header">
-      <p class="page-label">Research</p>
+      <p class="page-label">Исследования</p>
 
       {
         research.introduction.enabled && (
@@ -34,13 +33,11 @@ const display = research.display;
         >
           {research.items.map((item, index) => (
             <article class="research-item">
-
               <div class="research-number">
                 {String(index + 1).padStart(2, "0")}
               </div>
 
               <div class="research-content">
-
                 {
                   display.title && (
                     <h2>{item.title}</h2>
@@ -79,13 +76,11 @@ const display = research.display;
                     </div>
                   )
                 }
-
               </div>
             </article>
           ))}
         </div>
       )
     }
-
   </main>
 </BaseLayout>

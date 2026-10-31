@@ -9,9 +9,8 @@ const display = education.display;
 
 <BaseLayout>
   <main class="education-page">
-
     <header class="page-header">
-      <p class="page-label">Education</p>
+      <p class="page-label">Образование</p>
 
       {
         education.introduction.enabled && (
@@ -35,13 +34,11 @@ const display = education.display;
         >
           {education.items.map((item, index) => (
             <article class="education-item">
-
               <div class="education-number">
                 {String(index + 1).padStart(2, "0")}
               </div>
 
               <div class="education-content">
-
                 {
                   display.image &&
                   item.image && (
@@ -71,16 +68,9 @@ const display = education.display;
                 {
                   (display.location || display.dates) && (
                     <p class="education-meta">
-
                       {display.location && item.location}
-
-                      {display.location &&
-                        display.dates &&
-                        " · "}
-
-                      {display.dates &&
-                        `${item.start} — ${item.end}`}
-
+                      {display.location && display.dates && " · "}
+                      {display.dates && `${item.start} — ${item.end}`}
                     </p>
                   )
                 }
@@ -99,7 +89,7 @@ const display = education.display;
                   item.gpa &&
                   Object.keys(item.gpa).length > 0 && (
                     <section class="education-gpa">
-                      <h3>GPA</h3>
+                      <h3>Средний балл</h3>
 
                       <ul>
                         {Object.entries(item.gpa).map(
@@ -119,7 +109,7 @@ const display = education.display;
                   display.subjects &&
                   item.subjects?.length > 0 && (
                     <section class="education-subjects">
-                      <h3>Subjects</h3>
+                      <h3>Изученные дисциплины</h3>
 
                       <ul>
                         {item.subjects.map((subject) => (
@@ -134,7 +124,6 @@ const display = education.display;
                   display.links &&
                   item.links?.length > 0 && (
                     <div class="education-links">
-
                       {item.links.map((link) => (
                         <a
                           href={link.url}
@@ -144,17 +133,14 @@ const display = education.display;
                           {link.label} →
                         </a>
                       ))}
-
                     </div>
                   )
                 }
-
               </div>
             </article>
           ))}
         </div>
       )
     }
-
   </main>
 </BaseLayout>

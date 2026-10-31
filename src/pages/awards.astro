@@ -11,7 +11,7 @@ const display = awards.display;
   <main class="awards-page">
 
     <header class="page-header">
-      <p class="page-label">Awards</p>
+      <p class="page-label">Награды</p>
 
       {
         awards.introduction.enabled && (
@@ -92,30 +92,30 @@ const display = awards.display;
                 }
 
                 {
-                display.documents &&
-                item.documents?.length > 0 && (
+                  display.documents &&
+                  item.documents?.length > 0 && (
                     <div class="award-documents">
 
-                    {item.documents.map((document) => (
+                      {item.documents.map((document) => (
                         <div class="award-document">
-                        <iframe
+                          <iframe
                             src={assetPath(`documents/awards/${document}`)}
-                            title={`${item.title} document`}
+                            title={`${item.title} — документ`}
                             loading="lazy"
-                        ></iframe>
+                          ></iframe>
 
-                        <a
+                          <a
                             href={assetPath(`documents/awards/${document}`)}
                             target="_blank"
                             rel="noopener noreferrer"
-                        >
-                            Open Full Document →
-                        </a>
+                          >
+                            Открыть документ полностью →
+                          </a>
                         </div>
-                    ))}
+                      ))}
 
                     </div>
-                )
+                  )
                 }
 
                 {

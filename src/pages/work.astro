@@ -10,7 +10,7 @@ const display = work.display;
 <BaseLayout>
   <main class="work-page">
     <header class="page-header">
-      <p class="page-label">Work</p>
+      <p class="page-label">Проекты</p>
 
       <h1>{work.title}</h1>
 
@@ -45,52 +45,44 @@ const display = work.display;
               <div class="project-content">
                 <h2>{project.title}</h2>
 
-                {
-                  (display.category || display.year) && (
-                    <p class="project-meta">
-                      {display.category && project.category}
-                      {display.category && display.year && " · "}
-                      {display.year && project.year}
-                    </p>
-                  )
-                }
+                {(display.category || display.year) && (
+                  <p class="project-meta">
+                    {display.category && project.category}
+                    {display.category && display.year && " · "}
+                    {display.year && project.year}
+                  </p>
+                )}
 
                 {display.description && <p>{project.description}</p>}
 
-                {
-                  display.image && project.image && (
-                    <img
-                      src={assetPath(`images/projects/${project.image}`)}
-                      alt={project.title}
-                    />
-                  )
-                }
+                {display.image && project.image && (
+                  <img
+                    src={assetPath(`images/projects/${project.image}`)}
+                    alt={project.title}
+                  />
+                )}
 
-                {
-                  display.technologies && (
-                    <ul class="project-technologies">
-                      {project.technologies.map((technology) => (
-                        <li>{technology}</li>
-                      ))}
-                    </ul>
-                  )
-                }
+                {display.technologies && (
+                  <ul class="project-technologies">
+                    {project.technologies.map((technology) => (
+                      <li>{technology}</li>
+                    ))}
+                  </ul>
+                )}
 
-                {
-                  display.links && project.links?.length > 0 && (
-                    <div class="project-links">
-                      {project.links.map((link) => (
-                        <a
-                          href={link.url}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          {link.label} →
-                        </a>
-                      ))}
-                    </div>
-                  )
-                }
+                {display.links && project.links?.length > 0 && (
+                  <div class="project-links">
+                    {project.links.map((link) => (
+                      <a
+                        href={link.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        {link.label} →
+                      </a>
+                    ))}
+                  </div>
+                )}
               </div>
             </article>
           ))}
@@ -118,6 +110,6 @@ const display = work.display;
           </div>
         </section>
       )
-    }    
+    }
   </main>
 </BaseLayout>

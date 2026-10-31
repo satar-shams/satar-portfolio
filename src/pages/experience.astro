@@ -9,7 +9,7 @@ const display = experience.display;
 <BaseLayout>
   <main class="experience-page">
     <header class="page-header">
-      <p class="page-label">Experience</p>
+      <p class="page-label">Опыт работы</p>
 
       {
         experience.introduction.enabled && (
@@ -38,7 +38,6 @@ const display = experience.display;
               </div>
 
               <div class="experience-content">
-
                 {
                   display.organization && (
                     <h2>{item.organization}</h2>
@@ -76,7 +75,7 @@ const display = experience.display;
                   display.responsibilities &&
                   item.responsibilities?.length > 0 && (
                     <section class="experience-responsibilities">
-                      <h3>Responsibilities</h3>
+                      <h3>Обязанности</h3>
 
                       <ul>
                         {item.responsibilities.map((responsibility) => (
@@ -103,7 +102,6 @@ const display = experience.display;
                     </div>
                   )
                 }
-
               </div>
             </article>
           ))}

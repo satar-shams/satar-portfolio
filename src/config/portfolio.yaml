@@ -1,26 +1,26 @@
 # ============================================================
-# PORTFOLIO CONFIGURATION
+# КОНФИГУРАЦИЯ ПОРТФОЛИО
 # ============================================================
 #
-# This file contains the personal/content information for the
-# portfolio. The Astro components should handle presentation
-# and design; this file should contain the actual content.
+# Этот файл содержит персональную информацию и контент
+# портфолио. Компоненты Astro отвечают за отображение
+# и дизайн, а этот файл содержит непосредственно контент.
 #
-# Images:
-#   Project images -> /public/images/projects/
-#   Other image directories can be added later.
+# Изображения:
+#   Изображения проектов -> /public/images/projects/
+#   Другие каталоги для изображений можно добавить позже.
 #
 # ============================================================
 
 # ============================================================
-# SITE
+# САЙТ
 # ============================================================
 
 site:
-  language: "en"
-  name: "Satar Shamsi Goushki"
-  title: "ML / AI Engineer"
-  location: "Kerman, Iran"
+  language: "ru"
+  name: "Сатар Шамси Гушги"
+  title: "Инженер по машинному обучению и ИИ"
+  location: "Керман, Иран"
 
   email: "satar.shams2@gmail.com"
 
@@ -29,199 +29,212 @@ site:
     linkedin: "https://linkedin.com/in/satar-shamsi/"
 
   description: >
-    Portfolio of Satar Shamsi Goushki, ML / AI Engineer.
+    Портфолио Сатара Шамси Гушги, инженера по машинному обучению и ИИ.
 
 # ============================================================
-# NAVIGATION
+# НАВИГАЦИЯ
 # ============================================================
 #
-# The order here determines the navigation order.
+# Порядок элементов здесь определяет порядок пунктов навигации.
 #
-# Set enabled: false to remove a page from the navigation.
+# Установите enabled: false, чтобы убрать страницу из навигации.
 #
-# Home is handled by the site mark.
-# The remaining pages appear in this order.
+# Главная страница открывается нажатием на логотип сайта.
+# Остальные страницы отображаются в указанном ниже порядке.
 #
 
 navigation:
   about:
     enabled: true
-    label: "About"
+    label: "Обо мне"
     href: "/about"
 
   work:
     enabled: true
-    label: "Work"
+    label: "Проекты"
     href: "/work"
 
   experience:
     enabled: true
-    label: "Experience"
+    label: "Опыт работы"
     href: "/experience"
 
   research:
     enabled: true
-    label: "Research"
+    label: "Исследования"
     href: "/research"
 
   education:
     enabled: true
-    label: "Education"
+    label: "Образование"
     href: "/education"
 
   skills:
     enabled: true
-    label: "Skills"
+    label: "Навыки"
     href: "/skills"
 
   awards:
     enabled: true
-    label: "Awards"
+    label: "Награды"
     href: "/awards"
 
   cv:
     enabled: true
-    label: "CV"
+    label: "Резюме"
     href: "/cv"
 
   contact:
     enabled: true
-    label: "Contact"
+    label: "Контакты"
     href: "/contact"
 
 # ============================================================
-# PAGES
+# СТРАНИЦЫ
 # ============================================================
 
 pages:
   about:
     enabled: true
-    title: "About"
-    description: "Background, interests, and professional profile."
+    title: "Обо мне"
+    description: "Профессиональный профиль, опыт и интересы."
 
   work:
     enabled: true
-    title: "Work"
-    description: "Selected projects and engineering work."
+    title: "Проекты"
+    description: "Избранные проекты и инженерные разработки."
 
   experience:
     enabled: true
-    title: "Experience"
-    description: "Professional experience and engineering work."
+    title: "Опыт работы"
+    description: "Профессиональный опыт и инженерная деятельность."
 
   research:
     enabled: true
-    title: "Research"
-    description: "Research and academic projects."
+    title: "Исследования"
+    description: "Исследовательская и академическая деятельность."
 
   education:
     enabled: true
-    title: "Education"
-    description: "Academic background and education."
+    title: "Образование"
+    description: "Академическое образование и подготовка."
 
   cv:
     enabled: true
-    title: "CV"
-    description: "Curriculum vitae and professional profile."
+    title: "Резюме"
+    description: "Резюме и профессиональный профиль."
 
   contact:
     enabled: true
-    title: "Contact"
-    description: "Get in touch."
+    title: "Контакты"
+    description: "Свяжитесь со мной."
 
 # ============================================================
-# HOME
+# ГЛАВНАЯ СТРАНИЦА
 # ============================================================
 
 home:
   introduction: >
-    ML / AI Engineer working across machine learning,
-    data engineering, MLOps, and applied AI.
+    Инженер по машинному обучению и ИИ с опытом работы
+    в области машинного обучения, инженерии данных,
+    MLOps и прикладного искусственного интеллекта.
 
-  # We will design the artistic ML/AI engineering introduction
-  # later. For now this is only structural content.
+  # Художественное оформление вступительного блока,
+  # посвящённого ML/AI Engineering, разработаем позже.
+  # Пока здесь содержится только базовая структура.
 
 # ============================================================
-# About
+# ОБО МНЕ
 # ============================================================
 
 about:
   introduction:
     enabled: true
-    title: "Introduction"
+    title: "Введение"
     text: >
-      I am an ML / AI Engineer with hands-on experience across machine
-      learning, data engineering, MLOps, and applied AI. My recent work
-      focuses on building complete, practical systems rather than isolated
-      models, including data pipelines, model development and evaluation,
-      experiment tracking, testing, deployment, and API-based inference.
-      I also have an academic background in machine learning, mathematical
-      modeling, image processing, parallel algorithms, high-performance
-      computing, and data analysis through graduate studies and research
-      at ITMO University.
+      Я инженер по машинному обучению и ИИ с практическим опытом
+      в области машинного обучения, инженерии данных, MLOps
+      и прикладного искусственного интеллекта. В своей недавней
+      работе я сосредоточен на создании полноценных практических
+      систем, а не отдельных моделей. Это включает разработку
+      конвейеров обработки данных, создание и оценку моделей,
+      отслеживание экспериментов, тестирование, развёртывание
+      и предоставление моделей для инференса через API.
+      Также у меня есть академический опыт в области машинного
+      обучения, математического моделирования, обработки
+      изображений, параллельных алгоритмов, высокопроизводительных
+      вычислений и анализа данных, полученный в ходе обучения
+      в магистратуре и исследовательской работы в Университете ИТМО.
 
   engineering_focus:
     enabled: true
-    title: "Engineering Focus"
+    title: "Основные направления"
     items:
-      - "Machine Learning & Deep Learning"
-      - "ML Engineering & MLOps"
-      - "Data Engineering & ETL"
-      - "Time Series Forecasting"
-      - "NLP & Document AI"
-      - "Model Serving & APIs"
-      - "Data Analysis & Mathematical Modeling"
-      - "Research & Applied Computing"
+      - "Машинное обучение и глубокое обучение"
+      - "ML Engineering и MLOps"
+      - "Инженерия данных и ETL"
+      - "Прогнозирование временных рядов"
+      - "NLP и Document AI"
+      - "Развёртывание моделей и API"
+      - "Анализ данных и математическое моделирование"
+      - "Исследования и прикладные вычисления"
 
   approach:
     enabled: true
-    title: "Approach"
+    title: "Подход к работе"
     text: >
-      I approach machine learning as an engineering discipline as well as
-      a modeling problem. I value reproducible workflows, clean and modular
-      code, automated testing, data validation, experiment tracking, and
-      maintainable deployment pipelines. I prefer practical solutions that
-      can be understood, tested, and maintained, while using more advanced
-      methods when they provide a clear benefit. My academic and project
-      experience also gives me an interest in understanding the mathematical
-      and computational foundations behind the systems I build.
+      Я рассматриваю машинное обучение не только как задачу
+      моделирования, но и как инженерную дисциплину. Для меня
+      важны воспроизводимые рабочие процессы, чистый и модульный
+      код, автоматизированное тестирование, проверка качества
+      данных, отслеживание экспериментов и удобные в сопровождении
+      процессы развёртывания. Я отдаю предпочтение практическим
+      решениям, которые можно понять, протестировать и поддерживать,
+      используя более сложные методы тогда, когда они действительно
+      дают заметное преимущество. Мой академический и проектный опыт
+      также формирует интерес к математическим и вычислительным
+      основам создаваемых мной систем.
+
 # ============================================================
-# WORK
+# ПРОЕКТЫ
 # ============================================================
 #
-# Configuration and content for the Work / Projects page.
+# Настройки и содержимое страницы «Проекты».
 #
-# The page itself is controlled by pages.work.enabled.
+# Отображение страницы управляется параметром pages.work.enabled.
 #
 # ============================================================
 
 work:
   introduction:
     enabled: true
-    title: "Selected Projects"
+    title: "Избранные проекты"
     text: >
-      A selection of machine learning, AI, data engineering,
-      MLOps, and software engineering projects developed through
-      professional work, independent development, and academic study.
+      Подборка проектов в области машинного обучения, ИИ,
+      инженерии данных, MLOps и разработки программного
+      обеспечения, выполненных в рамках профессиональной
+      деятельности, самостоятельной разработки и академической
+      работы.
 
   references:
     enabled: true
-    title: "More Work"
+    title: "Другие проекты"
     text: >
-      To explore more of my projects and work, visit the links below.
+      Чтобы ознакомиться с другими моими проектами и работами,
+      перейдите по ссылкам ниже.
 
-    # Add or remove as many reference links as you want.
+    # Добавляйте или удаляйте ссылки по своему усмотрению.
 
     links:
       # ==========================================================
-      # LINK 1
+      # ССЫЛКА 1
       # ==========================================================
 
       - label: "GitHub"
         url: "https://github.com/satar-shams"
 
       # ==========================================================
-      # LINK 2
+      # ССЫЛКА 2
       # ==========================================================
 
       - label: "LinkedIn"
@@ -229,14 +242,14 @@ work:
 
   notice:
     enabled: false
-    title: "Projects Coming Soon"
+    title: "Скоро появятся новые проекты"
     text: >
-      New projects will be added here soon.
+      Скоро здесь появятся новые проекты.
 
   display:
     enabled: true
     # ==========================================================
-    # DISPLAY OPTIONS
+    # ПАРАМЕТРЫ ОТОБРАЖЕНИЯ
     # ==========================================================
 
     image: true
@@ -246,47 +259,48 @@ work:
     technologies: true
     links: true
 
+  # ============================================================
+# ПРОЕКТЫ
 # ============================================================
-# PROJECTS
-# ============================================================
 #
-# Add or remove as many projects as you want.
+# Добавляйте или удаляйте проекты по своему усмотрению.
 #
-# Each project is independent. Copy an existing project block
-# to add another project, or remove a project block when it is
-# no longer needed.
+# Каждый проект является независимым блоком. Чтобы добавить
+# новый проект, скопируйте существующий блок. Если проект
+# больше не нужен, удалите соответствующий блок.
 #
-# Which project fields are displayed is controlled by:
+# Отображение полей проектов управляется параметром:
 #
 #   work.display
 #
-# This section contains project data only. Presentation settings
-# should not be repeated inside individual projects.
+# Этот раздел содержит только данные проектов. Настройки
+# отображения не нужно повторять внутри отдельных проектов.
 #
-# Links are intentionally generic and can point to GitHub,
-# live demos, documentation, papers, Hugging Face, or any
-# other relevant external resource.
+# Ссылки могут вести на GitHub, демонстрационные версии,
+# документацию, научные публикации, Hugging Face или любые
+# другие релевантные внешние ресурсы.
 #
 # ============================================================
 
 projects:
   # ==========================================================
-  # PROJECT 1
+  # ПРОЕКТ 1
   # ==========================================================
 
-  - title: "LSTM Time Series Forecasting — End-to-End MLOps"
+  - title: "Прогнозирование временных рядов с помощью LSTM — полный цикл MLOps"
     year: 2026
-    category: "ML / MLOps"
+    category: "Машинное обучение / MLOps"
     slug: "lstm-time-series-forecasting"
 
     description: >
-      End-to-end machine learning system for AAPL stock-price
-      forecasting, covering chronological data splitting,
-      leakage-safe preprocessing, stacked LSTM modeling,
-      hyperparameter optimization, experiment tracking,
-      model management, evaluation, API-based inference,
-      containerization, automated testing, CI/CD, and cloud
-      deployment.
+      Комплексная система машинного обучения для прогнозирования
+      стоимости акций AAPL на всех этапах разработки: разделение
+      данных с учётом хронологии, предварительная обработка данных
+      без утечки информации, построение многослойной LSTM-модели,
+      оптимизация гиперпараметров, отслеживание экспериментов,
+      управление моделями, оценка качества, получение предсказаний
+      через API, контейнеризация, автоматизированное тестирование,
+      CI/CD и развёртывание в облачной среде.
 
     image: "lstm-time-series-forecasting-mlops.png"
 
@@ -306,20 +320,22 @@ projects:
         url: "https://github.com/satar-shams/lstm-time-series-mlops"
 
   # ==========================================================
-  # PROJECT 2
+  # ПРОЕКТ 2
   # ==========================================================
 
-  - title: "Market Data Pipeline — ETL"
+  - title: "Конвейер обработки рыночных данных — ETL"
     year: 2026
-    category: "Data Engineering"
+    category: "Инженерия данных"
     slug: "market-data-pipeline"
 
     description: >
-      Python ETL pipeline that acquires market data from yfinance,
-      validates and transforms it, and stores it in PostgreSQL using
-      idempotent loading. Integrated Apache Airflow for scheduling
-      and orchestration, with a FastAPI query layer for accessing
-      stored market data.
+      ETL-конвейер на Python для получения рыночных данных
+      с помощью yfinance, их проверки и преобразования,
+      а также сохранения в PostgreSQL с использованием
+      идемпотентной загрузки. Для планирования и управления
+      последовательностью процессов интегрирован Apache Airflow.
+      FastAPI предоставляет интерфейс для запросов
+      к сохранённым рыночным данным.
 
     image: "market-data-pipeline-etl.png"
 
@@ -339,19 +355,22 @@ projects:
         url: "https://github.com/satar-shams/market-data-pipeline"
 
   # ==========================================================
-  # PROJECT 3
+  # ПРОЕКТ 3
   # ==========================================================
 
-  - title: "Intelligent Document Analysis"
+  - title: "Интеллектуальный анализ документов"
     year: 2026
-    category: "AI / Document Intelligence"
+    category: "ИИ / Интеллектуальная обработка документов"
     slug: "intelligent-document-analysis"
 
     description: >
-      Document intelligence pipeline for processing PDF and DOCX files,
-      including text extraction, preprocessing, OCR for scanned documents,
-      embeddings, and vector database integration using Sentence
-      Transformers and ChromaDB for semantic search and retrieval.
+      Конвейер интеллектуальной обработки документов PDF и DOCX,
+      включающий извлечение и предварительную обработку текста,
+      OCR для распознавания текста в отсканированных документах,
+      создание векторных представлений текста и интеграцию
+      с векторной базой данных. Sentence Transformers и ChromaDB
+      используются для семантического поиска
+      и извлечения релевантной информации.
 
     image: "intelligent-document-analysis-document-ai.png"
 
@@ -370,21 +389,22 @@ projects:
         url: "https://github.com/satar-shams/intelligent-document-analysis"
 
   # ==========================================================
-  # PROJECT 4
+  # ПРОЕКТ 4
   # ==========================================================
 
-  - title: "Retail Orders ETL Pipeline"
+  - title: "Конвейер обработки розничных заказов — ETL"
     year: 2026
-    category: "Data Engineering"
+    category: "Инженерия данных"
     slug: "retail-orders-etl"
 
     description: >
-      End-to-end ETL pipeline for processing retail order data
-      from CSV files and loading validated results into PostgreSQL.
-      The project includes separate extraction, transformation,
-      and loading stages, data-quality checks, incremental and
-      idempotent loading, structured logging, automated testing,
-      credential management, and containerized execution.
+      Комплексный ETL-конвейер для обработки данных о розничных
+      заказах из CSV-файлов и загрузки проверенных результатов
+      в PostgreSQL. Проект включает отдельные этапы извлечения,
+      преобразования и загрузки данных, проверки качества данных,
+      инкрементальную и идемпотентную загрузку, структурированное
+      ведение журналов, автоматизированное тестирование, управление
+      учётными данными и выполнение в контейнерной среде.
 
     image: "retail-orders-etl-pipeline.png"
 
@@ -402,20 +422,21 @@ projects:
         url: "https://github.com/satar-shams/etl-retail-data-pipeline"
 
   # ==========================================================
-  # PROJECT 5
+  # ПРОЕКТ 5
   # ==========================================================
 
-  - title: "ML Inference API"
+  - title: "API для получения предсказаний моделей машинного обучения"
     year: 2025
-    category: "ML Engineering"
+    category: "Разработка систем машинного обучения"
     slug: "ml-inference-api"
 
     description: >
-      Machine learning inference service built around a REST API
-      for serving model predictions, with request and response
-      validation, environment-based configuration, structured
-      logging, automated testing, modular model handling, and
-      Docker-based deployment.
+      Сервис для получения предсказаний моделей машинного обучения
+      на основе REST API. Проект включает проверку входящих
+      запросов и ответов, настройку через переменные окружения,
+      структурированное ведение журналов, автоматизированное
+      тестирование, модульную обработку моделей и развёртывание
+      с использованием Docker.
 
     image: "ml-inference-api-fastapi.png"
 
@@ -432,30 +453,31 @@ projects:
         url: "https://github.com/satar-shams/ml-inference-api"
 
 # ============================================================
-# EXPERIENCE
+# ОПЫТ РАБОТЫ
 # ============================================================
 #
-# Add or remove as many experience entries as you want.
+# Добавляйте или удаляйте записи об опыте работы по своему усмотрению.
 #
-# Each experience entry is independent.
+# Каждая запись является независимым блоком.
 #
-# Links are optional. Add as many links as you want for each
-# experience, such as an organization website, LinkedIn,
-# company page, project page, or other relevant reference.
+# Ссылки необязательны. Для каждой записи можно добавить
+# любое количество ссылок, например на сайт организации,
+# профиль LinkedIn, страницу компании, страницу проекта
+# или другой релевантный ресурс.
 #
 # ============================================================
 
 experience:
   introduction:
     enabled: false
-    title: "Professional Experience"
+    title: "Профессиональный опыт"
     text: >
-      A summary of professional experience and engineering work.
+      Обзор профессионального опыта и инженерной деятельности.
 
   display:
     enabled: true
     # ==========================================================
-    # DISPLAY OPTIONS
+    # ПАРАМЕТРЫ ОТОБРАЖЕНИЯ
     # ==========================================================
 
     organization: true
@@ -468,90 +490,92 @@ experience:
 
   items:
     # ==========================================================
-    # EXPERIENCE 1
+    # ОПЫТ РАБОТЫ 1
     # ==========================================================
 
     - organization: "GoalEarn"
-      role: "ML / AI Engineer Intern"
+      role: "Стажёр — инженер по машинному обучению и ИИ"
 
-      location: "Iran"
-      start: "October 2025"
-      end: "September 2026"
+      location: "Иран"
+      start: "Октябрь 2025"
+      end: "Сентябрь 2026"
 
       description: >
-        Work across machine learning, data engineering, and ML engineering
-        projects, with a focus on building modular, testable, and reproducible
-        systems and applying software engineering practices to practical
-        machine learning workflows.
+        Работа над проектами в области машинного обучения,
+        инженерии данных и ML Engineering с акцентом на создание
+        модульных, тестируемых и воспроизводимых систем, а также
+        применение принципов разработки программного обеспечения
+        в практических процессах машинного обучения.
 
       responsibilities:
-        - "Built a modular ETL pipeline for acquiring, validating, transforming, and loading data into PostgreSQL."
-        - "Implemented incremental loading, structured logging, automated tests, and secure credential management using HashiCorp Vault."
-        - "Developed a machine learning inference API for serving model predictions."
-        - "Worked with modular project structures, automated testing, documentation, Git, and reproducible development workflows."
-        - "Applied engineering practices across data acquisition, preprocessing, model development, evaluation, and deployment."
+        - "Разработал модульный ETL-конвейер для получения, проверки, преобразования и загрузки данных в PostgreSQL."
+        - "Реализовал инкрементальную загрузку данных, структурированное логирование, автоматизированное тестирование и безопасное управление учётными данными с помощью HashiCorp Vault."
+        - "Разработал API для инференса моделей машинного обучения и предоставления предсказаний."
+        - "Работал с модульной структурой проектов, автоматизированным тестированием, документацией, Git и воспроизводимыми процессами разработки."
+        - "Применял инженерные практики на этапах получения и предварительной обработки данных, разработки и оценки моделей, а также их развёртывания."
 
       links:
         # ==========================================================
-        # LINK 1
+        # ССЫЛКА 1
         # ==========================================================
 
-        - label: "Website"
+        - label: "Веб-сайт"
           url: "https://example.com"
 
         # ==========================================================
-        # LINK 2
+        # ССЫЛКА 2
         # ==========================================================
 
         - label: "LinkedIn"
           url: "https://linkedin.com/company/example"
 
     # ==========================================================
-    # EXPERIENCE 2
+    # ОПЫТ РАБОТЫ 2
     # ==========================================================
 
-    - organization: "Self-employed"
-      role: "Full-stack Developer — Personal Projects"
+    - organization: "Самозанятость"
+      role: "Full-stack разработчик — личные проекты"
 
-      location: "Iran"
-      start: "January 2022"
-      end: "September 2022"
+      location: "Иран"
+      start: "Январь 2022"
+      end: "Сентябрь 2022"
 
       description: >
-        Developed several self-directed full-stack projects to build practical
-        experience in software development.
+        Разрабатывал несколько самостоятельных full-stack проектов
+        для получения практического опыта в разработке программного обеспечения.
 
       responsibilities:
-        - "Built web applications using Python and JavaScript, working across backend, frontend, APIs, and database integration."
-        - "Designed and implemented application logic and relational database components using SQL."
-        - "Managed projects independently from development and debugging through testing and delivery."
-        - "Used version control and software engineering practices throughout the development process."
+        - "Создавал веб-приложения с использованием Python и JavaScript, работая с серверной и клиентской частями, API и интеграцией баз данных."
+        - "Проектировал и реализовывал логику приложений и компоненты реляционных баз данных с использованием SQL."
+        - "Самостоятельно вёл проекты на всех этапах: от разработки и отладки до тестирования и подготовки к выпуску."
+        - "Использовал системы контроля версий и инженерные практики на протяжении всего процесса разработки."
 
 # ============================================================
-# RESEARCH
+# ИССЛЕДОВАНИЯ
 # ============================================================
 
 research:
   # ==========================================================
-  # INTRODUCTION
+  # ВВЕДЕНИЕ
   # ==========================================================
 
   introduction:
     enabled: true
-    title: "Research & Academic Work"
+    title: "Исследования и академическая деятельность"
     text: >
-      A selection of research, academic projects, mathematical
-      modeling, and computational work.
+      Подборка исследовательских и академических проектов,
+      работ по математическому моделированию и вычислительным
+      методам.
 
   # ==========================================================
-  # DISPLAY
+  # ОТОБРАЖЕНИЕ
   # ==========================================================
 
   display:
     enabled: true
 
     # ==========================================================
-    # DISPLAY OPTIONS
+    # ПАРАМЕТРЫ ОТОБРАЖЕНИЯ
     # ==========================================================
 
     title: true
@@ -560,133 +584,139 @@ research:
     links: false
 
   # ==========================================================
-  # RESEARCH ITEMS
+  # ИССЛЕДОВАТЕЛЬСКИЕ РАБОТЫ
   # ==========================================================
 
   items:
     # ==========================================================
-    # RESEARCH 1
+    # ИССЛЕДОВАНИЕ 1
     # ==========================================================
 
-    - title: "SEIR Epidemic Modeling"
-      category: "Mathematical Modeling"
+    - title: "Моделирование эпидемий SEIR"
+      category: "Математическое моделирование"
 
       description: >
-        Research and implementation of an SEIR-based mathematical
-        model for epidemic dynamics, supported by literature research
-        and a research paper of approximately 20 pages.
+        Исследование и реализация математической модели
+        распространения эпидемий на основе SEIR, дополненные
+        анализом научной литературы и исследовательской
+        работой объёмом около 20 страниц.
 
       # links:
       #   # ======================================================
-      #   # LINK 1
+      #   # ССЫЛКА 1
       #   # ======================================================
 
       #   - label: "Project"
       #     url: "https://example.com"
 
       #   # ======================================================
-      #   # LINK 2
+      #   # ССЫЛКА 2
       #   # ======================================================
 
       #   - label: "Research Paper"
       #     url: "https://example.com"
 
       # ======================================================
-      # Add or remove as many links as needed.
+      # Добавляйте или удаляйте ссылки по необходимости.
       # ======================================================
 
     # ==========================================================
-    # RESEARCH 2
+    # ИССЛЕДОВАНИЕ 2
     # ==========================================================
 
-    - title: "Music Generation"
-      category: "Machine Learning / Computational Music"
+    - title: "Генерация музыки"
+      category: "Машинное обучение / Вычислительная музыка"
 
       description: >
-        Research on machine-learning-based music generation,
-        including literature research, implementation, and a
-        research paper of approximately 20 pages.
+        Исследование генерации музыки с использованием методов
+        машинного обучения, включающее анализ научной литературы,
+        практическую реализацию и исследовательскую работу
+        объёмом около 20 страниц.
 
       links: []
 
     # ==========================================================
-    # RESEARCH 3
+    # ИССЛЕДОВАНИЕ 3
     # ==========================================================
 
-    - title: "Parallel Algorithms / Traveling Salesman Problem"
-      category: "High Performance Computing"
+    - title: "Параллельные алгоритмы / задача коммивояжёра"
+      category: "Высокопроизводительные вычисления"
 
       description: >
-        Academic work involving the Traveling Salesman Problem,
-        nearest-neighbor algorithms, parallel execution, and analysis
-        of algorithmic limitations and parallel performance.
+        Академическая работа, посвящённая задаче коммивояжёра,
+        алгоритмам ближайшего соседа, параллельному выполнению,
+        а также анализу ограничений алгоритмов и эффективности
+        параллельных вычислений.
 
       links: []
 
     # ==========================================================
-    # RESEARCH 4
+    # ИССЛЕДОВАНИЕ 4
     # ==========================================================
 
-    - title: "Image Processing"
-      category: "Computer Vision"
+    - title: "Обработка изображений"
+      category: "Компьютерное зрение"
 
       description: >
-        Academic projects involving image classification and image
-        segmentation, supported by technical reports and project
-        documentation.
+        Академические проекты по классификации и сегментации
+        изображений, сопровождаемые техническими отчётами
+        и проектной документацией.
 
       links: []
 
     # ==========================================================
-    # RESEARCH 5
+    # ИССЛЕДОВАНИЕ 5
     # ==========================================================
 
-    - title: "Multivariate Data Analysis"
-      category: "Data Analysis"
+    - title: "Многомерный анализ данных"
+      category: "Анализ данных"
 
       description: >
-        Academic work involving multivariate data analysis,
-        statistical methods, and mathematical modeling.
+        Академическая работа, включающая многомерный анализ
+        данных, статистические методы и математическое
+        моделирование.
 
       links: []
 
     # ==========================================================
-    # RESEARCH 6
+    # ИССЛЕДОВАНИЕ 6
     # ==========================================================
 
-    - title: "Machine Learning and NLP"
-      category: "Machine Learning"
+    - title: "Машинное обучение и обработка естественного языка (NLP)"
+      category: "Машинное обучение"
 
       description: >
-        Academic projects involving machine learning, text processing,
-        sentiment analysis, text classification, and time-series analysis.
+        Академические проекты в области машинного обучения,
+        обработки текста, анализа тональности, классификации
+        текстов и анализа временных рядов.
 
       links: []
 # ============================================================
-# EDUCATION
+# ОБРАЗОВАНИЕ
 # ============================================================
 
 education:
   # ==========================================================
-  # INTRODUCTION
+  # ВВЕДЕНИЕ
   # ==========================================================
 
   introduction:
     enabled: false
-    title: "Education"
+    title: "Образование"
     text: >
-      Academic background in electrical engineering, machine learning,
-      data analysis, high performance computing, and related fields.
+      Академическая подготовка в области электротехники,
+      машинного обучения, анализа данных, высокопроизводительных
+      вычислений и смежных дисциплин.
 
   # ==========================================================
-  # DISPLAY
+  # ОТОБРАЖЕНИЕ
   # ==========================================================
 
   display:
     enabled: true
 
     # ==========================================================
-    # DISPLAY OPTIONS
+    # ПАРАМЕТРЫ ОТОБРАЖЕНИЯ
     # ==========================================================
 
     image: true
@@ -700,107 +730,109 @@ education:
     links: false
 
   # ==========================================================
-  # EDUCATION ITEMS
+  # ОБРАЗОВАТЕЛЬНЫЕ ПРОГРАММЫ
   # ==========================================================
 
   items:
     # ==========================================================
-    # EDUCATION 1
+    # ОБРАЗОВАНИЕ 1
     # ==========================================================
 
-    - institution: "ITMO University"
+    - institution: "Университет ИТМО"
 
       image: "itmo-university.jpeg"
 
-      location: "Saint Petersburg, Russia"
+      location: "Санкт-Петербург, Россия"
 
       program: >
-        Graduate Studies in Big Data and Machine Learning
+        Обучение в магистратуре по направлениям
+        «Большие данные» и «Машинное обучение»
 
       start: 2018
       end: 2020
 
-      status: "Graduate studies completed; Master's degree not completed"
+      status: "Обучение в магистратуре завершено; степень магистра не получена"
 
       gpa:
-        big_data_extreme_computing: "3.91 / 4.00"
-        machine_learning_data_analysis: "3.79 / 4.00"
+        "Большие данные и высокопроизводительные вычисления": "3.91 / 4.00"
+        "Машинное обучение и анализ данных": "3.79 / 4.00"
 
       subjects:
-        - "Machine Learning"
-        - "Neural Networks"
-        - "High Performance Computing"
-        - "Parallel Algorithms"
-        - "Multivariate Data Analysis"
-        - "Mathematical and Statistical Modeling"
-        - "Image Processing"
-        - "Data Warehousing"
-        - "Time Series"
-        - "Natural Language Processing"
-        - "Scientific Computing"
+        - "Машинное обучение"
+        - "Нейронные сети"
+        - "Высокопроизводительные вычисления"
+        - "Параллельные алгоритмы"
+        - "Многомерный анализ данных"
+        - "Математическое и статистическое моделирование"
+        - "Обработка изображений"
+        - "Хранилища данных"
+        - "Временные ряды"
+        - "Обработка естественного языка"
+        - "Научные вычисления"
 
       links: []
 
         # ======================================================
-        # LINK 1
+        # ССЫЛКА 1
         # ======================================================
 
         # - label: "University"
         #   url: "https://example.com"
 
         # ======================================================
-        # LINK 2
+        # ССЫЛКА 2
         # ======================================================
 
         # - label: "Program"
         #   url: "https://example.com"
 
         # ======================================================
-        # Add or remove as many links as needed.
+        # Добавляйте или удаляйте ссылки по необходимости.
         # ======================================================
 
     # ==========================================================
-    # EDUCATION 2
+    # ОБРАЗОВАНИЕ 2
     # ==========================================================
 
-    - institution: "Shahid Bahonar University of Kerman"
+    - institution: "Керманский университет имени Шахида Бахонара"
 
       image: "shahid-bahonar-engineering.jpg"
 
-      location: "Kerman, Iran"
+      location: "Керман, Иран"
 
-      program: "B.Sc. in Electrical Engineering — Electronics"
+      program: "Бакалавриат по электротехнике — электроника"
 
       start: 2007
       end: 2012
 
       gpa:
-        overall: "14.47 / 20.00"
+        "Общий средний балл": "14.47 / 20.00"
 
-      status: "Top 5 students"
+      status: "В числе 5 лучших студентов"
 
       subjects: []
 
       links: []
 
         # ======================================================
-        # LINK 1
+        # ССЫЛКА 1
         # ======================================================
 
         # - label: "University"
         #   url: "https://example.com"
 
         # ======================================================
-        # Add or remove as many links as needed.
+        # Добавляйте или удаляйте ссылки по необходимости.
         # ======================================================
 
 skills:
   introduction:
     enabled: false
-    title: "Technical Skills"
+    title: "Технические навыки"
     text: >
-      Technologies, tools, and technical areas used across
-      machine learning, data engineering, and software development.
+      Технологии, инструменты и технические компетенции,
+      используемые в области машинного обучения, инженерии
+      данных и разработки программного обеспечения.
 
   display:
     enabled: true
@@ -810,176 +842,169 @@ skills:
 
   items:
     # ==========================================================
-    # SKILL CATEGORY 1
+    # КАТЕГОРИЯ НАВЫКОВ 1
     # ==========================================================
 
-    - category: "Programming Languages"
+    - category: "Языки программирования"
       skills:
         - "Python"
         - "SQL"
         - "C++"
 
     # ==========================================================
-    # SKILL CATEGORY 2
+    # КАТЕГОРИЯ НАВЫКОВ 2
     # ==========================================================
 
-    - category: "Machine Learning"
+    - category: "Машинное обучение"
       skills:
-        - "Machine Learning"
-        - "Deep Learning"
-        - "Neural Networks"
-        - "Time Series Forecasting"
-        - "Classification"
-        - "Natural Language Processing"
-        - "Computer Vision"
+        - "Машинное обучение"
+        - "Глубокое обучение"
+        - "Нейронные сети"
+        - "Прогнозирование временных рядов"
+        - "Классификация"
+        - "Обработка естественного языка"
+        - "Компьютерное зрение"
 
     # ==========================================================
-    # SKILL CATEGORY 3
+    # КАТЕГОРИЯ НАВЫКОВ 3
     # ==========================================================
 
-    - category: "ML Engineering / MLOps"
+    - category: "Инженерия машинного обучения и MLOps"
       skills:
         - "MLflow"
         - "Optuna"
-        - "Model Tracking"
-        - "Model Registry"
-        - "Model Versioning"
+        - "Отслеживание экспериментов и моделей"
+        - "Реестр моделей"
+        - "Версионирование моделей"
         - "FastAPI"
-        - "Model Serving"
+        - "Развёртывание моделей и организация доступа к ним"
         - "Docker"
         - "Docker Compose"
         - "GitHub Actions"
-        - "CI/CD"
+        - "Непрерывная интеграция и доставка (CI/CD)"
 
     # ==========================================================
-    # SKILL CATEGORY 4
+    # КАТЕГОРИЯ НАВЫКОВ 4
     # ==========================================================
 
-    - category: "Data Engineering"
+    - category: "Инженерия данных"
       skills:
         - "ETL / ELT"
         - "Pandas"
         - "PostgreSQL"
         - "SQLAlchemy"
         - "Apache Airflow"
-        - "Data Validation"
-        - "Incremental Loading"
-        - "Idempotent Loading"
+        - "Контроль качества данных"
+        - "Инкрементальная загрузка данных"
+        - "Идемпотентная загрузка данных"
 
     # ==========================================================
-    # SKILL CATEGORY 5
+    # КАТЕГОРИЯ НАВЫКОВ 5
     # ==========================================================
 
-    - category: "Deep Learning"
+    - category: "Глубокое обучение"
       skills:
         - "TensorFlow"
         - "Keras"
         - "LSTM"
         - "CNN"
-        - "Autoencoders"
-        - "Transfer Learning"
+        - "Автоэнкодеры"
+        - "Трансферное обучение"
 
     # ==========================================================
-    # SKILL CATEGORY 6
+    # КАТЕГОРИЯ НАВЫКОВ 6
     # ==========================================================
 
-    - category: "Data Science"
+    - category: "Наука о данных"
       skills:
         - "NumPy"
         - "scikit-learn"
-        - "Statistical Analysis"
-        - "Mathematical Modeling"
-        - "Time Series Analysis"
+        - "Статистический анализ"
+        - "Математическое моделирование"
+        - "Анализ временных рядов"
 
     # ==========================================================
-    # SKILL CATEGORY 7
+    # КАТЕГОРИЯ НАВЫКОВ 7
     # ==========================================================
 
-    - category: "NLP / Document AI"
+    - category: "Обработка естественного языка и анализ документов"
       skills:
-        - "Text Processing"
-        - "OCR"
-        - "Embeddings"
-        - "Vector Databases"
-        - "Document Processing"
+        - "Обработка текста"
+        - "Оптическое распознавание символов (OCR)"
+        - "Векторные представления (эмбеддинги)"
+        - "Векторные базы данных"
+        - "Обработка документов"
         - "LangChain"
 
     # ==========================================================
-    # SKILL CATEGORY 8
+    # КАТЕГОРИЯ НАВЫКОВ 8
     # ==========================================================
 
-    - category: "Development & Tools"
+    - category: "Разработка и инструменты"
       skills:
         - "Git"
         - "GitHub"
         - "Linux"
         - "Jupyter Notebook"
         - "Pytest"
-        - "Structured Logging"
+        - "Структурированное логирование"
         - "HashiCorp Vault"
 
   # ==========================================================
-  # LANGUAGES
+  # ВЛАДЕНИЕ ЯЗЫКАМИ
   # ==========================================================
 
   languages:
     # ==========================================================
-    # LANGUAGE 1
+    # ЯЗЫК 1
     # ==========================================================
 
-    - language: "English"
-      level: "Professional proficiency (TOEFL iBT 85; graduate studies conducted in English)"
+    - language: "Английский"
+      level: "Профессиональное владение (TOEFL iBT 85; обучение в магистратуре на английском языке)"
 
     # ==========================================================
-    # LANGUAGE 2
+    # ЯЗЫК 2
     # ==========================================================
 
-    - language: "Persian"
-      level: "Native"
+    - language: "Персидский"
+      level: "Родной язык"
 
     # ==========================================================
-    # LANGUAGE 3
+    # ЯЗЫК 3
     # ==========================================================
 
-    - language: "Russian"
-      level: "Basic"
+    - language: "Русский"
+      level: "Начальный уровень"
 
     # ==========================================================
-    # LANGUAGE 4
-    # ==========================================================
-
-    - language: "German"
-      level: "Basic"
-
-    # ==========================================================
-    # Add or remove as many languages as needed.
+    # Добавляйте или удаляйте языки по необходимости.
     # ==========================================================
 
 # ============================================================
-# AWARDS
+# НАГРАДЫ И ДОСТИЖЕНИЯ
 # ============================================================
 
 awards:
   # ==========================================================
-  # INTRODUCTION
+  # ВВЕДЕНИЕ
   # ==========================================================
 
   introduction:
     enabled: false
-    title: "Awards & Achievements"
+    title: "Награды и достижения"
     text: >
-      Selected academic and professional awards,
-      achievements, and recognitions.
+      Избранные академические и профессиональные награды,
+      достижения и признания.
 
   # ==========================================================
-  # DISPLAY
+  # ОТОБРАЖЕНИЕ
   # ==========================================================
 
   display:
     enabled: true
 
     # ==========================================================
-    # DISPLAY OPTIONS
+    # ПАРАМЕТРЫ ОТОБРАЖЕНИЯ
     # ==========================================================
 
     title: true
@@ -991,45 +1016,46 @@ awards:
     links: false
 
   # ==========================================================
-  # AWARD ITEMS
+  # СПИСОК НАГРАД
   # ==========================================================
 
   items:
     # ==========================================================
-    # AWARD 1
+    # НАГРАДА 1
     # ==========================================================
 
-    - title: "Russian Open Doors Olympiad — Full Scholarship"
-      organization: "HSE University"
+    - title: "Олимпиада «Открытые двери» — полная стипендия"
+      organization: "Национальный исследовательский университет «Высшая школа экономики»"
       year: 2024
 
       description: >
-        Awarded a full scholarship through the Russian Open Doors
-        Olympiad for graduate study in Russia.
+        Получение полной стипендии по результатам участия
+        в международной олимпиаде «Открытые двери»
+        для обучения в магистратуре в России.
 
       image: []
 
       documents:
         # ======================================================
-        # DOCUMENT 1
+        # ДОКУМЕНТ 1
         # ======================================================
 
         - "diplomas№ 2024-APP-M082_Satar_Shamsi Goushki_ru_diploma.pdf"
 
         # ======================================================
-        # DOCUMENT 2
+        # ДОКУМЕНТ 2
         # ======================================================
 
         - "diplomas№ 2024-APP-M082_Satar_Shamsi Goushki_en_diploma.pdf"
 
         # ======================================================
-        # Add or remove as many documents as needed.
+        # Добавляйте или удаляйте документы по необходимости.
         # ======================================================
 
       links: []
 
     # ==========================================================
-    # AWARD 2
+    # НАГРАДА 2
     # ==========================================================
 
     # - title: "Another Award"
@@ -1037,7 +1063,7 @@ awards:
     #   year: 2022
     #
     #   description: >
-    #     Description of another award or achievement.
+    #     Описание другой награды или достижения.
     #
     #   image: []
     #
@@ -1046,27 +1072,27 @@ awards:
     #   links: []
 
     # ==========================================================
-    # Add or remove as many awards as needed.
+    # Добавляйте или удаляйте награды по необходимости.
     # ==========================================================
 
 # ============================================================
-# CV
+# РЕЗЮМЕ
 # ============================================================
 
 cv:
   # ==========================================================
-  # INTRODUCTION
+  # ВВЕДЕНИЕ
   # ==========================================================
 
   introduction:
     enabled: false
-    title: "Curriculum Vitae"
+    title: "Профессиональное резюме"
     text: >
-      A detailed overview of my professional experience,
-      education, technical skills, and selected projects.
+      Подробная информация о моём профессиональном опыте,
+      образовании, технических навыках и избранных проектах.
 
   # ==========================================================
-  # DISPLAY
+  # ОТОБРАЖЕНИЕ
   # ==========================================================
 
   display:
@@ -1075,22 +1101,22 @@ cv:
     download: true
 
   # ==========================================================
-  # DOCUMENT
+  # ДОКУМЕНТ
   # ==========================================================
 
   document:
-    file: "CV_EN.pdf"
-    title: "Curriculum Vitae"
+    file: "CV_RU.pdf"
+    title: "Профессиональное резюме"
 
   # ==========================================================
-  # DOWNLOAD
+  # СКАЧИВАНИЕ
   # ==========================================================
 
   download:
-    label: "Download CV"
+    label: "Скачать резюме"
 
 # ============================================================
-# ADDITIONAL
+# ДОПОЛНИТЕЛЬНАЯ ИНФОРМАЦИЯ
 # ============================================================
 
 additional:
@@ -1098,31 +1124,32 @@ additional:
     - "Machine Learning"
     - "AI Engineering"
     - "Data Engineering"
-    - "Algorithms"
-    - "Mathematical Modeling"
-    - "Music Technology"
+    - "Алгоритмы"
+    - "Математическое моделирование"
+    - "Музыкальные технологии"
 
   notes:
-    - "Classical violinist with a long-standing interest in music and computational music generation."
+    - "Классический скрипач с многолетним интересом к музыке и компьютерной генерации музыки."
 
 # ============================================================
-# CONTACT
+# КОНТАКТЫ
 # ============================================================
 
 contact:
   # ==========================================================
-  # INTRODUCTION
+  # ВВЕДЕНИЕ
   # ==========================================================
 
   introduction:
     enabled: true
-    title: "Get in Touch"
+    title: "Связаться со мной"
     text: >
-      Feel free to contact me for professional opportunities,
-      collaboration, or other inquiries.
+      Буду рад обсудить профессиональные возможности,
+      сотрудничество и другие вопросы. Не стесняйтесь
+      связаться со мной.
 
   # ==========================================================
-  # DISPLAY
+  # ОТОБРАЖЕНИЕ
   # ==========================================================
 
   display:
@@ -1132,41 +1159,42 @@ contact:
     links: true
 
   # ==========================================================
-  # CONTACT INFORMATION
+  # КОНТАКТНАЯ ИНФОРМАЦИЯ
   # ==========================================================
 
-  email: "satar.shamsi@gmail.com"
+  email: "s.shamsi2020@gmail.com"
 
-  location: "Iran"
+  location: "Иран"
 
   # ==========================================================
-  # LINKS
+  # ССЫЛКИ
   # ==========================================================
 
   links:
     # ==========================================================
-    # LINK 1
+    # ССЫЛКА 1
     # ==========================================================
 
     - label: "GitHub"
       url: "https://github.com/satar-shams"
 
     # ==========================================================
-    # LINK 2
+    # ССЫЛКА 2
     # ==========================================================
 
     - label: "LinkedIn"
       url: "https://linkedin.com/in/satar-shamsi/"
 
     # ==========================================================
-    # Add or remove as many links as needed.
+    # При необходимости добавляйте или удаляйте ссылки.
     # ==========================================================
 
 # ============================================================
-# OPTIONAL SECTIONS — NOT USED YET
+# ДОПОЛНИТЕЛЬНЫЕ РАЗДЕЛЫ — ПОКА НЕ ИСПОЛЬЗУЮТСЯ
 # ============================================================
 #
-# We can activate these later simply by adding content.
+# Эти разделы можно активировать позже, просто добавив
+# необходимую информацию.
 #
 # publications:
 #   - title: ""

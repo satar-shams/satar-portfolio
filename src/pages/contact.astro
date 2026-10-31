@@ -10,7 +10,7 @@ const display = contact.display;
   <main class="contact-page">
 
     <header class="page-header">
-      <p class="page-label">Contact</p>
+      <p class="page-label">Контакты</p>
 
       {
         contact.introduction.enabled && (
@@ -37,7 +37,7 @@ const display = contact.display;
             display.email &&
             contact.email && (
               <div class="contact-item">
-                <span class="contact-label">Email</span>
+                <span class="contact-label">Электронная почта</span>
 
                 <a href={`mailto:${contact.email}`}>
                   {contact.email}
@@ -50,7 +50,7 @@ const display = contact.display;
             display.location &&
             contact.location && (
               <div class="contact-item">
-                <span class="contact-label">Location</span>
+                <span class="contact-label">Местоположение</span>
                 <span>{contact.location}</span>
               </div>
             )
